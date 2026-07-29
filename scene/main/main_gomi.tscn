@@ -1,0 +1,33 @@
+[gd_scene format=3 uid="uid://bbl3om5tq4qyi"]
+
+[node name="MainGomi" type="Node3D" unique_id=142683506]
+
+[node name="To Do List" type="Node" parent="." unique_id=274271298]
+
+[node name="Listen to Keyboard" type="Node" parent="To Do List" unique_id=1436539906]
+
+[node name="Listen to Barcode" type="Node" parent="To Do List" unique_id=1835368177]
+
+[node name="Listen to Morse" type="Node" parent="To Do List" unique_id=34830355]
+
+[node name="Listen to Gamepad" type="Node" parent="To Do List" unique_id=1465819427]
+
+[node name="Listen to Remote TV Input" type="Node" parent="To Do List" unique_id=808312888]
+
+[node name="Listen to Screen Mouse" type="Node" parent="To Do List" unique_id=891369163]
+
+[node name="Listen to Touch Input" type="Node" parent="To Do List" unique_id=1336486280]
+
+[node name="Listen to Mouse" type="Node" parent="To Do List" unique_id=209452627]
+
+[node name="Add Boolean Register" type="Node" parent="To Do List" unique_id=1921143704]
+
+[node name="Add UDP" type="Node" parent="To Do List" unique_id=984983878]
+
+[node name="Add Websocket" type="Node" parent="To Do List" unique_id=468915345]
+
+[node name="Add MQTT" type="Node" parent="To Do List" unique_id=380925566]
+
+[node name="Add RSA" type="Node" parent="To Do List" unique_id=1226856488]
+
+[node name="Add GitHub" type="Node" parent="To Do List" unique_id=509572102]
