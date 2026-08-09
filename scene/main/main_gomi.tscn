@@ -1,5 +1,8 @@
 [gd_scene format=3 uid="uid://bbl3om5tq4qyi"]
 
+[ext_resource type="Script" uid="uid://dne1wyvd2r3fi" path="res://addons/2026_01_03_gdp_input_to_primitive/script/nfc/input_nfc_listener.gd" id="1_3bq3q"]
+[ext_resource type="Script" uid="uid://dl1atyi78up5p" path="res://addons/2026_01_03_gdp_input_to_primitive/script/nfc/input_nfc_text_to_text.gd" id="2_h2evl"]
+
 [node name="MainGomi" type="Node3D" unique_id=142683506]
 
 [node name="To Do List" type="Node" parent="." unique_id=274271298]
@@ -7,6 +10,14 @@
 [node name="Listen to Keyboard" type="Node" parent="To Do List" unique_id=1436539906]
 
 [node name="Listen to Barcode" type="Node" parent="To Do List" unique_id=1835368177]
+
+[node name="InputListenToFastTypingNfc" type="Node" parent="To Do List/Listen to Barcode" unique_id=663283792]
+script = ExtResource("1_3bq3q")
+metadata/_custom_type_script = "uid://dne1wyvd2r3fi"
+
+[node name="InputNfcTextToText" type="Node" parent="To Do List/Listen to Barcode/InputListenToFastTypingNfc" unique_id=732519220]
+script = ExtResource("2_h2evl")
+metadata/_custom_type_script = "uid://dl1atyi78up5p"
 
 [node name="Listen to Morse" type="Node" parent="To Do List" unique_id=34830355]
 
