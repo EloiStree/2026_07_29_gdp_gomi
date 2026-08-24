@@ -22,11 +22,24 @@ signal on_bytes_in_to_process_request(bytes_to_process:PackedByteArray)
 signal on_text_out_to_broadcast_request(text_to_broadcast: String)
 signal on_bytes_out_to_broadcast_request(bytes_to_broadcast:PackedByteArray)
 
+
+signal on_text_in_game_telemetry(game_telemetry: String)
+signal on_bytes_in_game_telemetry(game_telemetry:PackedByteArray)
+
 func _ready() -> void:
 	_singleton= self
 
 func _exit_tree() -> void:
 	_singleton= null
+
+
+## Notify the user that the app received game telemetry on the websocket
+func push_in_text_game_telemetry(text_game_telemetry:String):
+	GOMI.game_text_telemetry(text_game_telemetry)
+
+## Notify the user that the app received game telemetry on the websocket
+func push_in_bytes_game_telemetry(bytes_game_telemetry:PackedByteArray):
+	GOMI.game_byte_telemetry(bytes_game_telemetry)
 
 func push_in_text_to_process(text_to_process:String):
 	GOMI.text_in(text_to_process)
@@ -218,6 +231,28 @@ static func hook_analog_changed(callable_analog_name_with_value:Callable):
 	_listeners_to_any_analog.append(callable_analog_name_with_value)
 
 
+
+
+## Notify the user that the app received game telemetry on the websocket
+static func game_text_telemetry(text_game_telemetry:String):
+	if _singleton==null:
+		return
+	if text_game_telemetry.is_empty():
+		return
+	_singleton.on_text_in_game_telemetry.emit(text_game_telemetry)
+	for callable in _listeners_text_game_telemetry:
+		callable.call(text_game_telemetry)
+
+## Notify the user that the app received game telemetry on the websocket
+static func game_byte_telemetry(bytes_game_telemetry:PackedByteArray):
+	if _singleton==null:
+		return
+	if bytes_game_telemetry.size() == 0:
+		return
+	_singleton.on_bytes_in_game_telemetry.emit(bytes_game_telemetry)
+	for callable in _listeners_byte_game_telemetry:
+		callable.call(bytes_game_telemetry)
+
 static var _listeners_to_any_analog: Array[Callable] = []
 static var _listeners_to_any_boolean: Array[Callable] = []
 
@@ -234,3 +269,17 @@ func for_dev_local_notify_to_hook_listeners_analog_changed(analog_name:String, v
 
 func for_dev_local_notify_to_hook_listeners_boolean_changed(boolean_name:String, value:bool):
 	for_dev_static_notify_to_hook_listeners_boolean_changed(boolean_name, value)
+
+
+
+static var _listeners_text_game_telemetry: Array[Callable] = []
+static var _listeners_byte_game_telemetry: Array[Callable] = []
+
+static func hook_to_text_game_telemetry(callback:Callable):
+	_listeners_text_game_telemetry.append(callback)
+	
+	
+static func hook_to_byte_game_telemetry(callback:Callable):
+	_listeners_byte_game_telemetry.append(callback)
+	
+	

@@ -2,6 +2,14 @@ class_name PushToSingletonGOMI
 extends Node
 
 
+## Notify the user that the app received game telemetry on the websocket
+func push_in_text_game_telemetry(text_game_telemetry:String):
+	GOMI.game_text_telemetry(text_game_telemetry)
+
+## Notify the user that the app received game telemetry on the websocket
+func push_in_bytes_game_telemetry(bytes_game_telemetry:PackedByteArray):
+	GOMI.game_byte_telemetry(bytes_game_telemetry)
+
 
 func push_in_text_to_process(text_to_process:String):
 	GOMI.text_in(text_to_process)
