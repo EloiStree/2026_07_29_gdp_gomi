@@ -85,7 +85,7 @@ func push_in_remove_named_gdscript(unique_name:String):
 static func text_in(text:String):
 	if _singleton==null:
 		return
-	var lines: Array[String] = text.split("\n")
+	var lines: PackedStringArray = text.split("\n")
 	for line in lines:
 		if len(line) > 0:
 			line= line.strip_edges()

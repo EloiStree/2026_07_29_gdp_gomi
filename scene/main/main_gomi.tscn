@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://bbl3om5tq4qyi"]
 
-[ext_resource type="Script" uid="uid://dne1wyvd2r3fi" path="res://addons/2026_01_03_gdp_input_to_primitive/script/nfc/input_nfc_listener.gd" id="1_3bq3q"]
+[ext_resource type="Script" uid="uid://dne1wyvd2r3fi" path="res://addons/2026_01_03_gdp_input_to_primitive/script/nfc/input_listen_to_fast_typing_nfc.gd" id="1_3bq3q"]
 [ext_resource type="Script" uid="uid://dl1atyi78up5p" path="res://addons/2026_01_03_gdp_input_to_primitive/script/nfc/input_nfc_text_to_text.gd" id="2_h2evl"]
 
 [node name="MainGomi" type="Node3D" unique_id=142683506]
