@@ -25,6 +25,7 @@
 [ext_resource type="Script" uid="uid://cvcpojr1clo5" path="res://addons/2026_07_30_gdp_boolean_register/scene/guid/demo_2d_vbox_static_boolean_register/script/bool_reg_listen_to_boolean_register_static_singleton.gd" id="4_16vpb"]
 [ext_resource type="Script" uid="uid://briys5vafrqt" path="res://addons/2026_08_09_gdp_text_interpeter_sc_cmd/scene/guid/demo_2d_scmd_static_singleton/scmd_push_shortcut_to_static_singleton.gd" id="4_dewju"]
 [ext_resource type="Script" uid="uid://c5s876kolj2pe" path="res://addons/2026_08_10_gdp_omi_file_import/scene/guid/demo_2d_vbox_keyboard_to_cmd/omi_file_godot_keyboard_to_cmd.gd" id="4_has3g"]
+[ext_resource type="Script" uid="uid://0et3umqbceuu" path="res://addons/2026_08_27_gdp_bool_analog_dictionary/scene/guid/demo_2d_vbox_abstract_boolean_float_input/script/ab_input_dictionary.gd" id="4_o8a1s"]
 [ext_resource type="Script" uid="uid://hj6ckkrsbo7k" path="res://addons/2026_01_03_gdp_input_to_primitive/script/input_dev_note_abstract_multiline_node.gd" id="4_y8qhp"]
 [ext_resource type="Script" uid="uid://c148v6fljprxl" path="res://addons/2026_08_10_gdp_omi_file_import/scene/script/unstored/omi_file_text_key_value_split_by_diamond.gd" id="6_rgn43"]
 [ext_resource type="Script" uid="uid://ru6nwtr6o2j2" path="res://addons/2026_08_09_gdp_text_interpeter_sc_cmd/script/unstored/scmd_parser_replace_shortcut_word_from_alias.gd" id="7_2vkrb"]
@@ -42,12 +43,15 @@
 [ext_resource type="PackedScene" uid="uid://h51oervmqplh" path="res://addons/2026_01_03_gdp_input_to_primitive/scene/guid/demo_2d_listen_to_nfc_bar_code/demo_2d_vbox_listen_to_nfc_bar_code.tscn" id="13_jtqnq"]
 [ext_resource type="PackedScene" uid="uid://c64isfnfdg043" path="res://addons/2026_01_03_gdp_input_to_primitive/scene/guid/demo_2d_listen_to_os_ctrl_shift_alt/scene/guid/demo_2d_vbox_ctrl_shift_alt/demo_2d_vbox_ctrl_shift_alt.tscn" id="14_0bajj"]
 [ext_resource type="Script" uid="uid://37ph7dwa7ih2" path="res://addons/2026_08_09_gdp_text_interpeter_sc_cmd/script/interpreters_cmd/short_cut_relayer/scmd_cmd_interpreter_relay_to_shortcut_actioneer.gd" id="14_has3g"]
+[ext_resource type="Script" uid="uid://blcopotut64vp" path="res://addons/2026_08_27_gdp_bool_analog_dictionary/scene/guid/demo_2d_vbox_abstract_boolean_float_input/script/actions/ab_input_actions_from_device_event.gd" id="14_ivyb7"]
 [ext_resource type="PackedScene" uid="uid://2fb6igtpf0bj" path="res://addons/2026_01_03_gdp_input_to_primitive/scene/guid/demo_2d_action_from_in_app_key_logger/demo_2d_action_from_in_app_key_logger.tscn" id="14_jtqnq"]
 [ext_resource type="Script" uid="uid://d17aryuj2dwti" path="res://addons/2025_10_27_gdp_udp_in_out_gate/scripts/udp_io_push_package_udp_out_to_targets_group.gd" id="14_qwj6p"]
 [ext_resource type="PackedScene" uid="uid://ba3og4m0880ou" path="res://addons/2026_01_03_gdp_input_to_primitive/scene/guid/demo_2d_listen_to_gamepad_button_axis/scene/guid/demo_2d_vbox_listen_to_axis_buttons.tscn" id="15_8fnf6"]
+[ext_resource type="Script" uid="uid://ptphj5e02qd3" path="res://addons/2026_08_27_gdp_bool_analog_dictionary/scene/guid/demo_2d_vbox_abstract_boolean_float_input/script/actions/ab_input_actions_from_boolean.gd" id="15_8fu7p"]
 [ext_resource type="PackedScene" uid="uid://brttoxwq0pfav" path="res://addons/2026_01_03_gdp_input_to_primitive/scene/guid/demo_2d_listen_to_tv_remote/scene/guid/demo_2d_vbox_listen_to_tv_remote/demo_2d_vbox_listen_to_tv_remote.tscn" id="15_8i4cd"]
 [ext_resource type="Script" uid="uid://ruty58kxt2hc" path="res://addons/2026_08_16_gdp_files_as_one_text/demo/guid/demo_2d_vbox_download_fuse_url_local/file_config_text_to_file_filter.gd" id="16_2018l"]
 [ext_resource type="PackedScene" uid="uid://lee8dfjmvx1s" path="res://addons/2026_01_03_gdp_input_to_primitive/scene/guid/demo_2d_listen_to_copy_past/demo_2d_listen_to_copy_past.tscn" id="16_ov4wx"]
+[ext_resource type="Script" uid="uid://ddid2r3af2q22" path="res://addons/2026_08_27_gdp_bool_analog_dictionary/scene/guid/demo_2d_vbox_abstract_boolean_float_input/script/actions/ab_input_actions_from_range_in_out.gd" id="16_sa742"]
 [ext_resource type="Script" uid="uid://56cj5ryg1n56" path="res://addons/2026_01_03_gdp_input_to_primitive/scene/guid/demo_2d_vbox_uart_one_two_char/input_listen_to_two_char_255_format.gd" id="19_8iqu7"]
 [ext_resource type="PackedScene" uid="uid://ckrhseo4w54p1" path="res://addons/2026_01_03_gdp_input_to_primitive/scene/guid/demo_2d_listen_to_mouse_screen_area/scene/demo_2d_listen_to_mouse_screen.tscn" id="19_netmx"]
 [ext_resource type="Script" uid="uid://dne1wyvd2r3fi" path="res://addons/2026_01_03_gdp_input_to_primitive/script/nfc/input_listen_to_fast_typing_nfc.gd" id="21_lgmy6"]
@@ -64,6 +68,7 @@
 [ext_resource type="Script" uid="uid://cc2wfvi266qp" path="res://addons/2026_01_03_gdp_input_to_primitive/scene/guid/demo_2d_listen_to_gamepad_button_axis/script/input_listen_to_devices_axis_and_buttons.gd" id="28_g6p4p"]
 [ext_resource type="Script" uid="uid://dwil6s4natvf5" path="res://addons/2026_08_09_gdp_text_interpeter_sc_cmd/script/scmd_ui_submit_line_edit.gd" id="29_lmmxa"]
 [ext_resource type="Script" uid="uid://01buevjjnaga" path="res://addons/2026_08_23_gdp_text_to_gdscript_trigger/scene/guid/demo_2d_vbox_pre_load_gdscript/script/tmod_emit_in_out_godot_event.gd" id="29_yo22e"]
+[ext_resource type="Script" uid="uid://b7w3lbqn4spoc" path="res://addons/2026_08_10_gdp_omi_file_import/scene/script/unstored/omi_file_ab_input_to_command.gd" id="30_8fu7p"]
 [ext_resource type="Script" uid="uid://bpsay7og5jwcf" path="res://addons/2026_01_03_gdp_input_to_primitive/scene/guid/demo_2d_text_to_text_action/script/input_text_array_group_of_actions.gd" id="30_rm0by"]
 [ext_resource type="PackedScene" uid="uid://xnlog20366in" path="res://addons/2026_01_03_gdp_input_to_primitive/scene/guid/demo_2d_tigger_text_to_interpret/demo_2d_tigger_text_to_interpret.tscn" id="31_xvmp1"]
 [ext_resource type="PackedScene" uid="uid://b65unl10jnrtn" path="res://addons/2026_01_03_gdp_input_to_primitive/scene/guid/input_ui/demo_2d_960x512_full_input_ui/demo_2d_960x512_full_input_ui.tscn" id="32_y7hht"]
@@ -82,8 +87,11 @@
 [ext_resource type="Script" uid="uid://cvi6cl5mh2288" path="res://addons/2026_08_10_gdp_omi_file_import/scene/guid/demo_2d_vbox_godot_event/omi_file_godot_event_to_command.gd" id="38_cla7f"]
 [ext_resource type="Script" uid="uid://bnh4ggp3el6ai" path="res://addons/2026_08_09_gdp_text_interpeter_sc_cmd/script/interpreters_sc/midi/scmd_sc_default_midi_output.gd" id="38_hp8ja"]
 [ext_resource type="Script" uid="uid://bmx4ne8gcmd62" path="res://addons/2026_08_09_gdp_text_interpeter_sc_cmd/script/interpreters_sc/tbio_iid/scmd_sc_interpeter_tbio_iid.gd" id="39_m1p13"]
+[ext_resource type="Script" uid="uid://dh7kby08knj4m" path="res://addons/2026_01_03_gdp_input_to_primitive/scene/guid/demo_2d_listen_to_midi/script/input_listen_to_midi_as_ab_input.gd" id="40_c6ljw"]
 [ext_resource type="Script" uid="uid://bcgdlgdpkc1wp" path="res://addons/2026_08_09_gdp_text_interpeter_sc_cmd/script/interpreters_sc/clipboard/scmd_sc_default_clipboard_storage.gd" id="40_xrwyb"]
+[ext_resource type="Script" uid="uid://dmyxgi5a4b6wj" path="res://addons/2026_01_03_gdp_input_to_primitive/scene/guid/demo_2d_listen_to_gamepad_button_axis/script/input_debug_devices_axis_and_buttons_as_string.gd" id="43_o72ou"]
 [ext_resource type="PackedScene" uid="uid://bibwipwfhymmj" path="res://addons/2026_01_03_gdp_input_to_primitive/scene/guid/demo_2d_listen_to_keyboard_input/demo_vbox_2d_listen_keyboard_input.tscn" id="43_rgn43"]
+[ext_resource type="Script" uid="uid://ivok83vhxq15" path="res://addons/2026_08_27_gdp_bool_analog_dictionary/scene/guid/demo_2d_vbox_abstract_boolean_float_input/script/ab_input_static_set_with_local_ref_list.gd" id="44_c6ljw"]
 [ext_resource type="PackedScene" uid="uid://bg2oltipkal3j" path="res://addons/2026_08_16_gdp_files_as_one_text/demo/guid/demo_2d_vbox_download_fuse_url_local/scene/prefab/prefab_button_res_os_directory.tscn" id="45_has3g"]
 [ext_resource type="Script" uid="uid://diecqinjp6x20" path="res://addons/2026_08_09_gdp_text_interpeter_sc_cmd/script/interpreters_sc/two_char_macro/scmd_sc_interpreter_two_char_macro.gd" id="45_vkenm"]
 [ext_resource type="PackedScene" uid="uid://ckhrtixvka8p" path="res://addons/2026_08_16_gdp_files_as_one_text/demo/guid/demo_2d_vbox_download_fuse_url_local/scene/prefab/prefab_button_user_os_directory.tscn" id="46_2018l"]
@@ -102,6 +110,8 @@
 [ext_resource type="PackedScene" uid="uid://2syh2xru73o0" path="res://addons/2026_08_22_gdp_gomi_code_edit_pusher/scene/main/scene_code_editor_pusher_for_gomi.tscn" id="74_f14o6"]
 [ext_resource type="Script" uid="uid://c7g1isaokapf8" path="res://addons/2026_07_29_gdp_gomi/script/push_to_singleton_gomi.gd" id="75_lw2yh"]
 [ext_resource type="PackedScene" uid="uid://cfdolvcck26yf" path="res://addons/2026_01_03_gdp_input_to_primitive/scene/guid/demo_2d_ui_button_clipboard/demo_2d_ui_button_clipboard.tscn" id="85_eclgv"]
+[ext_resource type="Script" uid="uid://br38ejpq7y2m6" path="res://addons/2026_08_27_gdp_bool_analog_dictionary/scene/guid/demo_2d_vbox_abstract_boolean_float_input/script/ab_input_static_listen_to_value_changed.gd" id="99_7qd0e"]
+[ext_resource type="Script" uid="uid://dekphoet0if33" path="res://addons/2026_08_27_gdp_bool_analog_dictionary/scene/guid/demo_2d_vbox_abstract_boolean_float_input/script/ab_ui_input/ab_ui_input_line_edit_to_clipboard.gd" id="104_ca1ic"]
 
 [sub_resource type="Resource" id="Resource_rs1r3"]
 script = ExtResource("2_58ya2")
@@ -131,6 +141,11 @@ size_flags_vertical = 3
 [node name="Static Singleton GOMI" type="Node" parent="GOMI" unique_id=665955297]
 script = ExtResource("1_d6640")
 metadata/_custom_type_script = "uid://cw57maegtq3gu"
+
+[node name="AbInputDictionary" type="Node" parent="GOMI/Static Singleton GOMI" unique_id=1661141111]
+script = ExtResource("4_o8a1s")
+_is_singleton = true
+metadata/_custom_type_script = "uid://0et3umqbceuu"
 
 [node name="List to Static CMD SC" type="Node" parent="GOMI/Static Singleton GOMI" unique_id=1038362528]
 
@@ -379,6 +394,49 @@ metadata/_custom_type_script = "uid://bh6jf2v73ktd2"
 script = ExtResource("75_lw2yh")
 metadata/_custom_type_script = "uid://c7g1isaokapf8"
 
+[node name="AB INPUT TO COMMAND" type="Node" parent="GOMI/DATABASE OF ACTIONS" unique_id=1183842534]
+script = ExtResource("4_y8qhp")
+metadata/_custom_type_script = "uid://hj6ckkrsbo7k"
+
+[node name="Device Event DB" type="Node" parent="GOMI/DATABASE OF ACTIONS/AB INPUT TO COMMAND" unique_id=2041627325]
+script = ExtResource("4_y8qhp")
+metadata/_custom_type_script = "uid://hj6ckkrsbo7k"
+
+[node name="AbInputActionsFromDeviceEvent" type="Node" parent="GOMI/DATABASE OF ACTIONS/AB INPUT TO COMMAND/Device Event DB" unique_id=2037877876]
+script = ExtResource("14_ivyb7")
+_use_debug_print = true
+metadata/_custom_type_script = "uid://blcopotut64vp"
+
+[node name="Push GOMI" type="Node" parent="GOMI/DATABASE OF ACTIONS/AB INPUT TO COMMAND/Device Event DB/AbInputActionsFromDeviceEvent" unique_id=1175385336]
+script = ExtResource("75_lw2yh")
+metadata/_custom_type_script = "uid://c7g1isaokapf8"
+
+[node name="Input Boolean DB" type="Node" parent="GOMI/DATABASE OF ACTIONS/AB INPUT TO COMMAND" unique_id=1355978097]
+script = ExtResource("4_y8qhp")
+metadata/_custom_type_script = "uid://hj6ckkrsbo7k"
+
+[node name="AbInputActionsFromBoolean" type="Node" parent="GOMI/DATABASE OF ACTIONS/AB INPUT TO COMMAND/Input Boolean DB" unique_id=1632203352]
+script = ExtResource("15_8fu7p")
+_use_debug_print = true
+metadata/_custom_type_script = "uid://ptphj5e02qd3"
+
+[node name="Push GOMI" type="Node" parent="GOMI/DATABASE OF ACTIONS/AB INPUT TO COMMAND/Input Boolean DB/AbInputActionsFromBoolean" unique_id=1007045943]
+script = ExtResource("75_lw2yh")
+metadata/_custom_type_script = "uid://c7g1isaokapf8"
+
+[node name="Input Analog Range DB" type="Node" parent="GOMI/DATABASE OF ACTIONS/AB INPUT TO COMMAND" unique_id=36288980]
+script = ExtResource("4_y8qhp")
+metadata/_custom_type_script = "uid://hj6ckkrsbo7k"
+
+[node name="AbInputActionsRangeInOut" type="Node" parent="GOMI/DATABASE OF ACTIONS/AB INPUT TO COMMAND/Input Analog Range DB" unique_id=1775015610]
+script = ExtResource("16_sa742")
+_use_debug_print = true
+metadata/_custom_type_script = "uid://ddid2r3af2q22"
+
+[node name="Push GOMI" type="Node" parent="GOMI/DATABASE OF ACTIONS/AB INPUT TO COMMAND/Input Analog Range DB/AbInputActionsRangeInOut" unique_id=1349368450]
+script = ExtResource("75_lw2yh")
+metadata/_custom_type_script = "uid://c7g1isaokapf8"
+
 [node name="Modding" type="Node" parent="GOMI" unique_id=148328299]
 
 [node name="One Script running" type="Node" parent="GOMI/Modding" unique_id=900710226]
@@ -550,6 +608,15 @@ metadata/_custom_type_script = "uid://ci68j7wx1poj6"
 script = ExtResource("75_lw2yh")
 metadata/_custom_type_script = "uid://c7g1isaokapf8"
 
+[node name="_ab_input_to_command" type="Node" parent="GOMI/FILE/LoadFileFromFolder/Filter Text As Files/FileConfigRedirectionByNameRelayBroadcaster" unique_id=1459037906]
+script = ExtResource("3_2018l")
+_exact_file_name = ".ab_input_to_command"
+metadata/_custom_type_script = "uid://ci68j7wx1poj6"
+
+[node name="OmiFileAbInputToCommand" type="Node" parent="GOMI/FILE/LoadFileFromFolder/Filter Text As Files/FileConfigRedirectionByNameRelayBroadcaster/_ab_input_to_command" unique_id=28861379]
+script = ExtResource("30_8fu7p")
+_use_debug_print = false
+
 [node name="Code" type="Node" parent="GOMI" unique_id=365457322]
 
 [node name="Boolean Register" type="Node" parent="GOMI/Code" unique_id=1040011544]
@@ -652,6 +719,10 @@ metadata/_custom_type_script = "uid://d3bq1wmbyp1v4"
 
 [node name="Input" type="Node" parent="GOMI/Code" unique_id=1966233397]
 
+[node name="AB INPUT Listener" type="Node" parent="GOMI/Code/Input" unique_id=866041786]
+script = ExtResource("99_7qd0e")
+metadata/_custom_type_script = "uid://br38ejpq7y2m6"
+
 [node name="GODOT LISTENER" type="Node" parent="GOMI/Code/Input" unique_id=2086236344]
 
 [node name="GODOT EVENT" type="Node" parent="GOMI/Code/Input/GODOT LISTENER" unique_id=1817406131]
@@ -669,6 +740,14 @@ script = ExtResource("7_rwjbu")
 _use_print_log = false
 metadata/_custom_type_script = "uid://d3wbcnhud6bjx"
 
+[node name="InputListenToMidiAsAbInput" type="Node" parent="GOMI/Code/Input/GODOT LISTENER/MIDI/InputListenToMidi" unique_id=1047167382 node_paths=PackedStringArray("_listen_to_midi")]
+script = ExtResource("40_c6ljw")
+_listen_to_midi = NodePath("..")
+
+[node name="Midi AB Input" type="Node" parent="GOMI/Code/Input/GODOT LISTENER/MIDI/InputListenToMidi/InputListenToMidiAsAbInput" unique_id=457041437]
+script = ExtResource("44_c6ljw")
+metadata/_custom_type_script = "uid://ivok83vhxq15"
+
 [node name="Midi Demo" type="Node" parent="GOMI/Code/Input/GODOT LISTENER/MIDI/InputListenToMidi" unique_id=1290141724]
 script = ExtResource("8_l4bru")
 _main_scene_reference = ExtResource("9_bvtn2")
@@ -680,8 +759,16 @@ metadata/_custom_type_script = "uid://hj6ckkrsbo7k"
 
 [node name="InputListenToDevicesAxisAndButtons" type="Node" parent="GOMI/Code/Input/GODOT LISTENER/GAMEPAD" unique_id=484595249]
 script = ExtResource("28_g6p4p")
-_use_print_debug = true
 metadata/_custom_type_script = "uid://cc2wfvi266qp"
+
+[node name="InputDebugDevicesAxisAndButtonsAsString" type="Node" parent="GOMI/Code/Input/GODOT LISTENER/GAMEPAD/InputListenToDevicesAxisAndButtons" unique_id=329246670 node_paths=PackedStringArray("listen_to_axis_and_buttons")]
+script = ExtResource("43_o72ou")
+listen_to_axis_and_buttons = NodePath("..")
+metadata/_custom_type_script = "uid://dmyxgi5a4b6wj"
+
+[node name="AB Push Static" type="Node" parent="GOMI/Code/Input/GODOT LISTENER/GAMEPAD/InputListenToDevicesAxisAndButtons" unique_id=2040039277]
+script = ExtResource("44_c6ljw")
+metadata/_custom_type_script = "uid://ivok83vhxq15"
 
 [node name="KEYBOARD" type="Node" parent="GOMI/Code/Input/GODOT LISTENER" unique_id=1243996228]
 script = ExtResource("4_y8qhp")
@@ -738,6 +825,10 @@ script = ExtResource("27_has3g")
 use_print_debug = false
 metadata/_custom_type_script = "uid://b6d0lxvq0uju0"
 
+[node name="Keyboard As AB Input" type="Node" parent="GOMI/Code/Input/GODOT LISTENER/KEYBOARD/KEYBOARD DOWN UP/Input Listen To Keyboard" unique_id=1492458441]
+script = ExtResource("44_c6ljw")
+metadata/_custom_type_script = "uid://ivok83vhxq15"
+
 [node name="MOUSE" type="Node" parent="GOMI/Code/Input/GODOT LISTENER" unique_id=1705412994]
 script = ExtResource("4_y8qhp")
 metadata/_custom_type_script = "uid://hj6ckkrsbo7k"
@@ -748,7 +839,12 @@ metadata/_custom_type_script = "uid://hj6ckkrsbo7k"
 
 [node name="InputListenToMouse" type="Node" parent="GOMI/Code/Input/GODOT LISTENER/MOUSE/BASIC" unique_id=1650341474]
 script = ExtResource("34_j3gf8")
+use_print_debug = false
 metadata/_custom_type_script = "uid://buabu81k2m1m5"
+
+[node name="Mouse AB Input" type="Node" parent="GOMI/Code/Input/GODOT LISTENER/MOUSE/BASIC/InputListenToMouse" unique_id=822843186]
+script = ExtResource("44_c6ljw")
+metadata/_custom_type_script = "uid://ivok83vhxq15"
 
 [node name="SCREEN" type="Node" parent="GOMI/Code/Input/GODOT LISTENER/MOUSE" unique_id=1605862322]
 script = ExtResource("4_y8qhp")
@@ -954,12 +1050,13 @@ size_flags_vertical = 3
 [node name="GOMI TAB" type="TabContainer" parent="CanvasLayer/GOMI Main" unique_id=199680806]
 layout_mode = 1
 anchors_preset = -1
-anchor_right = 1.0
-anchor_bottom = 0.8730469
-offset_right = -43.0
+anchor_right = 0.95500004
+anchor_bottom = 0.7734375
+offset_right = 0.19995117
 grow_horizontal = 2
 grow_vertical = 2
 current_tab = 0
+metadata/_edit_use_anchors_ = true
 
 [node name="VBox Input" type="Panel" parent="CanvasLayer/GOMI Main/GOMI TAB" unique_id=1151134158]
 layout_mode = 2
@@ -1048,17 +1145,8 @@ metadata/_tab_index = 11
 [node name="InputListenToKeyboardUnicodeAsString" parent="CanvasLayer/GOMI Main/GOMI TAB/VBox Input/TabContainer/KeyboardInput/As Unicode Typed" parent_id_path=PackedInt32Array(1833133360, 1192952613) index="0" unique_id=1699678968]
 use_print_debug = false
 
-[node name="Unicode Char To Actions" parent="CanvasLayer/GOMI Main/GOMI TAB/VBox Input/TabContainer/KeyboardInput/As Unicode Typed/InputListenToKeyboardUnicodeAsString" index="0" unique_id=1532805843]
-script = null
-
 [node name="InputListenToKeyboardUnicodeAsInteger" parent="CanvasLayer/GOMI Main/GOMI TAB/VBox Input/TabContainer/KeyboardInput/As Unicode Typed" parent_id_path=PackedInt32Array(1833133360, 1192952613) index="1" unique_id=1443949103]
 _use_print_debug = false
-
-[node name="Integer Char To Actions" parent="CanvasLayer/GOMI Main/GOMI TAB/VBox Input/TabContainer/KeyboardInput/As Unicode Typed/InputListenToKeyboardUnicodeAsInteger" index="0" unique_id=2113027912]
-script = null
-
-[node name="Keyboard Down Up To Actions" parent="CanvasLayer/GOMI Main/GOMI TAB/VBox Input/TabContainer/KeyboardInput/As Keyboard Typed/Input Listen To Keyboard" parent_id_path=PackedInt32Array(1833133360, 776076136) index="0" unique_id=1446956370]
-script = null
 
 [node name="Interpretor" type="Panel" parent="CanvasLayer/GOMI Main/GOMI TAB" unique_id=1256017668]
 visible = false
@@ -1265,6 +1353,47 @@ layout_mode = 1
 script = ExtResource("75_lw2yh")
 metadata/_custom_type_script = "uid://c7g1isaokapf8"
 
+[node name="HBoxContainer2" type="HBoxContainer" parent="CanvasLayer/GOMI Main" unique_id=2001596706]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.8066406
+anchor_right = 0.95104164
+anchor_bottom = 0.8671875
+grow_horizontal = 2
+grow_vertical = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="AbInputStaticListenToValueChanged" type="Node" parent="CanvasLayer/GOMI Main/HBoxContainer2" unique_id=2021518739]
+script = ExtResource("99_7qd0e")
+_analog_format_string = "%s %.1f"
+_boolean_format_string = "%s|%s"
+_any_format_string = "%s   %s"
+_device_event_format_string = "%s %s"
+_ignore_log_if_contains = Array[String](["mouse|left"])
+metadata/_custom_type_script = "uid://br38ejpq7y2m6"
+
+[node name="LineEdit AB Bool" type="LineEdit" parent="CanvasLayer/GOMI Main/HBoxContainer2" unique_id=190852102]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="LineEdit AB Analog" type="LineEdit" parent="CanvasLayer/GOMI Main/HBoxContainer2" unique_id=97479471]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="LineEdit AB Trigger" type="LineEdit" parent="CanvasLayer/GOMI Main/HBoxContainer2" unique_id=460222288]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Button" type="Button" parent="CanvasLayer/GOMI Main/HBoxContainer2" unique_id=1032761219]
+layout_mode = 2
+text = "Clipboard"
+
+[node name="AbUiInputLineEditToClipboard" type="Node" parent="CanvasLayer/GOMI Main/HBoxContainer2/Button" unique_id=843131497 node_paths=PackedStringArray("_line_edit_group", "_button_to_trigger")]
+script = ExtResource("104_ca1ic")
+_line_edit_group = [NodePath("../../LineEdit AB Bool"), NodePath("../../LineEdit AB Analog"), NodePath("../../LineEdit AB Trigger")]
+_button_to_trigger = [NodePath("..")]
+metadata/_custom_type_script = "uid://dekphoet0if33"
+
 [node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/GOMI Main" unique_id=1693475444]
 layout_mode = 1
 anchors_preset = -1
@@ -1470,6 +1599,9 @@ layout_mode = 2
 [connection signal="on_group_triggered_action" from="GOMI/DATABASE OF ACTIONS/MOUSE EVENT/Scroll Trigger Action/Scroll Left" to="GOMI/DATABASE OF ACTIONS/MOUSE EVENT/Scroll Trigger Action/Scroll Left/Push GOMI" method="push_in_text_to_process"]
 [connection signal="on_group_triggered_action" from="GOMI/DATABASE OF ACTIONS/MOUSE EVENT/Scroll Trigger Action/Scroll Right" to="GOMI/DATABASE OF ACTIONS/MOUSE EVENT/Scroll Trigger Action/Scroll Right/Push GOMI" method="push_in_text_to_process"]
 [connection signal="on_action_found" from="GOMI/DATABASE OF ACTIONS/BOOL TO MACRO/InputTextDictionaryTrueFalseValueToActions" to="GOMI/DATABASE OF ACTIONS/BOOL TO MACRO/InputTextDictionaryTrueFalseValueToActions/Push GOMI" method="push_in_text_to_process"]
+[connection signal="on_action_found" from="GOMI/DATABASE OF ACTIONS/AB INPUT TO COMMAND/Device Event DB/AbInputActionsFromDeviceEvent" to="GOMI/DATABASE OF ACTIONS/AB INPUT TO COMMAND/Device Event DB/AbInputActionsFromDeviceEvent/Push GOMI" method="push_in_text_to_process"]
+[connection signal="on_action_found" from="GOMI/DATABASE OF ACTIONS/AB INPUT TO COMMAND/Input Boolean DB/AbInputActionsFromBoolean" to="GOMI/DATABASE OF ACTIONS/AB INPUT TO COMMAND/Input Boolean DB/AbInputActionsFromBoolean/Push GOMI" method="push_in_text_to_process"]
+[connection signal="on_action_found" from="GOMI/DATABASE OF ACTIONS/AB INPUT TO COMMAND/Input Analog Range DB/AbInputActionsRangeInOut" to="GOMI/DATABASE OF ACTIONS/AB INPUT TO COMMAND/Input Analog Range DB/AbInputActionsRangeInOut/Push GOMI" method="push_in_text_to_process"]
 [connection signal="on_fusion_complete" from="GOMI/FILE/LoadFileFromFolder" to="GOMI/FILE/LoadFileFromFolder/Filter Text As Files" method="clear_dictionary_and_filter_files_from_text"]
 [connection signal="on_file_fused_by_extension_name" from="GOMI/FILE/LoadFileFromFolder/Filter Text As Files" to="GOMI/FILE/LoadFileFromFolder/Filter Text As Files/FileConfigRedirectionByNameRelayBroadcaster" method="push_file_content_by_extension_name"]
 [connection signal="on_content_found_to_redirect" from="GOMI/FILE/LoadFileFromFolder/Filter Text As Files/FileConfigRedirectionByNameRelayBroadcaster/_key_log_to_command" to="GOMI/FILE/LoadFileFromFolder/Filter Text As Files/FileConfigRedirectionByNameRelayBroadcaster/_key_log_to_command/Key Value Splitter" method="push_in_text_to_parse"]
@@ -1508,17 +1640,32 @@ layout_mode = 2
 [connection signal="on_content_found_to_redirect" from="GOMI/FILE/LoadFileFromFolder/Filter Text As Files/FileConfigRedirectionByNameRelayBroadcaster/_bool_register_to_command" to="GOMI/FILE/LoadFileFromFolder/Filter Text As Files/FileConfigRedirectionByNameRelayBroadcaster/_bool_register_to_command/OmiFileBoolRegisterToCommand" method="push_in_text_to_parse"]
 [connection signal="on_request_append_key_value_command" from="GOMI/FILE/LoadFileFromFolder/Filter Text As Files/FileConfigRedirectionByNameRelayBroadcaster/_bool_register_to_command/OmiFileBoolRegisterToCommand" to="GOMI/DATABASE OF ACTIONS/BOOL TO MACRO/InputTextDictionaryTrueFalseValueToActions" method="append_one_key_value_in_dictionary_for_true_or_false"]
 [connection signal="on_request_boolean_set_command" from="GOMI/FILE/LoadFileFromFolder/Filter Text As Files/FileConfigRedirectionByNameRelayBroadcaster/_bool_register_to_command/OmiFileBoolRegisterToCommand" to="GOMI/FILE/LoadFileFromFolder/Filter Text As Files/FileConfigRedirectionByNameRelayBroadcaster/_bool_register_to_command/OmiFileBoolRegisterToCommand/PushToSingletonGOMI" method="push_in_boolean_set"]
+[connection signal="on_content_found_to_redirect" from="GOMI/FILE/LoadFileFromFolder/Filter Text As Files/FileConfigRedirectionByNameRelayBroadcaster/_ab_input_to_command" to="GOMI/FILE/LoadFileFromFolder/Filter Text As Files/FileConfigRedirectionByNameRelayBroadcaster/_ab_input_to_command/OmiFileAbInputToCommand" method="push_in_text_to_parse"]
+[connection signal="on_request_ab_input_boolean_action" from="GOMI/FILE/LoadFileFromFolder/Filter Text As Files/FileConfigRedirectionByNameRelayBroadcaster/_ab_input_to_command/OmiFileAbInputToCommand" to="GOMI/DATABASE OF ACTIONS/AB INPUT TO COMMAND/Input Boolean DB/AbInputActionsFromBoolean" method="append_action"]
+[connection signal="on_request_ab_input_event_action" from="GOMI/FILE/LoadFileFromFolder/Filter Text As Files/FileConfigRedirectionByNameRelayBroadcaster/_ab_input_to_command/OmiFileAbInputToCommand" to="GOMI/DATABASE OF ACTIONS/AB INPUT TO COMMAND/Device Event DB/AbInputActionsFromDeviceEvent" method="append_action"]
+[connection signal="on_request_ab_input_range_in_out_action" from="GOMI/FILE/LoadFileFromFolder/Filter Text As Files/FileConfigRedirectionByNameRelayBroadcaster/_ab_input_to_command/OmiFileAbInputToCommand" to="GOMI/DATABASE OF ACTIONS/AB INPUT TO COMMAND/Input Analog Range DB/AbInputActionsRangeInOut" method="append_action"]
 [connection signal="on_message_received" from="GOMI/Code/Gate In/Command/UDP for Command/UdpIoListenThreadUdpByte" to="GOMI/Code/Gate In/Command/UDP for Command/UdpIoListenThreadUdpByte/UdpIoParseBytePackageToIID" method="parse_byte_in_litte_endian_package_to_iid"]
 [connection signal="on_message_received" from="GOMI/Code/Gate In/Command/UDP for Command/UdpIoListenThreadUdpText" to="GOMI/Static Singleton GOMI" method="push_in_raw_text"]
 [connection signal="on_received_from_client_byte_anonym" from="GOMI/Code/Gate In/GameInfo/WebSocket for Game Telemetry/TbioWsDefaultServer" to="GOMI/Code/Gate In/GameInfo/WebSocket for Game Telemetry/TbioWsDefaultServer/Push Game Telemetry" method="push_in_bytes_game_telemetry"]
 [connection signal="on_received_from_client_text_anonym" from="GOMI/Code/Gate In/GameInfo/WebSocket for Game Telemetry/TbioWsDefaultServer" to="GOMI/Code/Gate In/GameInfo/WebSocket for Game Telemetry/TbioWsDefaultServer/Push Game Telemetry" method="push_in_text_game_telemetry"]
 [connection signal="on_boolean_value_changed" from="GOMI/Code/BOOL REGISTER/Listen To Register Boolean Changed" to="GOMI/DATABASE OF ACTIONS/BOOL TO MACRO/InputTextDictionaryTrueFalseValueToActions" method="emit_if_equals_to_text_in_true_or_false_dictionary"]
+[connection signal="on_analog_value_changed" from="GOMI/Code/Input/AB INPUT Listener" to="GOMI/DATABASE OF ACTIONS/AB INPUT TO COMMAND/Input Analog Range DB/AbInputActionsRangeInOut" method="trigger_action_from_input_name_with_previous_and_current_value"]
+[connection signal="on_boolean_value_changed" from="GOMI/Code/Input/AB INPUT Listener" to="GOMI/DATABASE OF ACTIONS/AB INPUT TO COMMAND/Input Boolean DB/AbInputActionsFromBoolean" method="trigger_action_from_input_name_and_value"]
+[connection signal="on_device_event_received" from="GOMI/Code/Input/AB INPUT Listener" to="GOMI/DATABASE OF ACTIONS/AB INPUT TO COMMAND/Device Event DB/AbInputActionsFromDeviceEvent" method="trigger_action"]
+[connection signal="on_midi_control_analog_key_value" from="GOMI/Code/Input/GODOT LISTENER/MIDI/InputListenToMidi/InputListenToMidiAsAbInput" to="GOMI/Code/Input/GODOT LISTENER/MIDI/InputListenToMidi/InputListenToMidiAsAbInput/Midi AB Input" method="set_analog_value"]
+[connection signal="on_midi_note_analog_key_value" from="GOMI/Code/Input/GODOT LISTENER/MIDI/InputListenToMidi/InputListenToMidiAsAbInput" to="GOMI/Code/Input/GODOT LISTENER/MIDI/InputListenToMidi/InputListenToMidiAsAbInput/Midi AB Input" method="set_analog_value"]
+[connection signal="on_midi_note_boolean_key_value" from="GOMI/Code/Input/GODOT LISTENER/MIDI/InputListenToMidi/InputListenToMidiAsAbInput" to="GOMI/Code/Input/GODOT LISTENER/MIDI/InputListenToMidi/InputListenToMidiAsAbInput/Midi AB Input" method="set_boolean_value"]
+[connection signal="on_last_device_axis_changed_input_named_value" from="GOMI/Code/Input/GODOT LISTENER/GAMEPAD/InputListenToDevicesAxisAndButtons/InputDebugDevicesAxisAndButtonsAsString" to="GOMI/Code/Input/GODOT LISTENER/GAMEPAD/InputListenToDevicesAxisAndButtons/AB Push Static" method="set_analog_value"]
+[connection signal="on_last_device_button_changed_input_named_value" from="GOMI/Code/Input/GODOT LISTENER/GAMEPAD/InputListenToDevicesAxisAndButtons/InputDebugDevicesAxisAndButtonsAsString" to="GOMI/Code/Input/GODOT LISTENER/GAMEPAD/InputListenToDevicesAxisAndButtons/AB Push Static" method="set_boolean_value"]
 [connection signal="on_nfc_submit_code_found" from="GOMI/Code/Input/GODOT LISTENER/KEYBOARD/NFC/InputListenToFastTypingNfc" to="GOMI/FILE/LoadFileFromFolder/Filter Text As Files/FileConfigRedirectionByNameRelayBroadcaster/_nfc_to_command/Key Value Splitter/InputTextDictionaryToActions" method="emit_if_text_equals_to_one_key"]
 [connection signal="on_string_builder_changed" from="GOMI/Code/Input/GODOT LISTENER/KEYBOARD/LOG/Key Log/InputAbstractTypingKeyLogger" to="GOMI/DATABASE OF ACTIONS/KEYBOARD NFC RFID/NFC Equals By" method="emit_if_text_finishing_by_one_key"]
 [connection signal="on_new_input_detected" from="GOMI/Code/Input/GODOT LISTENER/KEYBOARD/LOG/Key Log/InputAbstractTypingKeyLogger/InputListenToGamepadAsAlias" to="GOMI/Code/Input/GODOT LISTENER/KEYBOARD/LOG/Key Log/InputAbstractTypingKeyLogger" method="inject_key_as_string"]
 [connection signal="on_any_unicode_char_found" from="GOMI/Code/Input/GODOT LISTENER/KEYBOARD/UNICODE CHAR/InputListenToKeyboardUnicodeAsString" to="GOMI/DATABASE OF ACTIONS/KEYBOARD INT CHAR/Keyboard Char to Actions" method="emit_if_text_equals_to_one_key"]
 [connection signal="on_any_unicode_integer_as_string_found" from="GOMI/Code/Input/GODOT LISTENER/KEYBOARD/UNICODE INT/InputListenToKeyboardUnicodeAsInteger" to="GOMI/DATABASE OF ACTIONS/KEYBOARD INT CHAR/Keyboard Int to Actions" method="emit_if_text_equals_to_one_key"]
+[connection signal="on_ab_input_key_bool_value" from="GOMI/Code/Input/GODOT LISTENER/KEYBOARD/KEYBOARD DOWN UP/Input Listen To Keyboard" to="GOMI/Code/Input/GODOT LISTENER/KEYBOARD/KEYBOARD DOWN UP/Input Listen To Keyboard/Keyboard As AB Input" method="set_boolean_value"]
 [connection signal="on_event_key_stroke_as_given_by_godot" from="GOMI/Code/Input/GODOT LISTENER/KEYBOARD/KEYBOARD DOWN UP/Input Listen To Keyboard" to="GOMI/DATABASE OF ACTIONS/KEYBOARD STROKE/Keyboard stroke key" method="emit_if_equals_to_text_in_true_or_false_dictionary"]
+[connection signal="on_ab_input_event" from="GOMI/Code/Input/GODOT LISTENER/MOUSE/BASIC/InputListenToMouse" to="GOMI/Code/Input/GODOT LISTENER/MOUSE/BASIC/InputListenToMouse/Mouse AB Input" method="trigger_event_with_input_name"]
+[connection signal="on_ab_input_key_bool_value" from="GOMI/Code/Input/GODOT LISTENER/MOUSE/BASIC/InputListenToMouse" to="GOMI/Code/Input/GODOT LISTENER/MOUSE/BASIC/InputListenToMouse/Mouse AB Input" method="set_boolean_value"]
 [connection signal="on_mouse_left_down_changed" from="GOMI/Code/Input/GODOT LISTENER/MOUSE/BASIC/InputListenToMouse" to="GOMI/DATABASE OF ACTIONS/MOUSE EVENT/Button Left Macro" method="trigger_from_boolean"]
 [connection signal="on_mouse_middle_down_changed" from="GOMI/Code/Input/GODOT LISTENER/MOUSE/BASIC/InputListenToMouse" to="GOMI/DATABASE OF ACTIONS/MOUSE EVENT/Button Middle Macro" method="trigger_from_boolean"]
 [connection signal="on_mouse_right_down_changed" from="GOMI/Code/Input/GODOT LISTENER/MOUSE/BASIC/InputListenToMouse" to="GOMI/DATABASE OF ACTIONS/MOUSE EVENT/Button Right Macro" method="trigger_from_boolean"]
@@ -1575,6 +1722,9 @@ layout_mode = 2
 [connection signal="on_stop_gdscript_execution_by_name" from="CanvasLayer/GOMI Main/GOMI TAB/GDScript/TabContainer/Code Push/SceneCodeEditorPusherForGomi/GomiPusherCodeEditSubmitWithButton" to="CanvasLayer/GOMI Main/GOMI TAB/GDScript/TabContainer/Code Push/SceneCodeEditorPusherForGomi/GomiPusherCodeEditSubmitWithButton/PushToSingletonGOMI" method="push_in_remove_named_gdscript"]
 [connection signal="on_submit_gdscript_to_execute_in_background" from="CanvasLayer/GOMI Main/GOMI TAB/GDScript/TabContainer/Code Push/SceneCodeEditorPusherForGomi/GomiPusherCodeEditSubmitWithButton" to="CanvasLayer/GOMI Main/GOMI TAB/GDScript/TabContainer/Code Push/SceneCodeEditorPusherForGomi/GomiPusherCodeEditSubmitWithButton/PushToSingletonGOMI" method="push_in_execute_named_gdscript"]
 [connection signal="on_submit_gdscript_to_execute_once" from="CanvasLayer/GOMI Main/GOMI TAB/GDScript/TabContainer/Code Push/SceneCodeEditorPusherForGomi/GomiPusherCodeEditSubmitWithButton" to="CanvasLayer/GOMI Main/GOMI TAB/GDScript/TabContainer/Code Push/SceneCodeEditorPusherForGomi/GomiPusherCodeEditSubmitWithButton/PushToSingletonGOMI" method="push_in_execute_one_time_gdscript"]
+[connection signal="on_analog_value_changed_as_string" from="CanvasLayer/GOMI Main/HBoxContainer2/AbInputStaticListenToValueChanged" to="CanvasLayer/GOMI Main/HBoxContainer2/LineEdit AB Analog" method="set_text"]
+[connection signal="on_boolean_value_changed_as_string" from="CanvasLayer/GOMI Main/HBoxContainer2/AbInputStaticListenToValueChanged" to="CanvasLayer/GOMI Main/HBoxContainer2/LineEdit AB Bool" method="set_text"]
+[connection signal="on_device_event_received_as_string" from="CanvasLayer/GOMI Main/HBoxContainer2/AbInputStaticListenToValueChanged" to="CanvasLayer/GOMI Main/HBoxContainer2/LineEdit AB Trigger" method="set_text"]
 [connection signal="on_text_to_display" from="CanvasLayer/GOMI Main/HBoxContainer/Label2/BoolRegUIDisplayBooleanNameFormat" to="CanvasLayer/GOMI Main/HBoxContainer/Label2" method="set_text"]
 [connection signal="on_boolean_value_changed" from="CanvasLayer/GOMI Main/HBoxContainer/Label2/BoolRegUIDisplayBooleanNameFormat/BoolRegListenToBooleanChangedInRegisterStaticSingleton" to="CanvasLayer/GOMI Main/HBoxContainer/Label2/BoolRegUIDisplayBooleanNameFormat" method="push_in_boolean_name_value"]
 [connection signal="on_submit_button_pressed" from="CanvasLayer/GOMI Main/HBoxContainer Quick input/Button/InputUiLineEditWithSubmitButton" to="CanvasLayer/GOMI Main/HBoxContainer Quick input/Button/InputUiLineEditWithSubmitButton/SCmdPushCommandLineToStaticSingleton" method="push_command_line_to_static_singleton"]
