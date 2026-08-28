@@ -162,6 +162,20 @@ script = ExtResource("4_y8qhp")
 _note = "Store all the text actions to be triggered by input and interepetor."
 metadata/_custom_type_script = "uid://hj6ckkrsbo7k"
 
+[node name="MACRO TO COMMAND" type="Node" parent="GOMI/DATABASE OF ACTIONS" unique_id=580034362]
+script = ExtResource("4_y8qhp")
+_note = "
+Example: `⌘` "
+metadata/_custom_type_script = "uid://hj6ckkrsbo7k"
+
+[node name="InputTextDictionaryToActions" type="Node" parent="GOMI/DATABASE OF ACTIONS/MACRO TO COMMAND" unique_id=1767845325]
+script = ExtResource("38_8q8k6")
+metadata/_custom_type_script = "uid://bpmly7i8fsqxp"
+
+[node name="Push GOMI" type="Node" parent="GOMI/DATABASE OF ACTIONS/MACRO TO COMMAND/InputTextDictionaryToActions" unique_id=1817359437]
+script = ExtResource("75_lw2yh")
+metadata/_custom_type_script = "uid://c7g1isaokapf8"
+
 [node name="UNICODE TO MACRO" type="Node" parent="GOMI/DATABASE OF ACTIONS" unique_id=423905786]
 script = ExtResource("4_y8qhp")
 _note = "Allows the user to store macro based on unicode call
@@ -616,6 +630,15 @@ metadata/_custom_type_script = "uid://ci68j7wx1poj6"
 [node name="OmiFileAbInputToCommand" type="Node" parent="GOMI/FILE/LoadFileFromFolder/Filter Text As Files/FileConfigRedirectionByNameRelayBroadcaster/_ab_input_to_command" unique_id=28861379]
 script = ExtResource("30_8fu7p")
 _use_debug_print = false
+
+[node name="_macro_to_command" type="Node" parent="GOMI/FILE/LoadFileFromFolder/Filter Text As Files/FileConfigRedirectionByNameRelayBroadcaster" unique_id=602954324]
+script = ExtResource("3_2018l")
+_exact_file_name = ".macro_to_command"
+metadata/_custom_type_script = "uid://ci68j7wx1poj6"
+
+[node name="OmiFileTextKeyValueSplitByDiamond" type="Node" parent="GOMI/FILE/LoadFileFromFolder/Filter Text As Files/FileConfigRedirectionByNameRelayBroadcaster/_macro_to_command" unique_id=2015560650]
+script = ExtResource("6_rgn43")
+metadata/_custom_type_script = "uid://c148v6fljprxl"
 
 [node name="Code" type="Node" parent="GOMI" unique_id=365457322]
 
@@ -1577,6 +1600,7 @@ layout_mode = 2
 [connection signal="on_text_out_to_broadcast_request" from="GOMI/Static Singleton GOMI" to="GOMI/Code/TBIO Out/Udp Alias Pusher" method="send_text_to_all_aliases"]
 [connection signal="on_shortcut_to_interpret" from="GOMI/Static Singleton GOMI/List to Static CMD SC/SCmdListenToPushShortcutToStaticSingleton" to="GOMI/Static Singleton GOMI" method="push_in_shortcut_line"]
 [connection signal="on_command_line_to_interpret" from="GOMI/Static Singleton GOMI/List to Static CMD SC/SCmdListenToPushCommandLineToStaticSingleton" to="GOMI/Static Singleton GOMI" method="push_in_command_line"]
+[connection signal="on_action_found" from="GOMI/DATABASE OF ACTIONS/MACRO TO COMMAND/InputTextDictionaryToActions" to="GOMI/DATABASE OF ACTIONS/MACRO TO COMMAND/InputTextDictionaryToActions/Push GOMI" method="push_in_text_to_process"]
 [connection signal="on_action_found" from="GOMI/DATABASE OF ACTIONS/UNICODE TO MACRO/InputTextDictionaryToActions" to="GOMI/DATABASE OF ACTIONS/UNICODE TO MACRO/InputTextDictionaryToActions/Push GOMI" method="push_in_text_to_process"]
 [connection signal="on_action_found" from="GOMI/DATABASE OF ACTIONS/INT TO MACRO/Int To Command" to="GOMI/DATABASE OF ACTIONS/INT TO MACRO/Int To Command/Push GOMI" method="push_in_text_to_process"]
 [connection signal="on_text_action_found" from="GOMI/DATABASE OF ACTIONS/AA TO MACRO/One Two Byte To Text Action" to="GOMI/DATABASE OF ACTIONS/AA TO MACRO/One Two Byte To Text Action/Push GOMI" method="push_in_text_to_process"]
@@ -1644,6 +1668,8 @@ layout_mode = 2
 [connection signal="on_request_ab_input_boolean_action" from="GOMI/FILE/LoadFileFromFolder/Filter Text As Files/FileConfigRedirectionByNameRelayBroadcaster/_ab_input_to_command/OmiFileAbInputToCommand" to="GOMI/DATABASE OF ACTIONS/AB INPUT TO COMMAND/Input Boolean DB/AbInputActionsFromBoolean" method="append_action"]
 [connection signal="on_request_ab_input_event_action" from="GOMI/FILE/LoadFileFromFolder/Filter Text As Files/FileConfigRedirectionByNameRelayBroadcaster/_ab_input_to_command/OmiFileAbInputToCommand" to="GOMI/DATABASE OF ACTIONS/AB INPUT TO COMMAND/Device Event DB/AbInputActionsFromDeviceEvent" method="append_action"]
 [connection signal="on_request_ab_input_range_in_out_action" from="GOMI/FILE/LoadFileFromFolder/Filter Text As Files/FileConfigRedirectionByNameRelayBroadcaster/_ab_input_to_command/OmiFileAbInputToCommand" to="GOMI/DATABASE OF ACTIONS/AB INPUT TO COMMAND/Input Analog Range DB/AbInputActionsRangeInOut" method="append_action"]
+[connection signal="on_content_found_to_redirect" from="GOMI/FILE/LoadFileFromFolder/Filter Text As Files/FileConfigRedirectionByNameRelayBroadcaster/_macro_to_command" to="GOMI/FILE/LoadFileFromFolder/Filter Text As Files/FileConfigRedirectionByNameRelayBroadcaster/_macro_to_command/OmiFileTextKeyValueSplitByDiamond" method="push_in_text_to_parse"]
+[connection signal="on_text_key_value_found" from="GOMI/FILE/LoadFileFromFolder/Filter Text As Files/FileConfigRedirectionByNameRelayBroadcaster/_macro_to_command/OmiFileTextKeyValueSplitByDiamond" to="GOMI/DATABASE OF ACTIONS/MACRO TO COMMAND/InputTextDictionaryToActions" method="append_a_key_value_in_dictionary"]
 [connection signal="on_message_received" from="GOMI/Code/Gate In/Command/UDP for Command/UdpIoListenThreadUdpByte" to="GOMI/Code/Gate In/Command/UDP for Command/UdpIoListenThreadUdpByte/UdpIoParseBytePackageToIID" method="parse_byte_in_litte_endian_package_to_iid"]
 [connection signal="on_message_received" from="GOMI/Code/Gate In/Command/UDP for Command/UdpIoListenThreadUdpText" to="GOMI/Static Singleton GOMI" method="push_in_raw_text"]
 [connection signal="on_received_from_client_byte_anonym" from="GOMI/Code/Gate In/GameInfo/WebSocket for Game Telemetry/TbioWsDefaultServer" to="GOMI/Code/Gate In/GameInfo/WebSocket for Game Telemetry/TbioWsDefaultServer/Push Game Telemetry" method="push_in_bytes_game_telemetry"]
@@ -1678,6 +1704,7 @@ layout_mode = 2
 [connection signal="on_string_to_relay_received" from="GOMI/Code/PROCESS_COMMAND_LINE" to="GOMI/Code/PROCESS_COMMAND_LINE/Actioneer of command line" method="push_in_command_line_text"]
 [connection signal="on_command_start_processing" from="GOMI/Code/PROCESS_COMMAND_LINE/Actioneer of command line" to="CanvasLayer/GOMI Main/HBoxContainer/Label CMD" method="set_text"]
 [connection signal="on_call_macro_request" from="GOMI/Code/PROCESS_COMMAND_LINE/Actioneer of command line/Interpreter/To Call Macro" to="ToStore/Trigger Loaded GDScript From Name/Trigger GDScript From Name" method="emit_godot_script_resource_from_file_name"]
+[connection signal="on_call_macro_request" from="GOMI/Code/PROCESS_COMMAND_LINE/Actioneer of command line/Interpreter/To Call Macro" to="GOMI/DATABASE OF ACTIONS/MACRO TO COMMAND/InputTextDictionaryToActions" method="emit_if_text_equals_to_one_key"]
 [connection signal="on_set_boolean_to_value_from_name" from="GOMI/Code/PROCESS_COMMAND_LINE/Actioneer of command line/Interpreter/To Boolean Registerd" to="GOMI/Code/PROCESS_COMMAND_LINE/Actioneer of command line/Interpreter/To Boolean Registerd/Push To bool Register" method="set_boolean_value_in_static_singleton"]
 [connection signal="on_toggle_boolean_from_name" from="GOMI/Code/PROCESS_COMMAND_LINE/Actioneer of command line/Interpreter/To Boolean Registerd" to="GOMI/Code/PROCESS_COMMAND_LINE/Actioneer of command line/Interpreter/To Boolean Registerd/Push To bool Register" method="toggle_boolean_value_in_static_singleton"]
 [connection signal="on_command_line_to_delay_found" from="GOMI/Code/PROCESS_COMMAND_LINE/Actioneer of command line/Interpreter/To Delay command with time" to="GOMI/Code/PROCESS_COMMAND_LINE/Actioneer of command line/Interpreter/To Delay command with time/As simple Text Delayer" method="append_text_to_be_delayed_of_milliseconds"]
@@ -1714,6 +1741,7 @@ layout_mode = 2
 [connection signal="on_set_boolean_to_value_from_name" from="GOMI/Code/PROCESS_SHORTCUT_LINE/Auctioneer of shortcut line/Interpreters To Use/To Set Boolean in Register" to="GOMI/Code/PROCESS_SHORTCUT_LINE/Auctioneer of shortcut line/Interpreters To Use/To Set Boolean in Register/Push Boolean To Register" method="set_boolean_value_in_static_singleton"]
 [connection signal="on_toggle_boolean_from_name" from="GOMI/Code/PROCESS_SHORTCUT_LINE/Auctioneer of shortcut line/Interpreters To Use/To Set Boolean in Register" to="GOMI/Code/PROCESS_SHORTCUT_LINE/Auctioneer of shortcut line/Interpreters To Use/To Set Boolean in Register/Push Boolean To Register" method="toggle_boolean_value_in_static_singleton"]
 [connection signal="on_call_macro_request" from="GOMI/Code/PROCESS_SHORTCUT_LINE/Auctioneer of shortcut line/Interpreters To Use/To Call Macros" to="ToStore/Trigger Loaded GDScript From Name/Trigger GDScript From Name" method="emit_godot_script_resource_from_file_name"]
+[connection signal="on_call_macro_request" from="GOMI/Code/PROCESS_SHORTCUT_LINE/Auctioneer of shortcut line/Interpreters To Use/To Call Macros" to="GOMI/DATABASE OF ACTIONS/MACRO TO COMMAND/InputTextDictionaryToActions" method="emit_if_text_equals_to_one_key"]
 [connection signal="on_submit_button_pressed" from="CanvasLayer/GOMI Main/GOMI TAB/Interpretor/TabContainer/Demo2dInterpreterScCmd/VBoxContainer/Button/SCmdUiSubmitLineEdit" to="GOMI/Code/PROCESS_SHORTCUT_LINE/Pre Actionner shortcut line/Duplicate Text inside Brackets" method="parse_text_then_emit"]
 [connection signal="on_submit_button_pressed" from="CanvasLayer/GOMI Main/GOMI TAB/Shortcut Edit/VBoxContainer/Button/SCmdUiSubmitTextEdit" to="CanvasLayer/GOMI Main/GOMI TAB/Shortcut Edit/VBoxContainer/Code/SCmdDuplicateBracketsInText" method="parse_text_then_emit"]
 [connection signal="on_parsed_text_emitted" from="CanvasLayer/GOMI Main/GOMI TAB/Shortcut Edit/VBoxContainer/Code/SCmdDuplicateBracketsInText" to="CanvasLayer/GOMI Main/GOMI TAB/Shortcut Edit/VBoxContainer/TextEdit" method="set_text"]
