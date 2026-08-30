@@ -23,6 +23,18 @@ func push_out_text_to_broadcast_(text_to_broadcast:String):
 func push_out_bytes_to_broadcast(bytes_to_broadcast:PackedByteArray):
 	GOMI.bytes_out(bytes_to_broadcast)
 
+func push_out_bytes_ii_to_broadcast(index:int, value:int):
+	var bytes = PackedByteArray()
+	bytes.append((index >> 0) & 0xFF)
+	bytes.append((index >> 8) & 0xFF)
+	bytes.append((index >> 16) & 0xFF)
+	bytes.append((index >> 24) & 0xFF)
+	bytes.append((value >> 0) & 0xFF)
+	bytes.append((value >> 8) & 0xFF)
+	bytes.append((value >> 16) & 0xFF)
+	bytes.append((value >> 24) & 0xFF)
+	GOMI.bytes_out(bytes)
+	
 
 func push_in_command_line(command_line:String):
 	GOMI.cmd(command_line)
