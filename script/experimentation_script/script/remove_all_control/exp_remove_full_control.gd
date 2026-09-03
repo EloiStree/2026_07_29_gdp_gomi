@@ -12,6 +12,10 @@ func _remove_focus_from_controls(node: Node) -> void:
 	if node is Control:
 		if node is LineEdit:
 			node.focus_mode = Control.FOCUS_CLICK
+		elif node is CodeEdit:
+			node.focus_mode = Control.FOCUS_CLICK
+		elif node is TextEdit:
+			node.focus_mode = Control.FOCUS_CLICK
 		else:
 			node.focus_mode = Control.FOCUS_NONE
 
