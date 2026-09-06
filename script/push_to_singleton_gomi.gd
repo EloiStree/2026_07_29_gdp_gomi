@@ -2,6 +2,12 @@ class_name PushToSingletonGOMI
 extends Node
 
 
+
+## Set NTP UTC offset in milliseconds. This is used to synchronize the time between the client and the server.
+## Fetch NTP can vary on the how with code that why it is settable.
+func push_in_ntp_utc_offset_in_milliseconds(offset_in_milliseconds:float):
+	GOMI.push_in_ntp_utc_offset_in_milliseconds(offset_in_milliseconds)
+
 ## Notify the user that the app received game telemetry on the websocket
 func push_in_text_game_telemetry(text_game_telemetry:String):
 	GOMI.game_text_telemetry(text_game_telemetry)

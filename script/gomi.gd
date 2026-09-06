@@ -6,6 +6,8 @@ extends Node
 
 static var _singleton:GOMI
 
+
+
 signal on_command_line_requested(command_line: String)
 signal on_shortcut_line_requested(shortcut_line: String)
 signal on_boolean_set_requested(boolean_name: String, value: bool)
@@ -25,6 +27,8 @@ signal on_bytes_out_to_broadcast_request(bytes_to_broadcast:PackedByteArray)
 
 signal on_text_in_game_telemetry(game_telemetry: String)
 signal on_bytes_in_game_telemetry(game_telemetry:PackedByteArray)
+
+
 
 func _ready() -> void:
 	_singleton= self
@@ -281,5 +285,40 @@ static func hook_to_text_game_telemetry(callback:Callable):
 	
 static func hook_to_byte_game_telemetry(callback:Callable):
 	_listeners_byte_game_telemetry.append(callback)
+	
+
+
+
+
+#region NTP UTC Offset
+static var _listeners_ntp_utc_offset_updated: Array[Callable] = []
+static var _last_offset_utc_ntp_update:float
+static var _received_ntp_utc_offset:bool = false
+signal on_ntp_utc_offset_milliseconds_updated(offset_utc_ntp_in_milliseconds:float)
+
+static func get_last_offset_utc_ntp_update_in_milliseconds() -> float:
+	var singleton = _singleton
+	if singleton == null:
+		return 0.0
+	return singleton._last_offset_utc_ntp_update
+
+
+static func hook_ntp_utc_offset(callback_of_update_in_milliseconds:Callable):
+	_listeners_ntp_utc_offset_updated.append(callback_of_update_in_milliseconds)
+
+
+static func push_in_ntp_utc_offset_in_milliseconds(offset_in_milliseconds:float):
+	var singleton = _singleton
+	_last_offset_utc_ntp_update = offset_in_milliseconds
+	_received_ntp_utc_offset = true
+	for callable in _listeners_ntp_utc_offset_updated:
+		callable.call(offset_in_milliseconds)
+
+	if singleton == null:
+		return
+	singleton.on_ntp_utc_offset_milliseconds_updated.emit(offset_in_milliseconds)
+
+#endregion
+	
 	
 	

@@ -85,10 +85,12 @@
 [ext_resource type="Script" uid="uid://bi6ho0utaifjx" path="res://addons/2026_08_10_gdp_omi_file_import/scene/guid/demo_2d_vbox_gate_in/omi_file_gate_in.gd" id="36_fgpks"]
 [ext_resource type="Script" uid="uid://bmjoj6331yk6a" path="res://addons/2026_08_09_gdp_text_interpeter_sc_cmd/script/interpreters_sc/ignore_wait/scmd_sc_interpreter_wait_for_n_milliseconds.gd" id="36_xrwyb"]
 [ext_resource type="Script" uid="uid://0ebuvi8k7fbd" path="res://addons/2026_08_09_gdp_text_interpeter_sc_cmd/script/interpreters_sc/midi/scmd_sc_interpeter_midi.gd" id="37_68an0"]
+[ext_resource type="Script" uid="uid://bgc60omuuxwoe" path="res://addons/2025_10_28_gdp_ntp_sync/scene/guid/demo_2d_vbox_ntp_offset/script/vibed/ntp_tool_get_offset_of_single_server.gd" id="37_gjif2"]
 [ext_resource type="Script" uid="uid://bfvhdcjt1g5ye" path="res://addons/2026_08_09_gdp_text_interpeter_sc_cmd/script/interpreters_sc/clipboard/scmd_sc_interpreter_clipboard_storage.gd" id="38_1xswp"]
 [ext_resource type="Script" uid="uid://bpmly7i8fsqxp" path="res://addons/2026_01_03_gdp_input_to_primitive/scene/guid/demo_2d_text_to_text_action/script/input_text_dictionary_to_actions.gd" id="38_8q8k6"]
 [ext_resource type="Script" uid="uid://cvi6cl5mh2288" path="res://addons/2026_08_10_gdp_omi_file_import/scene/guid/demo_2d_vbox_godot_event/omi_file_godot_event_to_command.gd" id="38_cla7f"]
 [ext_resource type="Script" uid="uid://bnh4ggp3el6ai" path="res://addons/2026_08_09_gdp_text_interpeter_sc_cmd/script/interpreters_sc/midi/scmd_sc_default_midi_output.gd" id="38_hp8ja"]
+[ext_resource type="Script" uid="uid://dyc6tgqjpokih" path="res://addons/2025_10_28_gdp_ntp_sync/scene/guid/demo_2d_vbox_ntp_offset/script/ntp_tool_compute_time_with_offset_ntp_utc.gd" id="38_tggwk"]
 [ext_resource type="Script" uid="uid://bmx4ne8gcmd62" path="res://addons/2026_08_09_gdp_text_interpeter_sc_cmd/script/interpreters_sc/tbio_iid/scmd_sc_interpeter_tbio_iid.gd" id="39_m1p13"]
 [ext_resource type="Script" uid="uid://dh7kby08knj4m" path="res://addons/2026_01_03_gdp_input_to_primitive/scene/guid/demo_2d_listen_to_midi/script/input_listen_to_midi_as_ab_input.gd" id="40_c6ljw"]
 [ext_resource type="Script" uid="uid://bcgdlgdpkc1wp" path="res://addons/2026_08_09_gdp_text_interpeter_sc_cmd/script/interpreters_sc/clipboard/scmd_sc_default_clipboard_storage.gd" id="40_xrwyb"]
@@ -118,6 +120,8 @@
 [ext_resource type="PackedScene" uid="uid://cfdolvcck26yf" path="res://addons/2026_01_03_gdp_input_to_primitive/scene/guid/demo_2d_ui_button_clipboard/demo_2d_ui_button_clipboard.tscn" id="85_eclgv"]
 [ext_resource type="Script" uid="uid://dbjhie2h4hxeh" path="res://addons/2026_07_29_gdp_gomi/script/experimentation_script/script/remove_all_control/exp_remove_full_control.gd" id="95_i5ptq"]
 [ext_resource type="Script" uid="uid://br38ejpq7y2m6" path="res://addons/2026_08_27_gdp_bool_analog_dictionary/scene/guid/demo_2d_vbox_abstract_boolean_float_input/script/ab_input_static_listen_to_value_changed.gd" id="99_7qd0e"]
+[ext_resource type="PackedScene" uid="uid://l8ywpf88875q" path="res://addons/2026_07_20_gdp_get_ipv4_info/scene/guid/demo_ui2d_ipv4_fetch/demo_ui2d_ipv4_fetch.tscn" id="99_xxhw8"]
+[ext_resource type="PackedScene" uid="uid://cabdc5i2urxji" path="res://addons/2025_10_28_gdp_ntp_sync/scene/guid/demo_2d_vbox_ntp_offset/demo_2d_vbox_ntp_offset.tscn" id="102_jb2c4"]
 [ext_resource type="Script" uid="uid://dekphoet0if33" path="res://addons/2026_08_27_gdp_bool_analog_dictionary/scene/guid/demo_2d_vbox_abstract_boolean_float_input/script/ab_ui_input/ab_ui_input_line_edit_to_clipboard.gd" id="104_ca1ic"]
 [ext_resource type="Script" uid="uid://pxmwg52apxu5" path="res://addons/2026_08_27_gdp_bool_analog_dictionary/script/ab_input_add_prefix_to_key_value.gd" id="107_feoa8"]
 [ext_resource type="Script" uid="uid://bcxq5monpm1ab" path="res://addons/2026_01_03_gdp_input_to_primitive/script/input_ui_open_url.gd" id="112_m7vwt"]
@@ -725,6 +729,20 @@ metadata/_custom_type_script = "uid://dyi637b61u14f"
 
 [node name="Code" type="Node" parent="GOMI" unique_id=365457322]
 
+[node name="NTP" type="Node" parent="GOMI/Code" unique_id=39432543]
+
+[node name="NtpToolGetOffsetOfSingleServer" type="Node" parent="GOMI/Code/NTP" unique_id=1706735516]
+script = ExtResource("37_gjif2")
+metadata/_custom_type_script = "uid://bgc60omuuxwoe"
+
+[node name="PushToSingletonGOMI" type="Node" parent="GOMI/Code/NTP/NtpToolGetOffsetOfSingleServer" unique_id=545332603]
+script = ExtResource("75_lw2yh")
+metadata/_custom_type_script = "uid://c7g1isaokapf8"
+
+[node name="NtpToolComputeTimeWithOffsetNtpUtc" type="Node" parent="GOMI/Code/NTP/NtpToolGetOffsetOfSingleServer" unique_id=759752122]
+script = ExtResource("38_tggwk")
+metadata/_custom_type_script = "uid://dyc6tgqjpokih"
+
 [node name="Boolean Register" type="Node" parent="GOMI/Code" unique_id=1040011544]
 script = ExtResource("1_rv3rt")
 _register = SubResource("Resource_rs1r3")
@@ -1253,51 +1271,79 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-current_tab = 8
+current_tab = 0
+
+[node name="IPV4" type="Panel" parent="CanvasLayer/GOMI Main/PanelMainBoard/GOMI TAB/Input/TabContainer" unique_id=6950897]
+layout_mode = 2
+metadata/_tab_index = 0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/GOMI Main/PanelMainBoard/GOMI TAB/Input/TabContainer/IPV4" unique_id=905049738]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="DemoUi2dIpv4Fetch" parent="CanvasLayer/GOMI Main/PanelMainBoard/GOMI TAB/Input/TabContainer/IPV4/VBoxContainer" unique_id=158926684 instance=ExtResource("99_xxhw8")]
+layout_mode = 2
+
+[node name="LabelLocalIpv4Joined" parent="CanvasLayer/GOMI Main/PanelMainBoard/GOMI TAB/Input/TabContainer/IPV4/VBoxContainer/DemoUi2dIpv4Fetch/ScrollContainer/VBoxContainer" parent_id_path=PackedInt32Array(158926684, 1233135524) index="1" unique_id=1398720084]
+visible = false
+
+[node name="NetFetchMemoryToggleIpv4IsVisible" parent="CanvasLayer/GOMI Main/PanelMainBoard/GOMI TAB/Input/TabContainer/IPV4/VBoxContainer/DemoUi2dIpv4Fetch/ScrollContainer/VBoxContainer/CheckButton" parent_id_path=PackedInt32Array(158926684, 584965223) index="0" unique_id=841020476 node_paths=PackedStringArray("_to_affect_controls")]
+_to_affect_controls = [NodePath("../../Label Public IPV4"), NodePath("../../LineEditPublicIpv4")]
+
+[node name="Label Public IPV4" parent="CanvasLayer/GOMI Main/PanelMainBoard/GOMI TAB/Input/TabContainer/IPV4/VBoxContainer/DemoUi2dIpv4Fetch/ScrollContainer/VBoxContainer" parent_id_path=PackedInt32Array(158926684, 1233135524) index="4" unique_id=698700770]
+visible = false
+
+[node name="Demo2dVboxNtpOffset" parent="CanvasLayer/GOMI Main/PanelMainBoard/GOMI TAB/Input/TabContainer/IPV4/VBoxContainer" unique_id=699101665 instance=ExtResource("102_jb2c4")]
+layout_mode = 2
 
 [node name="MIDI" parent="CanvasLayer/GOMI Main/PanelMainBoard/GOMI TAB/Input/TabContainer" unique_id=1257018321 instance=ExtResource("9_bvtn2")]
 visible = false
 layout_mode = 2
-metadata/_tab_index = 0
+metadata/_tab_index = 1
 
 [node name="Mouse" parent="CanvasLayer/GOMI Main/PanelMainBoard/GOMI TAB/Input/TabContainer" unique_id=297125749 instance=ExtResource("12_bvtn2")]
 visible = false
 layout_mode = 2
-metadata/_tab_index = 1
+metadata/_tab_index = 2
 
 [node name="NFC" parent="CanvasLayer/GOMI Main/PanelMainBoard/GOMI TAB/Input/TabContainer" unique_id=57509181 instance=ExtResource("13_jtqnq")]
 visible = false
 layout_mode = 2
-metadata/_tab_index = 2
+metadata/_tab_index = 3
 
 [node name="Key Log" parent="CanvasLayer/GOMI Main/PanelMainBoard/GOMI TAB/Input/TabContainer" unique_id=965093910 instance=ExtResource("14_jtqnq")]
 visible = false
 layout_mode = 2
-metadata/_tab_index = 3
+metadata/_tab_index = 4
 
 [node name="Joysticks" parent="CanvasLayer/GOMI Main/PanelMainBoard/GOMI TAB/Input/TabContainer" unique_id=25078802 instance=ExtResource("15_8fnf6")]
 visible = false
 layout_mode = 2
-metadata/_tab_index = 4
+metadata/_tab_index = 5
 
 [node name="Ctrl Shift Alt" parent="CanvasLayer/GOMI Main/PanelMainBoard/GOMI TAB/Input/TabContainer" unique_id=1506564625 instance=ExtResource("14_0bajj")]
 visible = false
 layout_mode = 2
-metadata/_tab_index = 5
+metadata/_tab_index = 6
 
 [node name="TV Remote" parent="CanvasLayer/GOMI Main/PanelMainBoard/GOMI TAB/Input/TabContainer" unique_id=836566719 instance=ExtResource("15_8i4cd")]
 visible = false
 layout_mode = 2
-metadata/_tab_index = 6
+metadata/_tab_index = 7
 
 [node name="Copy Past" parent="CanvasLayer/GOMI Main/PanelMainBoard/GOMI TAB/Input/TabContainer" unique_id=558129070 instance=ExtResource("16_ov4wx")]
 visible = false
 layout_mode = 2
-metadata/_tab_index = 7
+metadata/_tab_index = 8
 
 [node name="Mouse Area" parent="CanvasLayer/GOMI Main/PanelMainBoard/GOMI TAB/Input/TabContainer" unique_id=2143746156 instance=ExtResource("19_netmx")]
+visible = false
 layout_mode = 2
-metadata/_tab_index = 8
+metadata/_tab_index = 9
 
 [node name="AbInputAddPrefixToKeyValue" type="Node" parent="CanvasLayer/GOMI Main/PanelMainBoard/GOMI TAB/Input/TabContainer/Mouse Area/InputObserveMouseAreaTriggers" parent_id_path=PackedInt32Array(2143746156, 847926584) index="0" unique_id=1585276118]
 script = ExtResource("107_feoa8")
@@ -1311,17 +1357,17 @@ metadata/_custom_type_script = "uid://ivok83vhxq15"
 [node name="Grid" parent="CanvasLayer/GOMI Main/PanelMainBoard/GOMI TAB/Input/TabContainer" unique_id=2022053850 instance=ExtResource("31_xvmp1")]
 visible = false
 layout_mode = 2
-metadata/_tab_index = 9
+metadata/_tab_index = 10
 
 [node name="UI Emit" parent="CanvasLayer/GOMI Main/PanelMainBoard/GOMI TAB/Input/TabContainer" unique_id=1318290114 instance=ExtResource("32_y7hht")]
 visible = false
 layout_mode = 2
-metadata/_tab_index = 10
+metadata/_tab_index = 11
 
 [node name="KeyboardInput" parent="CanvasLayer/GOMI Main/PanelMainBoard/GOMI TAB/Input/TabContainer" unique_id=1833133360 instance=ExtResource("43_rgn43")]
 visible = false
 layout_mode = 2
-metadata/_tab_index = 11
+metadata/_tab_index = 12
 
 [node name="Bool" type="Panel" parent="CanvasLayer/GOMI Main/PanelMainBoard/GOMI TAB" unique_id=829018000]
 visible = false
@@ -2784,6 +2830,8 @@ layout_mode = 2
 [connection signal="on_request_append_xbox_if_has_text_in_name" from="GOMI/FILE/LoadFileFromFolder/Filter Text As Files/FileConfigRedirectionByNameRelayBroadcaster/_godot_joystick_to_command/OmiFileGodotJoystickToCommand" to="GOMI/Code/Input/GODOT LISTENER/GAMEPAD/InputListenToDevicesAxisAndButtons" method="append_is_xbox_keyword"]
 [connection signal="on_request_duplicate_input_with_new_name" from="GOMI/FILE/LoadFileFromFolder/Filter Text As Files/FileConfigRedirectionByNameRelayBroadcaster/_godot_joystick_to_command/OmiFileGodotJoystickToCommand" to="GOMI/Code/Input/GODOT LISTENER/GAMEPAD/InputListenToDevicesAxisAndButtons/InputDebugDevicesAxisAndButtonsAsString" method="append_a_device_input_duplication"]
 [connection signal="on_request_rename_input_with_new_name" from="GOMI/FILE/LoadFileFromFolder/Filter Text As Files/FileConfigRedirectionByNameRelayBroadcaster/_godot_joystick_to_command/OmiFileGodotJoystickToCommand" to="GOMI/Code/Input/GODOT LISTENER/GAMEPAD/InputListenToDevicesAxisAndButtons/InputDebugDevicesAxisAndButtonsAsString" method="append_a_device_input_rename"]
+[connection signal="on_ntp_utc_time_offset_milliseconds_received" from="GOMI/Code/NTP/NtpToolGetOffsetOfSingleServer" to="GOMI/Code/NTP/NtpToolGetOffsetOfSingleServer/PushToSingletonGOMI" method="push_in_ntp_utc_offset_in_milliseconds"]
+[connection signal="on_ntp_utc_time_offset_milliseconds_received" from="GOMI/Code/NTP/NtpToolGetOffsetOfSingleServer" to="GOMI/Code/NTP/NtpToolGetOffsetOfSingleServer/NtpToolComputeTimeWithOffsetNtpUtc" method="set_ntp_utc_offset_in_milliseconds"]
 [connection signal="on_message_received" from="GOMI/Code/Gate In/Command/UDP for Command/UdpIoListenThreadUdpByte" to="GOMI/Code/Gate In/Command/UDP for Command/UdpIoListenThreadUdpByte/UdpIoParseBytePackageToIID" method="parse_byte_in_litte_endian_package_to_iid"]
 [connection signal="on_message_received" from="GOMI/Code/Gate In/Command/UDP for Command/UdpIoListenThreadUdpText" to="GOMI/Static Singleton GOMI" method="push_in_raw_text"]
 [connection signal="on_received_from_client_byte_anonym" from="GOMI/Code/Gate In/GameInfo/WebSocket for Game Telemetry/TbioWsDefaultServer" to="GOMI/Code/Gate In/GameInfo/WebSocket for Game Telemetry/TbioWsDefaultServer/Push Game Telemetry" method="push_in_bytes_game_telemetry"]
@@ -2866,6 +2914,8 @@ layout_mode = 2
 [connection signal="on_stop_gdscript_execution_by_name" from="CanvasLayer/GOMI Main/PanelMainBoard/GOMI TAB/GDScript/TabContainer/Code Push/SceneCodeEditorPusherForGomi/GomiPusherCodeEditSubmitWithButton" to="CanvasLayer/GOMI Main/PanelMainBoard/GOMI TAB/GDScript/TabContainer/Code Push/SceneCodeEditorPusherForGomi/GomiPusherCodeEditSubmitWithButton/PushToSingletonGOMI" method="push_in_remove_named_gdscript"]
 [connection signal="on_submit_gdscript_to_execute_in_background" from="CanvasLayer/GOMI Main/PanelMainBoard/GOMI TAB/GDScript/TabContainer/Code Push/SceneCodeEditorPusherForGomi/GomiPusherCodeEditSubmitWithButton" to="CanvasLayer/GOMI Main/PanelMainBoard/GOMI TAB/GDScript/TabContainer/Code Push/SceneCodeEditorPusherForGomi/GomiPusherCodeEditSubmitWithButton/PushToSingletonGOMI" method="push_in_execute_named_gdscript"]
 [connection signal="on_submit_gdscript_to_execute_once" from="CanvasLayer/GOMI Main/PanelMainBoard/GOMI TAB/GDScript/TabContainer/Code Push/SceneCodeEditorPusherForGomi/GomiPusherCodeEditSubmitWithButton" to="CanvasLayer/GOMI Main/PanelMainBoard/GOMI TAB/GDScript/TabContainer/Code Push/SceneCodeEditorPusherForGomi/GomiPusherCodeEditSubmitWithButton/PushToSingletonGOMI" method="push_in_execute_one_time_gdscript"]
+[connection signal="pressed" from="CanvasLayer/GOMI Main/PanelMainBoard/GOMI TAB/Input/TabContainer/IPV4/VBoxContainer/DemoUi2dIpv4Fetch/ScrollContainer/VBoxContainer/Button" to="CanvasLayer/GOMI Main/PanelMainBoard/GOMI TAB/Input/TabContainer/IPV4/VBoxContainer/DemoUi2dIpv4Fetch/ScrollContainer/VBoxContainer/LabelLocalIpv4Joined/NetFetchGetLocalIPv4" method="fetch_local_ipv4"]
+[connection signal="pressed" from="CanvasLayer/GOMI Main/PanelMainBoard/GOMI TAB/Input/TabContainer/IPV4/VBoxContainer/DemoUi2dIpv4Fetch/ScrollContainer/VBoxContainer/Button" to="CanvasLayer/GOMI Main/PanelMainBoard/GOMI TAB/Input/TabContainer/IPV4/VBoxContainer/DemoUi2dIpv4Fetch/ScrollContainer/VBoxContainer/LabelPublicIpv4/NetFetchGetPublicIPv4" method="fetch_public_ipv4"]
 [connection signal="on_area_triggered_inside_value" from="CanvasLayer/GOMI Main/PanelMainBoard/GOMI TAB/Input/TabContainer/Mouse Area/InputObserveMouseAreaTriggers" to="CanvasLayer/GOMI Main/PanelMainBoard/GOMI TAB/Input/TabContainer/Mouse Area/InputObserveMouseAreaTriggers/AbInputAddPrefixToKeyValue" method="push_in_key_value_boolean"]
 [connection signal="on_parsed_key_value_boolean" from="CanvasLayer/GOMI Main/PanelMainBoard/GOMI TAB/Input/TabContainer/Mouse Area/InputObserveMouseAreaTriggers/AbInputAddPrefixToKeyValue" to="CanvasLayer/GOMI Main/PanelMainBoard/GOMI TAB/Input/TabContainer/Mouse Area/InputObserveMouseAreaTriggers/AbInputStaticSetWithLocalRefList" method="set_boolean_value_with_input_name"]
 [connection signal="on_boolean_key_value_changed" from="CanvasLayer/GOMI Main/PanelMainBoard/GOMI TAB/Bool/Demo2dVboxBooleanRegister/VBoxContainer/HBoxContainer/CheckButton/BoolRegLineEditToggleSubmit" to="CanvasLayer/GOMI Main/PanelMainBoard/GOMI TAB/Bool/Demo2dVboxBooleanRegister/VBoxContainer/HBoxContainer/Push Bool" method="set_boolean_value_in_static_singleton"]
@@ -2911,6 +2961,9 @@ layout_mode = 2
 [editable path="ToStore/Pre Load Main Godot Script"]
 [editable path="ToStore/Trigger Loaded GDScript From Name"]
 [editable path="CanvasLayer/GOMI Main/PanelMainBoard/GOMI TAB/GDScript/TabContainer/Code Push/SceneCodeEditorPusherForGomi"]
+[editable path="CanvasLayer/GOMI Main/PanelMainBoard/GOMI TAB/Input/TabContainer/IPV4/VBoxContainer/DemoUi2dIpv4Fetch"]
+[editable path="CanvasLayer/GOMI Main/PanelMainBoard/GOMI TAB/Input/TabContainer/IPV4/VBoxContainer/DemoUi2dIpv4Fetch/ScrollContainer/VBoxContainer/LabelLocalIpv4Joined"]
+[editable path="CanvasLayer/GOMI Main/PanelMainBoard/GOMI TAB/Input/TabContainer/IPV4/VBoxContainer/DemoUi2dIpv4Fetch/ScrollContainer/VBoxContainer/LabelPublicIpv4"]
 [editable path="CanvasLayer/GOMI Main/PanelMainBoard/GOMI TAB/Input/TabContainer/MIDI"]
 [editable path="CanvasLayer/GOMI Main/PanelMainBoard/GOMI TAB/Input/TabContainer/Mouse"]
 [editable path="CanvasLayer/GOMI Main/PanelMainBoard/GOMI TAB/Input/TabContainer/NFC"]
