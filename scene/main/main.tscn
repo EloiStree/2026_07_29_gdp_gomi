@@ -57,6 +57,7 @@
 [ext_resource type="Script" uid="uid://dne1wyvd2r3fi" path="res://addons/2026_01_03_gdp_input_to_primitive/script/nfc/input_listen_to_fast_typing_nfc.gd" id="21_lgmy6"]
 [ext_resource type="Script" uid="uid://bh6jf2v73ktd2" path="res://addons/2026_01_03_gdp_input_to_primitive/scene/guid/demo_2d_text_to_text_action/script/input_text_dictionary_true_false_value_to_actions.gd" id="21_qgr4o"]
 [ext_resource type="Script" uid="uid://cfprv71ff8kgl" path="res://addons/2026_08_13_gdp_developer_note/script/abstract/dev_note_abstract_url_note.gd" id="22_8iqu7"]
+[ext_resource type="Script" uid="uid://tyxvri5ixf6b" path="res://addons/2026_08_13_gdp_developer_note/script/stable/dev_note_single_multiline.gd" id="22_i5ptq"]
 [ext_resource type="Script" uid="uid://cgetyfyk4dgns" path="res://addons/2026_08_09_gdp_text_interpeter_sc_cmd/scene/guid/demo_2d_scmd_static_singleton/scmd_listen_to_push_command_line_to_static_singleton.gd" id="22_iilpp"]
 [ext_resource type="Script" uid="uid://dy6v5butthvf6" path="res://addons/2026_01_03_gdp_input_to_primitive/scene/guid/demo_2d_action_from_in_app_key_logger/input_abstract_typing_key_logger.gd" id="23_iif8h"]
 [ext_resource type="Script" uid="uid://cm76n7hcopjcs" path="res://addons/2026_01_03_gdp_input_to_primitive/script/input_to_alias/input_listen_to_gamepad_as_alias.gd" id="23_y8qhp"]
@@ -118,14 +119,17 @@
 [ext_resource type="Script" uid="uid://dbjhie2h4hxeh" path="res://addons/2026_07_29_gdp_gomi/script/experimentation_script/script/remove_all_control/exp_remove_full_control.gd" id="95_i5ptq"]
 [ext_resource type="Script" uid="uid://br38ejpq7y2m6" path="res://addons/2026_08_27_gdp_bool_analog_dictionary/scene/guid/demo_2d_vbox_abstract_boolean_float_input/script/ab_input_static_listen_to_value_changed.gd" id="99_7qd0e"]
 [ext_resource type="Script" uid="uid://dekphoet0if33" path="res://addons/2026_08_27_gdp_bool_analog_dictionary/scene/guid/demo_2d_vbox_abstract_boolean_float_input/script/ab_ui_input/ab_ui_input_line_edit_to_clipboard.gd" id="104_ca1ic"]
+[ext_resource type="Script" uid="uid://pxmwg52apxu5" path="res://addons/2026_08_27_gdp_bool_analog_dictionary/script/ab_input_add_prefix_to_key_value.gd" id="107_feoa8"]
 [ext_resource type="Script" uid="uid://bcxq5monpm1ab" path="res://addons/2026_01_03_gdp_input_to_primitive/script/input_ui_open_url.gd" id="112_m7vwt"]
+[ext_resource type="Script" uid="uid://cheu56oxb55ta" path="res://addons/2026_01_03_gdp_input_to_primitive/script/unstore/input_text_file_from_godot_project.gd" id="116_pu0sh"]
+[ext_resource type="Script" uid="uid://b5dytkpgo6xa0" path="res://addons/2026_01_03_gdp_input_to_primitive/script/input_parse_index_value_integer_to_string.gd" id="118_vw6xl"]
 
 [sub_resource type="Resource" id="Resource_rs1r3"]
 script = ExtResource("2_58ya2")
 metadata/_custom_type_script = "uid://b3owf2lgui5lo"
 
 [node name="Main" type="Control" unique_id=462290757]
-custom_minimum_size = Vector2(960, 512)
+custom_minimum_size = Vector2(20, 20)
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -496,6 +500,11 @@ metadata/_custom_type_script = "uid://djrstxa66bhuq"
 script = ExtResource("16_2018l")
 metadata/_custom_type_script = "uid://ruty58kxt2hc"
 
+[node name="Read Book Word" type="Node" parent="GOMI/FILE/LoadFileFromFolder/Filter Text As Files" unique_id=1648462130]
+script = ExtResource("22_i5ptq")
+_note = "Scan the big merge file for  `📕` the following word is the key and the reste of the line the description append"
+metadata/_custom_type_script = "uid://tyxvri5ixf6b"
+
 [node name="FileConfigRedirectionByNameRelayBroadcaster" type="Node" parent="GOMI/FILE/LoadFileFromFolder/Filter Text As Files" unique_id=2015895183 node_paths=PackedStringArray("_recursive_search_in_parents")]
 script = ExtResource("2_has3g")
 _recursive_search_in_parents = [NodePath(".")]
@@ -702,16 +711,6 @@ metadata/_custom_type_script = "uid://ci68j7wx1poj6"
 [node name="_godot_event_to_command_at_exit" type="Node" parent="GOMI/FILE/LoadFileFromFolder/Filter Text As Files/FileConfigRedirectionByNameRelayBroadcaster" unique_id=1811242584]
 script = ExtResource("3_2018l")
 _exact_file_name = ".godot_event_to_command_at_exit"
-metadata/_custom_type_script = "uid://ci68j7wx1poj6"
-
-[node name="_godot_unicode" type="Node" parent="GOMI/FILE/LoadFileFromFolder/Filter Text As Files/FileConfigRedirectionByNameRelayBroadcaster" unique_id=1619584061]
-script = ExtResource("3_2018l")
-_exact_file_name = ".godot_keyboard_to_cmd"
-metadata/_custom_type_script = "uid://ci68j7wx1poj6"
-
-[node name="_to_clipboard" type="Node" parent="GOMI/FILE/LoadFileFromFolder/Filter Text As Files/FileConfigRedirectionByNameRelayBroadcaster" unique_id=1417752555]
-script = ExtResource("3_2018l")
-_exact_file_name = ".godot_keyboard_to_cmd"
 metadata/_custom_type_script = "uid://ci68j7wx1poj6"
 
 [node name="_godot_joystick_to_command" type="Node" parent="GOMI/FILE/LoadFileFromFolder/Filter Text As Files/FileConfigRedirectionByNameRelayBroadcaster" unique_id=1030340908]
@@ -1161,23 +1160,56 @@ grow_vertical = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
-[node name="GOMI TAB" type="TabContainer" parent="CanvasLayer/GOMI Main" unique_id=199680806]
+[node name="Panel Reload" type="Panel" parent="CanvasLayer/GOMI Main" unique_id=2111062860]
 layout_mode = 1
 anchors_preset = -1
-anchor_right = 0.95500004
-anchor_bottom = 0.76171875
-offset_right = 0.19995117
-grow_horizontal = 2
-grow_vertical = 2
-current_tab = 1
+anchor_left = 0.93299997
+anchor_right = 0.99808544
+anchor_bottom = 0.029000001
+offset_left = 0.2000122
+offset_right = 0.14874268
+offset_bottom = 3.0569992
 metadata/_edit_use_anchors_ = true
 
-[node name="GDScript" type="Panel" parent="CanvasLayer/GOMI Main/GOMI TAB" unique_id=592686736]
-visible = false
+[node name="Button Reload Scene" type="Button" parent="CanvasLayer/GOMI Main/Panel Reload" unique_id=2092020435]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 16
+text = "R"
+
+[node name="PushToSingletonGOMI" type="Node" parent="CanvasLayer/GOMI Main/Panel Reload/Button Reload Scene" unique_id=397088351]
+script = ExtResource("75_lw2yh")
+metadata/_custom_type_script = "uid://c7g1isaokapf8"
+
+[node name="PanelMainBoard" type="Panel" parent="CanvasLayer/GOMI Main" unique_id=1339274428]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.93
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="GOMI TAB" type="TabContainer" parent="CanvasLayer/GOMI Main/PanelMainBoard" unique_id=199680806]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 0.619
+offset_right = -1.0
+offset_bottom = -0.47302246
+grow_horizontal = 2
+grow_vertical = 2
+current_tab = 0
+
+[node name="GDScript" type="Panel" parent="CanvasLayer/GOMI Main/PanelMainBoard/GOMI TAB" unique_id=592686736]
 layout_mode = 2
 metadata/_tab_index = 0
 
-[node name="TabContainer" type="TabContainer" parent="CanvasLayer/GOMI Main/GOMI TAB/GDScript" unique_id=1045680459]
+[node name="TabContainer" type="TabContainer" parent="CanvasLayer/GOMI Main/PanelMainBoard/GOMI TAB/GDScript" unique_id=1045680459]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -1186,95 +1218,117 @@ grow_horizontal = 2
 grow_vertical = 2
 current_tab = 0
 
-[node name="Code Push" type="TabBar" parent="CanvasLayer/GOMI Main/GOMI TAB/GDScript/TabContainer" unique_id=1225792577]
+[node name="Code Push" type="TabBar" parent="CanvasLayer/GOMI Main/PanelMainBoard/GOMI TAB/GDScript/TabContainer" unique_id=1225792577]
 layout_mode = 2
 metadata/_tab_index = 0
 
-[node name="SceneCodeEditorPusherForGomi" parent="CanvasLayer/GOMI Main/GOMI TAB/GDScript/TabContainer/Code Push" unique_id=1938970278 instance=ExtResource("74_f14o6")]
+[node name="SceneCodeEditorPusherForGomi" parent="CanvasLayer/GOMI Main/PanelMainBoard/GOMI TAB/GDScript/TabContainer/Code Push" unique_id=1938970278 instance=ExtResource("74_f14o6")]
 layout_mode = 1
 
-[node name="PushToSingletonGOMI" type="Node" parent="CanvasLayer/GOMI Main/GOMI TAB/GDScript/TabContainer/Code Push/SceneCodeEditorPusherForGomi/GomiPusherCodeEditSubmitWithButton" parent_id_path=PackedInt32Array(1938970278, 1152394247) index="0" unique_id=846480102]
+[node name="PushToSingletonGOMI" type="Node" parent="CanvasLayer/GOMI Main/PanelMainBoard/GOMI TAB/GDScript/TabContainer/Code Push/SceneCodeEditorPusherForGomi/GomiPusherCodeEditSubmitWithButton" parent_id_path=PackedInt32Array(1938970278, 1152394247) index="0" unique_id=846480102]
 script = ExtResource("75_lw2yh")
 metadata/_custom_type_script = "uid://c7g1isaokapf8"
 
-[node name="Input" type="Panel" parent="CanvasLayer/GOMI Main/GOMI TAB" unique_id=1151134158]
+[node name="LineEdit File Name" parent="CanvasLayer/GOMI Main/PanelMainBoard/GOMI TAB/GDScript/TabContainer/Code Push/SceneCodeEditorPusherForGomi/Panel/HBoxContainer" parent_id_path=PackedInt32Array(1938970278, 1039317097) index="2" unique_id=872199387]
+visible = false
+
+[node name="Button Once" parent="CanvasLayer/GOMI Main/PanelMainBoard/GOMI TAB/GDScript/TabContainer/Code Push/SceneCodeEditorPusherForGomi/Panel/HBoxContainer" parent_id_path=PackedInt32Array(1938970278, 1039317097) index="3" unique_id=799773932]
+visible = false
+
+[node name="Button Background" parent="CanvasLayer/GOMI Main/PanelMainBoard/GOMI TAB/GDScript/TabContainer/Code Push/SceneCodeEditorPusherForGomi/Panel/HBoxContainer" parent_id_path=PackedInt32Array(1938970278, 1039317097) index="4" unique_id=1890543308]
+visible = false
+
+[node name="Button Stop" parent="CanvasLayer/GOMI Main/PanelMainBoard/GOMI TAB/GDScript/TabContainer/Code Push/SceneCodeEditorPusherForGomi/Panel/HBoxContainer" parent_id_path=PackedInt32Array(1938970278, 1039317097) index="5" unique_id=781367671]
+visible = false
+
+[node name="Input" type="Panel" parent="CanvasLayer/GOMI Main/PanelMainBoard/GOMI TAB" unique_id=1151134158]
+visible = false
 layout_mode = 2
 metadata/_tab_index = 1
 
-[node name="TabContainer" type="TabContainer" parent="CanvasLayer/GOMI Main/GOMI TAB/Input" unique_id=921145737]
+[node name="TabContainer" type="TabContainer" parent="CanvasLayer/GOMI Main/PanelMainBoard/GOMI TAB/Input" unique_id=921145737]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-current_tab = 4
+current_tab = 8
 
-[node name="MIDI" parent="CanvasLayer/GOMI Main/GOMI TAB/Input/TabContainer" unique_id=1257018321 instance=ExtResource("9_bvtn2")]
+[node name="MIDI" parent="CanvasLayer/GOMI Main/PanelMainBoard/GOMI TAB/Input/TabContainer" unique_id=1257018321 instance=ExtResource("9_bvtn2")]
 visible = false
 layout_mode = 2
 metadata/_tab_index = 0
 
-[node name="Mouse" parent="CanvasLayer/GOMI Main/GOMI TAB/Input/TabContainer" unique_id=297125749 instance=ExtResource("12_bvtn2")]
+[node name="Mouse" parent="CanvasLayer/GOMI Main/PanelMainBoard/GOMI TAB/Input/TabContainer" unique_id=297125749 instance=ExtResource("12_bvtn2")]
 visible = false
 layout_mode = 2
 metadata/_tab_index = 1
 
-[node name="NFC" parent="CanvasLayer/GOMI Main/GOMI TAB/Input/TabContainer" unique_id=57509181 instance=ExtResource("13_jtqnq")]
+[node name="NFC" parent="CanvasLayer/GOMI Main/PanelMainBoard/GOMI TAB/Input/TabContainer" unique_id=57509181 instance=ExtResource("13_jtqnq")]
 visible = false
 layout_mode = 2
 metadata/_tab_index = 2
 
-[node name="Key Log" parent="CanvasLayer/GOMI Main/GOMI TAB/Input/TabContainer" unique_id=965093910 instance=ExtResource("14_jtqnq")]
+[node name="Key Log" parent="CanvasLayer/GOMI Main/PanelMainBoard/GOMI TAB/Input/TabContainer" unique_id=965093910 instance=ExtResource("14_jtqnq")]
 visible = false
 layout_mode = 2
 metadata/_tab_index = 3
 
-[node name="Joysticks" parent="CanvasLayer/GOMI Main/GOMI TAB/Input/TabContainer" unique_id=25078802 instance=ExtResource("15_8fnf6")]
+[node name="Joysticks" parent="CanvasLayer/GOMI Main/PanelMainBoard/GOMI TAB/Input/TabContainer" unique_id=25078802 instance=ExtResource("15_8fnf6")]
+visible = false
 layout_mode = 2
 metadata/_tab_index = 4
 
-[node name="Ctrl Shift Alt" parent="CanvasLayer/GOMI Main/GOMI TAB/Input/TabContainer" unique_id=1506564625 instance=ExtResource("14_0bajj")]
+[node name="Ctrl Shift Alt" parent="CanvasLayer/GOMI Main/PanelMainBoard/GOMI TAB/Input/TabContainer" unique_id=1506564625 instance=ExtResource("14_0bajj")]
 visible = false
 layout_mode = 2
 metadata/_tab_index = 5
 
-[node name="TV Remote" parent="CanvasLayer/GOMI Main/GOMI TAB/Input/TabContainer" unique_id=836566719 instance=ExtResource("15_8i4cd")]
+[node name="TV Remote" parent="CanvasLayer/GOMI Main/PanelMainBoard/GOMI TAB/Input/TabContainer" unique_id=836566719 instance=ExtResource("15_8i4cd")]
 visible = false
 layout_mode = 2
 metadata/_tab_index = 6
 
-[node name="Copy Past" parent="CanvasLayer/GOMI Main/GOMI TAB/Input/TabContainer" unique_id=558129070 instance=ExtResource("16_ov4wx")]
+[node name="Copy Past" parent="CanvasLayer/GOMI Main/PanelMainBoard/GOMI TAB/Input/TabContainer" unique_id=558129070 instance=ExtResource("16_ov4wx")]
 visible = false
 layout_mode = 2
 metadata/_tab_index = 7
 
-[node name="Mouse Area" parent="CanvasLayer/GOMI Main/GOMI TAB/Input/TabContainer" unique_id=2143746156 instance=ExtResource("19_netmx")]
-visible = false
+[node name="Mouse Area" parent="CanvasLayer/GOMI Main/PanelMainBoard/GOMI TAB/Input/TabContainer" unique_id=2143746156 instance=ExtResource("19_netmx")]
 layout_mode = 2
 metadata/_tab_index = 8
 
-[node name="Grid" parent="CanvasLayer/GOMI Main/GOMI TAB/Input/TabContainer" unique_id=2022053850 instance=ExtResource("31_xvmp1")]
+[node name="AbInputAddPrefixToKeyValue" type="Node" parent="CanvasLayer/GOMI Main/PanelMainBoard/GOMI TAB/Input/TabContainer/Mouse Area/InputObserveMouseAreaTriggers" parent_id_path=PackedInt32Array(2143746156, 847926584) index="0" unique_id=1585276118]
+script = ExtResource("107_feoa8")
+_prefix_to_append = "SCREEN|"
+metadata/_custom_type_script = "uid://pxmwg52apxu5"
+
+[node name="AbInputStaticSetWithLocalRefList" type="Node" parent="CanvasLayer/GOMI Main/PanelMainBoard/GOMI TAB/Input/TabContainer/Mouse Area/InputObserveMouseAreaTriggers" parent_id_path=PackedInt32Array(2143746156, 847926584) index="1" unique_id=318953344]
+script = ExtResource("44_c6ljw")
+metadata/_custom_type_script = "uid://ivok83vhxq15"
+
+[node name="Grid" parent="CanvasLayer/GOMI Main/PanelMainBoard/GOMI TAB/Input/TabContainer" unique_id=2022053850 instance=ExtResource("31_xvmp1")]
 visible = false
 layout_mode = 2
 metadata/_tab_index = 9
 
-[node name="UI Emit" parent="CanvasLayer/GOMI Main/GOMI TAB/Input/TabContainer" unique_id=1318290114 instance=ExtResource("32_y7hht")]
+[node name="UI Emit" parent="CanvasLayer/GOMI Main/PanelMainBoard/GOMI TAB/Input/TabContainer" unique_id=1318290114 instance=ExtResource("32_y7hht")]
 visible = false
 layout_mode = 2
 metadata/_tab_index = 10
 
-[node name="KeyboardInput" parent="CanvasLayer/GOMI Main/GOMI TAB/Input/TabContainer" unique_id=1833133360 instance=ExtResource("43_rgn43")]
+[node name="KeyboardInput" parent="CanvasLayer/GOMI Main/PanelMainBoard/GOMI TAB/Input/TabContainer" unique_id=1833133360 instance=ExtResource("43_rgn43")]
 visible = false
 layout_mode = 2
 metadata/_tab_index = 11
 
-[node name="Bool" type="Panel" parent="CanvasLayer/GOMI Main/GOMI TAB" unique_id=829018000]
+[node name="Bool" type="Panel" parent="CanvasLayer/GOMI Main/PanelMainBoard/GOMI TAB" unique_id=829018000]
 visible = false
 layout_mode = 2
 metadata/_tab_index = 2
 
-[node name="Demo2dVboxBooleanRegister" type="Panel" parent="CanvasLayer/GOMI Main/GOMI TAB/Bool" unique_id=2023422385]
+[node name="Demo2dVboxBooleanRegister" type="Panel" parent="CanvasLayer/GOMI Main/PanelMainBoard/GOMI TAB/Bool" unique_id=2023422385]
 custom_minimum_size = Vector2(0, 200)
 layout_mode = 1
 anchors_preset = 15
@@ -1283,7 +1337,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/GOMI Main/GOMI TAB/Bool/Demo2dVboxBooleanRegister" unique_id=1139760909]
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/GOMI Main/PanelMainBoard/GOMI TAB/Bool/Demo2dVboxBooleanRegister" unique_id=1139760909]
 custom_minimum_size = Vector2(0, 200)
 layout_mode = 1
 anchors_preset = 15
@@ -1292,70 +1346,70 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/GOMI Main/GOMI TAB/Bool/Demo2dVboxBooleanRegister/VBoxContainer" unique_id=1768143750]
+[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/GOMI Main/PanelMainBoard/GOMI TAB/Bool/Demo2dVboxBooleanRegister/VBoxContainer" unique_id=1768143750]
 layout_mode = 2
 
-[node name="Push Bool" type="Node" parent="CanvasLayer/GOMI Main/GOMI TAB/Bool/Demo2dVboxBooleanRegister/VBoxContainer/HBoxContainer" unique_id=957636690]
+[node name="Push Bool" type="Node" parent="CanvasLayer/GOMI Main/PanelMainBoard/GOMI TAB/Bool/Demo2dVboxBooleanRegister/VBoxContainer/HBoxContainer" unique_id=957636690]
 script = ExtResource("35_smkdd")
 metadata/_custom_type_script = "uid://drujjt4x780gf"
 
-[node name="LineEdit" type="LineEdit" parent="CanvasLayer/GOMI Main/GOMI TAB/Bool/Demo2dVboxBooleanRegister/VBoxContainer/HBoxContainer" unique_id=153533558]
+[node name="LineEdit" type="LineEdit" parent="CanvasLayer/GOMI Main/PanelMainBoard/GOMI TAB/Bool/Demo2dVboxBooleanRegister/VBoxContainer/HBoxContainer" unique_id=153533558]
 layout_mode = 2
 size_flags_horizontal = 3
 text = "button_a"
 
-[node name="CheckButton" type="CheckButton" parent="CanvasLayer/GOMI Main/GOMI TAB/Bool/Demo2dVboxBooleanRegister/VBoxContainer/HBoxContainer" unique_id=990696092]
+[node name="CheckButton" type="CheckButton" parent="CanvasLayer/GOMI Main/PanelMainBoard/GOMI TAB/Bool/Demo2dVboxBooleanRegister/VBoxContainer/HBoxContainer" unique_id=990696092]
 layout_mode = 2
 
-[node name="BoolRegLineEditToggleSubmit" type="Node" parent="CanvasLayer/GOMI Main/GOMI TAB/Bool/Demo2dVboxBooleanRegister/VBoxContainer/HBoxContainer/CheckButton" unique_id=1860216824 node_paths=PackedStringArray("_line_edit", "_toggle_button")]
+[node name="BoolRegLineEditToggleSubmit" type="Node" parent="CanvasLayer/GOMI Main/PanelMainBoard/GOMI TAB/Bool/Demo2dVboxBooleanRegister/VBoxContainer/HBoxContainer/CheckButton" unique_id=1860216824 node_paths=PackedStringArray("_line_edit", "_toggle_button")]
 script = ExtResource("69_5ktmr")
 _line_edit = NodePath("../../LineEdit")
 _toggle_button = NodePath("..")
 metadata/_custom_type_script = "uid://c0vsmm5jcxd56"
 
-[node name="Button DownUp" type="Button" parent="CanvasLayer/GOMI Main/GOMI TAB/Bool/Demo2dVboxBooleanRegister/VBoxContainer/HBoxContainer" unique_id=1569252490]
+[node name="Button DownUp" type="Button" parent="CanvasLayer/GOMI Main/PanelMainBoard/GOMI TAB/Bool/Demo2dVboxBooleanRegister/VBoxContainer/HBoxContainer" unique_id=1569252490]
 layout_mode = 2
 text = "Down/Up"
 
-[node name="BoolRegLineEditButtonSubmit" type="Node" parent="CanvasLayer/GOMI Main/GOMI TAB/Bool/Demo2dVboxBooleanRegister/VBoxContainer/HBoxContainer/Button DownUp" unique_id=1963501345 node_paths=PackedStringArray("_line_edit", "_toggle_button")]
+[node name="BoolRegLineEditButtonSubmit" type="Node" parent="CanvasLayer/GOMI Main/PanelMainBoard/GOMI TAB/Bool/Demo2dVboxBooleanRegister/VBoxContainer/HBoxContainer/Button DownUp" unique_id=1963501345 node_paths=PackedStringArray("_line_edit", "_toggle_button")]
 script = ExtResource("70_d6640")
 _line_edit = NodePath("../../LineEdit")
 _toggle_button = NodePath("..")
 
-[node name="Button Toggle" type="Button" parent="CanvasLayer/GOMI Main/GOMI TAB/Bool/Demo2dVboxBooleanRegister/VBoxContainer/HBoxContainer" unique_id=1365534576]
+[node name="Button Toggle" type="Button" parent="CanvasLayer/GOMI Main/PanelMainBoard/GOMI TAB/Bool/Demo2dVboxBooleanRegister/VBoxContainer/HBoxContainer" unique_id=1365534576]
 layout_mode = 2
 text = "Toggle"
 
-[node name="BoolRegLineEditButtonSubmit" type="Node" parent="CanvasLayer/GOMI Main/GOMI TAB/Bool/Demo2dVboxBooleanRegister/VBoxContainer/HBoxContainer/Button Toggle" unique_id=702594398 node_paths=PackedStringArray("_line_edit", "_toggle_button")]
+[node name="BoolRegLineEditButtonSubmit" type="Node" parent="CanvasLayer/GOMI Main/PanelMainBoard/GOMI TAB/Bool/Demo2dVboxBooleanRegister/VBoxContainer/HBoxContainer/Button Toggle" unique_id=702594398 node_paths=PackedStringArray("_line_edit", "_toggle_button")]
 script = ExtResource("70_d6640")
 _line_edit = NodePath("../../LineEdit")
 _toggle_button = NodePath("..")
 
-[node name="Label" type="Label" parent="CanvasLayer/GOMI Main/GOMI TAB/Bool/Demo2dVboxBooleanRegister/VBoxContainer" unique_id=1396669404]
+[node name="Label" type="Label" parent="CanvasLayer/GOMI Main/PanelMainBoard/GOMI TAB/Bool/Demo2dVboxBooleanRegister/VBoxContainer" unique_id=1396669404]
 layout_mode = 2
 text = "-"
 
-[node name="BoolRegUIDisplayBooleanNameFormat" type="Node" parent="CanvasLayer/GOMI Main/GOMI TAB/Bool/Demo2dVboxBooleanRegister/VBoxContainer/Label" unique_id=1435620320 node_paths=PackedStringArray("_debug_labels")]
+[node name="BoolRegUIDisplayBooleanNameFormat" type="Node" parent="CanvasLayer/GOMI Main/PanelMainBoard/GOMI TAB/Bool/Demo2dVboxBooleanRegister/VBoxContainer/Label" unique_id=1435620320 node_paths=PackedStringArray("_debug_labels")]
 script = ExtResource("67_16vpb")
 _debug_labels = [NodePath("..")]
 
-[node name="RichTextLabel" type="RichTextLabel" parent="CanvasLayer/GOMI Main/GOMI TAB/Bool/Demo2dVboxBooleanRegister/VBoxContainer" unique_id=199810786]
+[node name="RichTextLabel" type="RichTextLabel" parent="CanvasLayer/GOMI Main/PanelMainBoard/GOMI TAB/Bool/Demo2dVboxBooleanRegister/VBoxContainer" unique_id=199810786]
 custom_minimum_size = Vector2(0, 150)
 layout_mode = 2
 size_flags_vertical = 3
 bbcode_enabled = true
 
-[node name="UI Debug of Bool Register" type="Node" parent="CanvasLayer/GOMI Main/GOMI TAB/Bool/Demo2dVboxBooleanRegister/VBoxContainer/RichTextLabel" unique_id=2120446982 node_paths=PackedStringArray("_boolean_register", "_rich_text_label")]
+[node name="UI Debug of Bool Register" type="Node" parent="CanvasLayer/GOMI Main/PanelMainBoard/GOMI TAB/Bool/Demo2dVboxBooleanRegister/VBoxContainer/RichTextLabel" unique_id=2120446982 node_paths=PackedStringArray("_boolean_register", "_rich_text_label")]
 script = ExtResource("72_f14o6")
-_boolean_register = NodePath("../../../../../../../../GOMI/Code/Boolean Register")
+_boolean_register = NodePath("../../../../../../../../../GOMI/Code/Boolean Register")
 _rich_text_label = NodePath("..")
 
-[node name="S2W" type="Panel" parent="CanvasLayer/GOMI Main/GOMI TAB" unique_id=1632348575]
+[node name="S2W" type="Panel" parent="CanvasLayer/GOMI Main/PanelMainBoard/GOMI TAB" unique_id=1632348575]
 visible = false
 layout_mode = 2
 metadata/_tab_index = 3
 
-[node name="ScrollContainer" type="ScrollContainer" parent="CanvasLayer/GOMI Main/GOMI TAB/S2W" unique_id=231613762]
+[node name="ScrollContainer" type="ScrollContainer" parent="CanvasLayer/GOMI Main/PanelMainBoard/GOMI TAB/S2W" unique_id=231613762]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -1363,7 +1417,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="RichTextLabel" type="RichTextLabel" parent="CanvasLayer/GOMI Main/GOMI TAB/S2W/ScrollContainer" unique_id=240597457]
+[node name="RichTextLabel" type="RichTextLabel" parent="CanvasLayer/GOMI Main/PanelMainBoard/GOMI TAB/S2W/ScrollContainer" unique_id=240597457]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
@@ -1868,7 +1922,7 @@ Play|1250|2250
 Zoom|1251|2251
 PA1|1253|2253"
 
-[node name="Button" type="Button" parent="CanvasLayer/GOMI Main/GOMI TAB/S2W" unique_id=862301688]
+[node name="Button" type="Button" parent="CanvasLayer/GOMI Main/PanelMainBoard/GOMI TAB/S2W" unique_id=862301688]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.6401309
@@ -1880,17 +1934,17 @@ offset_bottom = 0.12599945
 text = "S2W Documentation ~>"
 metadata/_edit_use_anchors_ = true
 
-[node name="InputUiOpenUrl" type="Node" parent="CanvasLayer/GOMI Main/GOMI TAB/S2W/Button" unique_id=1834041630]
+[node name="InputUiOpenUrl" type="Node" parent="CanvasLayer/GOMI Main/PanelMainBoard/GOMI TAB/S2W/Button" unique_id=1834041630]
 script = ExtResource("112_m7vwt")
 _url_to_open = "https://github.com/EloiStree/s2w"
 metadata/_custom_type_script = "uid://bcxq5monpm1ab"
 
-[node name="Files" type="Panel" parent="CanvasLayer/GOMI Main/GOMI TAB" unique_id=1786359730]
+[node name="Files" type="Panel" parent="CanvasLayer/GOMI Main/PanelMainBoard/GOMI TAB" unique_id=1786359730]
 visible = false
 layout_mode = 2
 metadata/_tab_index = 4
 
-[node name="TabContainer" type="TabContainer" parent="CanvasLayer/GOMI Main/GOMI TAB/Files" unique_id=1507949220]
+[node name="TabContainer" type="TabContainer" parent="CanvasLayer/GOMI Main/PanelMainBoard/GOMI TAB/Files" unique_id=1507949220]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -1899,11 +1953,11 @@ grow_horizontal = 2
 grow_vertical = 2
 current_tab = 0
 
-[node name="Merge Files" type="Panel" parent="CanvasLayer/GOMI Main/GOMI TAB/Files/TabContainer" unique_id=1813658953]
+[node name="Merge Files" type="Panel" parent="CanvasLayer/GOMI Main/PanelMainBoard/GOMI TAB/Files/TabContainer" unique_id=1813658953]
 layout_mode = 2
 metadata/_tab_index = 0
 
-[node name="ScrollContainer" type="ScrollContainer" parent="CanvasLayer/GOMI Main/GOMI TAB/Files/TabContainer/Merge Files" unique_id=400245923]
+[node name="ScrollContainer" type="ScrollContainer" parent="CanvasLayer/GOMI Main/PanelMainBoard/GOMI TAB/Files/TabContainer/Merge Files" unique_id=400245923]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -1911,17 +1965,17 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="CodeEdit Merge Files" type="CodeEdit" parent="CanvasLayer/GOMI Main/GOMI TAB/Files/TabContainer/Merge Files/ScrollContainer" unique_id=1549912888]
+[node name="CodeEdit Merge Files" type="CodeEdit" parent="CanvasLayer/GOMI Main/PanelMainBoard/GOMI TAB/Files/TabContainer/Merge Files/ScrollContainer" unique_id=1549912888]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
-[node name="Learn" type="Panel" parent="CanvasLayer/GOMI Main/GOMI TAB" unique_id=981463572]
+[node name="Learn" type="Panel" parent="CanvasLayer/GOMI Main/PanelMainBoard/GOMI TAB" unique_id=981463572]
 visible = false
 layout_mode = 2
 metadata/_tab_index = 5
 
-[node name="ScrollContainer" type="ScrollContainer" parent="CanvasLayer/GOMI Main/GOMI TAB/Learn" unique_id=2143413810]
+[node name="ScrollContainer" type="ScrollContainer" parent="CanvasLayer/GOMI Main/PanelMainBoard/GOMI TAB/Learn" unique_id=2143413810]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -1929,236 +1983,232 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/GOMI Main/GOMI TAB/Learn/ScrollContainer" unique_id=1863537997]
+[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/GOMI Main/PanelMainBoard/GOMI TAB/Learn/ScrollContainer" unique_id=1863537997]
 layout_mode = 2
 size_flags_horizontal = 3
 metadata/_edit_use_anchors_ = true
 
-[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/GOMI Main/GOMI TAB/Learn/ScrollContainer/HBoxContainer" unique_id=993270609]
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/GOMI Main/PanelMainBoard/GOMI TAB/Learn/ScrollContainer/HBoxContainer" unique_id=993270609]
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="Label2" type="Label" parent="CanvasLayer/GOMI Main/GOMI TAB/Learn/ScrollContainer/HBoxContainer/VBoxContainer" unique_id=939495664]
+[node name="Label2" type="Label" parent="CanvasLayer/GOMI Main/PanelMainBoard/GOMI TAB/Learn/ScrollContainer/HBoxContainer/VBoxContainer" unique_id=939495664]
 layout_mode = 2
 text = "  ~> Documentation"
 
-[node name="Button GOMI" type="Button" parent="CanvasLayer/GOMI Main/GOMI TAB/Learn/ScrollContainer/HBoxContainer/VBoxContainer" unique_id=913122733]
+[node name="Button GOMI" type="Button" parent="CanvasLayer/GOMI Main/PanelMainBoard/GOMI TAB/Learn/ScrollContainer/HBoxContainer/VBoxContainer" unique_id=913122733]
 layout_mode = 2
 text = "GOMI Code / Download"
 
-[node name="InputUiOpenUrl" type="Node" parent="CanvasLayer/GOMI Main/GOMI TAB/Learn/ScrollContainer/HBoxContainer/VBoxContainer/Button GOMI" unique_id=54799565]
+[node name="InputUiOpenUrl" type="Node" parent="CanvasLayer/GOMI Main/PanelMainBoard/GOMI TAB/Learn/ScrollContainer/HBoxContainer/VBoxContainer/Button GOMI" unique_id=54799565]
 script = ExtResource("112_m7vwt")
 _url_to_open = "https://github.com/EloiStree/gomi"
 metadata/_custom_type_script = "uid://bcxq5monpm1ab"
 
-[node name="Button Documentation" type="Button" parent="CanvasLayer/GOMI Main/GOMI TAB/Learn/ScrollContainer/HBoxContainer/VBoxContainer" unique_id=212106810]
+[node name="Button Documentation" type="Button" parent="CanvasLayer/GOMI Main/PanelMainBoard/GOMI TAB/Learn/ScrollContainer/HBoxContainer/VBoxContainer" unique_id=212106810]
 layout_mode = 2
 text = "GOMI Documentation"
 
-[node name="InputUiOpenUrl" type="Node" parent="CanvasLayer/GOMI Main/GOMI TAB/Learn/ScrollContainer/HBoxContainer/VBoxContainer/Button Documentation" unique_id=539737657]
+[node name="InputUiOpenUrl" type="Node" parent="CanvasLayer/GOMI Main/PanelMainBoard/GOMI TAB/Learn/ScrollContainer/HBoxContainer/VBoxContainer/Button Documentation" unique_id=539737657]
 script = ExtResource("112_m7vwt")
 _url_to_open = "https://github.com/EloiStree/GOMI_DOC"
 metadata/_custom_type_script = "uid://bcxq5monpm1ab"
 
-[node name="Button Documentation2" type="Button" parent="CanvasLayer/GOMI Main/GOMI TAB/Learn/ScrollContainer/HBoxContainer/VBoxContainer" unique_id=1597012570]
+[node name="Button Documentation2" type="Button" parent="CanvasLayer/GOMI Main/PanelMainBoard/GOMI TAB/Learn/ScrollContainer/HBoxContainer/VBoxContainer" unique_id=1597012570]
 layout_mode = 2
 text = "Discord"
 
-[node name="InputUiOpenUrl" type="Node" parent="CanvasLayer/GOMI Main/GOMI TAB/Learn/ScrollContainer/HBoxContainer/VBoxContainer/Button Documentation2" unique_id=905537835]
+[node name="InputUiOpenUrl" type="Node" parent="CanvasLayer/GOMI Main/PanelMainBoard/GOMI TAB/Learn/ScrollContainer/HBoxContainer/VBoxContainer/Button Documentation2" unique_id=905537835]
 script = ExtResource("112_m7vwt")
 _url_to_open = "https://eloistree.github.io/r/discord"
 metadata/_custom_type_script = "uid://bcxq5monpm1ab"
 
-[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/GOMI Main/GOMI TAB/Learn/ScrollContainer/HBoxContainer/VBoxContainer" unique_id=31709134]
+[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/GOMI Main/PanelMainBoard/GOMI TAB/Learn/ScrollContainer/HBoxContainer/VBoxContainer" unique_id=31709134]
 layout_mode = 2
 
-[node name="Button S2W" type="Button" parent="CanvasLayer/GOMI Main/GOMI TAB/Learn/ScrollContainer/HBoxContainer/VBoxContainer/HBoxContainer" unique_id=885663052]
+[node name="Button S2W" type="Button" parent="CanvasLayer/GOMI Main/PanelMainBoard/GOMI TAB/Learn/ScrollContainer/HBoxContainer/VBoxContainer/HBoxContainer" unique_id=885663052]
 layout_mode = 2
 size_flags_horizontal = 3
 text = "S2W"
 
-[node name="InputUiOpenUrl" type="Node" parent="CanvasLayer/GOMI Main/GOMI TAB/Learn/ScrollContainer/HBoxContainer/VBoxContainer/HBoxContainer/Button S2W" unique_id=2142467902]
+[node name="InputUiOpenUrl" type="Node" parent="CanvasLayer/GOMI Main/PanelMainBoard/GOMI TAB/Learn/ScrollContainer/HBoxContainer/VBoxContainer/HBoxContainer/Button S2W" unique_id=2142467902]
 script = ExtResource("112_m7vwt")
 _url_to_open = "https://github.com/EloiStree/S2W"
 metadata/_custom_type_script = "uid://bcxq5monpm1ab"
 
-[node name="Button IID" type="Button" parent="CanvasLayer/GOMI Main/GOMI TAB/Learn/ScrollContainer/HBoxContainer/VBoxContainer/HBoxContainer" unique_id=1965429743]
+[node name="Button IID" type="Button" parent="CanvasLayer/GOMI Main/PanelMainBoard/GOMI TAB/Learn/ScrollContainer/HBoxContainer/VBoxContainer/HBoxContainer" unique_id=1965429743]
 layout_mode = 2
 size_flags_horizontal = 3
 text = "IID"
 
-[node name="InputUiOpenUrl" type="Node" parent="CanvasLayer/GOMI Main/GOMI TAB/Learn/ScrollContainer/HBoxContainer/VBoxContainer/HBoxContainer/Button IID" unique_id=882062707]
+[node name="InputUiOpenUrl" type="Node" parent="CanvasLayer/GOMI Main/PanelMainBoard/GOMI TAB/Learn/ScrollContainer/HBoxContainer/VBoxContainer/HBoxContainer/Button IID" unique_id=882062707]
 script = ExtResource("112_m7vwt")
 _url_to_open = "https://github.com/EloiStree/IID"
 metadata/_custom_type_script = "uid://bcxq5monpm1ab"
 
-[node name="Label" type="Label" parent="CanvasLayer/GOMI Main/GOMI TAB/Learn/ScrollContainer/HBoxContainer/VBoxContainer" unique_id=175543345]
+[node name="Label" type="Label" parent="CanvasLayer/GOMI Main/PanelMainBoard/GOMI TAB/Learn/ScrollContainer/HBoxContainer/VBoxContainer" unique_id=175543345]
 layout_mode = 2
 text = "  ~> Input Hacking"
 
-[node name="Button Doc XBox" type="Button" parent="CanvasLayer/GOMI Main/GOMI TAB/Learn/ScrollContainer/HBoxContainer/VBoxContainer" unique_id=504850036]
+[node name="Button Doc XBox" type="Button" parent="CanvasLayer/GOMI Main/PanelMainBoard/GOMI TAB/Learn/ScrollContainer/HBoxContainer/VBoxContainer" unique_id=504850036]
 layout_mode = 2
 text = "XOMI / Xbox Simulation"
 
-[node name="InputUiOpenUrl" type="Node" parent="CanvasLayer/GOMI Main/GOMI TAB/Learn/ScrollContainer/HBoxContainer/VBoxContainer/Button Doc XBox" unique_id=1638151656]
+[node name="InputUiOpenUrl" type="Node" parent="CanvasLayer/GOMI Main/PanelMainBoard/GOMI TAB/Learn/ScrollContainer/HBoxContainer/VBoxContainer/Button Doc XBox" unique_id=1638151656]
 script = ExtResource("112_m7vwt")
 _url_to_open = "https://github.com/EloiStree/XOMI"
 metadata/_custom_type_script = "uid://bcxq5monpm1ab"
 
-[node name="Button Doc Keyboard" type="Button" parent="CanvasLayer/GOMI Main/GOMI TAB/Learn/ScrollContainer/HBoxContainer/VBoxContainer" unique_id=235406623]
+[node name="Button Doc Keyboard" type="Button" parent="CanvasLayer/GOMI Main/PanelMainBoard/GOMI TAB/Learn/ScrollContainer/HBoxContainer/VBoxContainer" unique_id=235406623]
 layout_mode = 2
 text = "S2W / Keyboard Simulation"
 
-[node name="InputUiOpenUrl" type="Node" parent="CanvasLayer/GOMI Main/GOMI TAB/Learn/ScrollContainer/HBoxContainer/VBoxContainer/Button Doc Keyboard" unique_id=1550356232]
+[node name="InputUiOpenUrl" type="Node" parent="CanvasLayer/GOMI Main/PanelMainBoard/GOMI TAB/Learn/ScrollContainer/HBoxContainer/VBoxContainer/Button Doc Keyboard" unique_id=1550356232]
 script = ExtResource("112_m7vwt")
 _url_to_open = "https://github.com/EloiStree/S2W"
 metadata/_custom_type_script = "uid://bcxq5monpm1ab"
 
-[node name="Button Doc Pico2W" type="Button" parent="CanvasLayer/GOMI Main/GOMI TAB/Learn/ScrollContainer/HBoxContainer/VBoxContainer" unique_id=2091889959]
+[node name="Button Doc Pico2W" type="Button" parent="CanvasLayer/GOMI Main/PanelMainBoard/GOMI TAB/Learn/ScrollContainer/HBoxContainer/VBoxContainer" unique_id=2091889959]
 layout_mode = 2
 text = "Pico2W  / Hardware Input"
 
-[node name="InputUiOpenUrl" type="Node" parent="CanvasLayer/GOMI Main/GOMI TAB/Learn/ScrollContainer/HBoxContainer/VBoxContainer/Button Doc Pico2W" unique_id=55491759]
+[node name="InputUiOpenUrl" type="Node" parent="CanvasLayer/GOMI Main/PanelMainBoard/GOMI TAB/Learn/ScrollContainer/HBoxContainer/VBoxContainer/Button Doc Pico2W" unique_id=55491759]
 script = ExtResource("112_m7vwt")
 _url_to_open = "https://github.com/EloiStree/PicoS2W"
 metadata/_custom_type_script = "uid://bcxq5monpm1ab"
 
-[node name="Button Doc Arduino" type="Button" parent="CanvasLayer/GOMI Main/GOMI TAB/Learn/ScrollContainer/HBoxContainer/VBoxContainer" unique_id=681713613]
+[node name="Button Doc Arduino" type="Button" parent="CanvasLayer/GOMI Main/PanelMainBoard/GOMI TAB/Learn/ScrollContainer/HBoxContainer/VBoxContainer" unique_id=681713613]
 layout_mode = 2
 text = "Arduino/ Hardware XInput"
 
-[node name="InputUiOpenUrl" type="Node" parent="CanvasLayer/GOMI Main/GOMI TAB/Learn/ScrollContainer/HBoxContainer/VBoxContainer/Button Doc Arduino" unique_id=617302048]
+[node name="InputUiOpenUrl" type="Node" parent="CanvasLayer/GOMI Main/PanelMainBoard/GOMI TAB/Learn/ScrollContainer/HBoxContainer/VBoxContainer/Button Doc Arduino" unique_id=617302048]
 script = ExtResource("112_m7vwt")
 _url_to_open = "https://github.com/EloiStree/2023_06_21_arduino_to_xbox_360"
 metadata/_custom_type_script = "uid://bcxq5monpm1ab"
 
-[node name="Button Doc AOMI" type="Button" parent="CanvasLayer/GOMI Main/GOMI TAB/Learn/ScrollContainer/HBoxContainer/VBoxContainer" unique_id=1092736685]
+[node name="Button Doc AOMI" type="Button" parent="CanvasLayer/GOMI Main/PanelMainBoard/GOMI TAB/Learn/ScrollContainer/HBoxContainer/VBoxContainer" unique_id=1092736685]
 visible = false
 layout_mode = 2
 text = "AOMI / Android ADB Input"
 
-[node name="InputUiOpenUrl" type="Node" parent="CanvasLayer/GOMI Main/GOMI TAB/Learn/ScrollContainer/HBoxContainer/VBoxContainer/Button Doc AOMI" unique_id=1547267984]
+[node name="InputUiOpenUrl" type="Node" parent="CanvasLayer/GOMI Main/PanelMainBoard/GOMI TAB/Learn/ScrollContainer/HBoxContainer/VBoxContainer/Button Doc AOMI" unique_id=1547267984]
 script = ExtResource("112_m7vwt")
 _url_to_open = "https://github.com/EloiStree/AOMI"
 metadata/_custom_type_script = "uid://bcxq5monpm1ab"
 
-[node name="Button Doc XESP32" type="Button" parent="CanvasLayer/GOMI Main/GOMI TAB/Learn/ScrollContainer/HBoxContainer/VBoxContainer" unique_id=1579254482]
+[node name="Button Doc XESP32" type="Button" parent="CanvasLayer/GOMI Main/PanelMainBoard/GOMI TAB/Learn/ScrollContainer/HBoxContainer/VBoxContainer" unique_id=1579254482]
 layout_mode = 2
 text = "XESP32 / Bluetooth Hardware Input"
 
-[node name="InputUiOpenUrl" type="Node" parent="CanvasLayer/GOMI Main/GOMI TAB/Learn/ScrollContainer/HBoxContainer/VBoxContainer/Button Doc XESP32" unique_id=1630787457]
+[node name="InputUiOpenUrl" type="Node" parent="CanvasLayer/GOMI Main/PanelMainBoard/GOMI TAB/Learn/ScrollContainer/HBoxContainer/VBoxContainer/Button Doc XESP32" unique_id=1630787457]
 script = ExtResource("112_m7vwt")
 _url_to_open = "https://github.com/EloiStree/XESP32"
 metadata/_custom_type_script = "uid://bcxq5monpm1ab"
 
-[node name="Button License" type="Button" parent="CanvasLayer/GOMI Main/GOMI TAB/Learn/ScrollContainer/HBoxContainer/VBoxContainer" unique_id=1217509191]
+[node name="Button License" type="Button" parent="CanvasLayer/GOMI Main/PanelMainBoard/GOMI TAB/Learn/ScrollContainer/HBoxContainer/VBoxContainer" unique_id=1217509191]
 layout_mode = 2
 text = "License"
 
-[node name="InputUiOpenUrl" type="Node" parent="CanvasLayer/GOMI Main/GOMI TAB/Learn/ScrollContainer/HBoxContainer/VBoxContainer/Button License" unique_id=129492308]
+[node name="InputUiOpenUrl" type="Node" parent="CanvasLayer/GOMI Main/PanelMainBoard/GOMI TAB/Learn/ScrollContainer/HBoxContainer/VBoxContainer/Button License" unique_id=129492308]
 script = ExtResource("112_m7vwt")
 _url_to_open = "https://github.com/EloiStree/license"
 metadata/_custom_type_script = "uid://bcxq5monpm1ab"
 
-[node name="VBoxContainer2" type="VBoxContainer" parent="CanvasLayer/GOMI Main/GOMI TAB/Learn/ScrollContainer/HBoxContainer" unique_id=937732031]
-layout_mode = 2
-size_flags_horizontal = 3
-
-[node name="Label" type="Label" parent="CanvasLayer/GOMI Main/GOMI TAB/Learn/ScrollContainer/HBoxContainer/VBoxContainer2" unique_id=1773901958]
+[node name="Label3" type="Label" parent="CanvasLayer/GOMI Main/PanelMainBoard/GOMI TAB/Learn/ScrollContainer/HBoxContainer/VBoxContainer" unique_id=1773901958]
 layout_mode = 2
 text = "  ~> Youtube"
 
-[node name="Button Documentation8" type="Button" parent="CanvasLayer/GOMI Main/GOMI TAB/Learn/ScrollContainer/HBoxContainer/VBoxContainer2" unique_id=1757826226]
+[node name="Button Documentation8" type="Button" parent="CanvasLayer/GOMI Main/PanelMainBoard/GOMI TAB/Learn/ScrollContainer/HBoxContainer/VBoxContainer" unique_id=1757826226]
 layout_mode = 2
 text = "Learn to use GOMI"
 
-[node name="InputUiOpenUrl" type="Node" parent="CanvasLayer/GOMI Main/GOMI TAB/Learn/ScrollContainer/HBoxContainer/VBoxContainer2/Button Documentation8" unique_id=1063532468]
+[node name="InputUiOpenUrl" type="Node" parent="CanvasLayer/GOMI Main/PanelMainBoard/GOMI TAB/Learn/ScrollContainer/HBoxContainer/VBoxContainer/Button Documentation8" unique_id=1063532468]
 script = ExtResource("112_m7vwt")
 _url_to_open = "https://www.youtube.com/@GOMI_DOC"
 metadata/_custom_type_script = "uid://bcxq5monpm1ab"
 
-[node name="Button Documentation9" type="Button" parent="CanvasLayer/GOMI Main/GOMI TAB/Learn/ScrollContainer/HBoxContainer/VBoxContainer2" unique_id=2111330531]
+[node name="Button Documentation9" type="Button" parent="CanvasLayer/GOMI Main/PanelMainBoard/GOMI TAB/Learn/ScrollContainer/HBoxContainer/VBoxContainer" unique_id=2111330531]
 layout_mode = 2
 text = "Learn to create game"
 
-[node name="InputUiOpenUrl" type="Node" parent="CanvasLayer/GOMI Main/GOMI TAB/Learn/ScrollContainer/HBoxContainer/VBoxContainer2/Button Documentation9" unique_id=1440187655]
+[node name="InputUiOpenUrl" type="Node" parent="CanvasLayer/GOMI Main/PanelMainBoard/GOMI TAB/Learn/ScrollContainer/HBoxContainer/VBoxContainer/Button Documentation9" unique_id=1440187655]
 script = ExtResource("112_m7vwt")
 _url_to_open = "https://www.youtube.com/@EloiTeaching"
 metadata/_custom_type_script = "uid://bcxq5monpm1ab"
 
-[node name="Label2" type="Label" parent="CanvasLayer/GOMI Main/GOMI TAB/Learn/ScrollContainer/HBoxContainer/VBoxContainer2" unique_id=937524937]
+[node name="Label4" type="Label" parent="CanvasLayer/GOMI Main/PanelMainBoard/GOMI TAB/Learn/ScrollContainer/HBoxContainer/VBoxContainer" unique_id=937524937]
 layout_mode = 2
 text = "  ~> Learn to code"
 
-[node name="Button Code Lab TV" type="Button" parent="CanvasLayer/GOMI Main/GOMI TAB/Learn/ScrollContainer/HBoxContainer/VBoxContainer2" unique_id=239089340]
+[node name="Button Code Lab TV" type="Button" parent="CanvasLayer/GOMI Main/PanelMainBoard/GOMI TAB/Learn/ScrollContainer/HBoxContainer/VBoxContainer" unique_id=239089340]
 layout_mode = 2
 text = "Practice on Code Lab TV"
 
-[node name="InputUiOpenUrl" type="Node" parent="CanvasLayer/GOMI Main/GOMI TAB/Learn/ScrollContainer/HBoxContainer/VBoxContainer2/Button Code Lab TV" unique_id=92383395]
+[node name="InputUiOpenUrl" type="Node" parent="CanvasLayer/GOMI Main/PanelMainBoard/GOMI TAB/Learn/ScrollContainer/HBoxContainer/VBoxContainer/Button Code Lab TV" unique_id=92383395]
 script = ExtResource("112_m7vwt")
 _url_to_open = "https://github.com/EloiStree/CodeLabTV"
 metadata/_custom_type_script = "uid://bcxq5monpm1ab"
 
-[node name="Button Hello Git" type="Button" parent="CanvasLayer/GOMI Main/GOMI TAB/Learn/ScrollContainer/HBoxContainer/VBoxContainer2" unique_id=1808686568]
+[node name="Button Hello Git" type="Button" parent="CanvasLayer/GOMI Main/PanelMainBoard/GOMI TAB/Learn/ScrollContainer/HBoxContainer/VBoxContainer" unique_id=1808686568]
 layout_mode = 2
 text = "Hello Git"
 
-[node name="InputUiOpenUrl" type="Node" parent="CanvasLayer/GOMI Main/GOMI TAB/Learn/ScrollContainer/HBoxContainer/VBoxContainer2/Button Hello Git" unique_id=1080820517]
+[node name="InputUiOpenUrl" type="Node" parent="CanvasLayer/GOMI Main/PanelMainBoard/GOMI TAB/Learn/ScrollContainer/HBoxContainer/VBoxContainer/Button Hello Git" unique_id=1080820517]
 script = ExtResource("112_m7vwt")
 _url_to_open = "https://github.com/EloiStree/hellogit"
 metadata/_custom_type_script = "uid://bcxq5monpm1ab"
 
-[node name="Button Hello GDScript" type="Button" parent="CanvasLayer/GOMI Main/GOMI TAB/Learn/ScrollContainer/HBoxContainer/VBoxContainer2" unique_id=831707905]
+[node name="Button Hello GDScript" type="Button" parent="CanvasLayer/GOMI Main/PanelMainBoard/GOMI TAB/Learn/ScrollContainer/HBoxContainer/VBoxContainer" unique_id=831707905]
 layout_mode = 2
 text = "Hello GDScript"
 
-[node name="InputUiOpenUrl" type="Node" parent="CanvasLayer/GOMI Main/GOMI TAB/Learn/ScrollContainer/HBoxContainer/VBoxContainer2/Button Hello GDScript" unique_id=1846702627]
+[node name="InputUiOpenUrl" type="Node" parent="CanvasLayer/GOMI Main/PanelMainBoard/GOMI TAB/Learn/ScrollContainer/HBoxContainer/VBoxContainer/Button Hello GDScript" unique_id=1846702627]
 script = ExtResource("112_m7vwt")
 _url_to_open = "https://github.com/EloiStree/HelloGodotCode"
 metadata/_custom_type_script = "uid://bcxq5monpm1ab"
 
-[node name="Button Hello Godot Engine" type="Button" parent="CanvasLayer/GOMI Main/GOMI TAB/Learn/ScrollContainer/HBoxContainer/VBoxContainer2" unique_id=1510104432]
+[node name="Button Hello Godot Engine" type="Button" parent="CanvasLayer/GOMI Main/PanelMainBoard/GOMI TAB/Learn/ScrollContainer/HBoxContainer/VBoxContainer" unique_id=1510104432]
 layout_mode = 2
 text = "Hello Godot Engine"
 
-[node name="InputUiOpenUrl" type="Node" parent="CanvasLayer/GOMI Main/GOMI TAB/Learn/ScrollContainer/HBoxContainer/VBoxContainer2/Button Hello Godot Engine" unique_id=155599405]
+[node name="InputUiOpenUrl" type="Node" parent="CanvasLayer/GOMI Main/PanelMainBoard/GOMI TAB/Learn/ScrollContainer/HBoxContainer/VBoxContainer/Button Hello Godot Engine" unique_id=155599405]
 script = ExtResource("112_m7vwt")
 _url_to_open = "https://github.com/EloiStree/HelloGodotEngineKeyword"
 metadata/_custom_type_script = "uid://bcxq5monpm1ab"
 
-[node name="Button Hello Godot XR" type="Button" parent="CanvasLayer/GOMI Main/GOMI TAB/Learn/ScrollContainer/HBoxContainer/VBoxContainer2" unique_id=773011785]
+[node name="Button Hello Godot XR" type="Button" parent="CanvasLayer/GOMI Main/PanelMainBoard/GOMI TAB/Learn/ScrollContainer/HBoxContainer/VBoxContainer" unique_id=773011785]
 layout_mode = 2
 text = "Hello Godot XR"
 
-[node name="InputUiOpenUrl" type="Node" parent="CanvasLayer/GOMI Main/GOMI TAB/Learn/ScrollContainer/HBoxContainer/VBoxContainer2/Button Hello Godot XR" unique_id=2140188665]
+[node name="InputUiOpenUrl" type="Node" parent="CanvasLayer/GOMI Main/PanelMainBoard/GOMI TAB/Learn/ScrollContainer/HBoxContainer/VBoxContainer/Button Hello Godot XR" unique_id=2140188665]
 script = ExtResource("112_m7vwt")
 _url_to_open = "https://github.com/EloiStree/HelloGodotXR"
 metadata/_custom_type_script = "uid://bcxq5monpm1ab"
 
-[node name="Button Hello Input" type="Button" parent="CanvasLayer/GOMI Main/GOMI TAB/Learn/ScrollContainer/HBoxContainer/VBoxContainer2" unique_id=1522625946]
+[node name="Button Hello Input" type="Button" parent="CanvasLayer/GOMI Main/PanelMainBoard/GOMI TAB/Learn/ScrollContainer/HBoxContainer/VBoxContainer" unique_id=1522625946]
 layout_mode = 2
 text = "Hello Input"
 
-[node name="InputUiOpenUrl" type="Node" parent="CanvasLayer/GOMI Main/GOMI TAB/Learn/ScrollContainer/HBoxContainer/VBoxContainer2/Button Hello Input" unique_id=1807888506]
+[node name="InputUiOpenUrl" type="Node" parent="CanvasLayer/GOMI Main/PanelMainBoard/GOMI TAB/Learn/ScrollContainer/HBoxContainer/VBoxContainer/Button Hello Input" unique_id=1807888506]
 script = ExtResource("112_m7vwt")
 _url_to_open = "https://github.com/EloiStree/helloinput"
 metadata/_custom_type_script = "uid://bcxq5monpm1ab"
 
-[node name="Button Hello C#" type="Button" parent="CanvasLayer/GOMI Main/GOMI TAB/Learn/ScrollContainer/HBoxContainer/VBoxContainer2" unique_id=1626635955]
+[node name="Button Hello C#" type="Button" parent="CanvasLayer/GOMI Main/PanelMainBoard/GOMI TAB/Learn/ScrollContainer/HBoxContainer/VBoxContainer" unique_id=1626635955]
 layout_mode = 2
 text = "Hello C#"
 
-[node name="InputUiOpenUrl" type="Node" parent="CanvasLayer/GOMI Main/GOMI TAB/Learn/ScrollContainer/HBoxContainer/VBoxContainer2/Button Hello C#" unique_id=56174039]
+[node name="InputUiOpenUrl" type="Node" parent="CanvasLayer/GOMI Main/PanelMainBoard/GOMI TAB/Learn/ScrollContainer/HBoxContainer/VBoxContainer/Button Hello C#" unique_id=56174039]
 script = ExtResource("112_m7vwt")
 _url_to_open = "https://github.com/EloiStree/HelloSharpInGodot"
 metadata/_custom_type_script = "uid://bcxq5monpm1ab"
 
-[node name="About" type="Panel" parent="CanvasLayer/GOMI Main/GOMI TAB" unique_id=1330973916]
+[node name="About" type="Panel" parent="CanvasLayer/GOMI Main/PanelMainBoard/GOMI TAB" unique_id=1330973916]
 visible = false
 layout_mode = 2
 metadata/_tab_index = 6
 
-[node name="ScrollContainer" type="ScrollContainer" parent="CanvasLayer/GOMI Main/GOMI TAB/About" unique_id=1723858997]
+[node name="ScrollContainer" type="ScrollContainer" parent="CanvasLayer/GOMI Main/PanelMainBoard/GOMI TAB/About" unique_id=1723858997]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -2166,27 +2216,30 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="TextEdit" type="TextEdit" parent="CanvasLayer/GOMI Main/GOMI TAB/About/ScrollContainer" unique_id=902887407]
+[node name="TextEdit" type="TextEdit" parent="CanvasLayer/GOMI Main/PanelMainBoard/GOMI TAB/About/ScrollContainer" unique_id=902887407]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
-text = "GOMI is a tool designed by Eloi Stree to allow input remapping and help people learn to code.
-Feel free to ping me on Discord:
-- If you are a QA tester or a QA company and need assistance.
-- If you have a disability and want to play a game.
-- If you are trying to learn to code but video and text guides are not enough.
+text = "GOMI is a tool designed by Eloi Stree to allow input remapping and help people learn to code by playing games.  
 
-This software does NOT simulate input.
-It is a control hub that reads input and turns it into actions and macros.
-You need to add a keylogger yourself if you want it to read your keyboard outside of the application.
+Feel free to ping me on Discord: 
+* If you are a QA tester or a QA company and need assistance. 
+* If you have a disability and want to play a game.  
+* If you are trying to learn to code but video and text guides are not enough.    
 
-I designed this tool in Godot because GDScript is highly moddable.
-Feel free to hook into the tool or add your own code.
+This software does **NOT** simulate input.  
+It is a control hub that reads input with in the app and turns it into actions and macros.   
+ 
+You need to add a keylogger yourself if you want it to read your keyboard outside of the application.  
 
-All the code in this application are opensource toolbox in Godot on GitHub.  
-https://github.com/EloiStree?tab=repositories&q=_gdp_  
+I designed this tool in Godot because GDScript is highly moddable.  
+Feel free to hook into the tool or add your own code.   
+   
+All the code in this application is available as open-source Godot toolboxes on GitHub:   
+https://github.com/EloiStree?tab=repositories&q=_gdp_   
 
-Under Pizza License: https://github.com/EloiStree/license   
+Under the Pizza License:   
+https://github.com/EloiStree/license   
 
 /*
  * ----------------------------------------------------------------------------
@@ -2203,20 +2256,47 @@ Under Pizza License: https://github.com/EloiStree/license
  * Updated version: https://github.com/EloiStree/License
  * ----------------------------------------------------------------------------
  */"
+wrap_mode = 1
 
-[node name="HBoxContainer Analog" type="VBoxContainer" parent="CanvasLayer/GOMI Main" unique_id=426073517]
+[node name="Git" type="Panel" parent="CanvasLayer/GOMI Main/PanelMainBoard/GOMI TAB" unique_id=620829281]
+visible = false
+layout_mode = 2
+metadata/_tab_index = 7
+
+[node name="ScrollContainer" type="ScrollContainer" parent="CanvasLayer/GOMI Main/PanelMainBoard/GOMI TAB/Git" unique_id=1121460259]
 layout_mode = 1
-anchors_preset = -1
-anchor_top = 0.768
-anchor_right = 0.95400006
-anchor_bottom = 0.873
-offset_top = -0.21600342
-offset_right = 0.15997314
-offset_bottom = 0.023986816
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="AbInputStaticListenToValueChanged" type="Node" parent="CanvasLayer/GOMI Main/HBoxContainer Analog" unique_id=2021518739]
+[node name="TextEdit" type="TextEdit" parent="CanvasLayer/GOMI Main/PanelMainBoard/GOMI TAB/Git/ScrollContainer" unique_id=2065187143]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+metadata/_edit_use_anchors_ = true
+
+[node name="InputTextFileFromGodotProject" type="Node" parent="CanvasLayer/GOMI Main/PanelMainBoard/GOMI TAB/Git/ScrollContainer/TextEdit" unique_id=647954495 node_paths=PackedStringArray("_text_edit_to_affect")]
+script = ExtResource("116_pu0sh")
+_file_path = "res://gitmodules.txt"
+_text_edit_to_affect = [NodePath("..")]
+metadata/_custom_type_script = "uid://cheu56oxb55ta"
+
+[node name="HBoxContainer Analog" type="Panel" parent="CanvasLayer/GOMI Main/PanelMainBoard" unique_id=1822031107]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.6253196
+anchor_right = 0.9961291
+anchor_bottom = 0.73688006
+offset_top = -0.21600342
+offset_right = 0.15997314
+offset_bottom = 3.7489624
+grow_horizontal = 2
+grow_vertical = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="AbInputStaticListenToValueChanged" type="Node" parent="CanvasLayer/GOMI Main/PanelMainBoard/HBoxContainer Analog" unique_id=2021518739]
 script = ExtResource("99_7qd0e")
 _analog_format_string = "%s %.1f"
 _boolean_format_string = "%s|%s"
@@ -2225,226 +2305,377 @@ _device_event_format_string = "%s %s"
 _ignore_log_if_contains = Array[String](["mouse|left"])
 metadata/_custom_type_script = "uid://br38ejpq7y2m6"
 
-[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/GOMI Main/HBoxContainer Analog" unique_id=601546953]
-layout_mode = 2
-size_flags_vertical = 3
-
-[node name="LineEdit AB Bool" type="LineEdit" parent="CanvasLayer/GOMI Main/HBoxContainer Analog/HBoxContainer" unique_id=190852102]
-layout_mode = 2
+[node name="Button Clipboard" type="Button" parent="CanvasLayer/GOMI Main/PanelMainBoard/HBoxContainer Analog" unique_id=1032761219]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.9388489
+anchor_right = 1.0071943
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 size_flags_horizontal = 3
-theme_override_font_sizes/font_size = 12
+theme_override_font_sizes/font_size = 20
+text = "📋"
+metadata/_edit_use_anchors_ = true
 
-[node name="LineEdit AB Trigger" type="LineEdit" parent="CanvasLayer/GOMI Main/HBoxContainer Analog/HBoxContainer" unique_id=460222288]
-layout_mode = 2
-size_flags_horizontal = 3
-theme_override_font_sizes/font_size = 12
-
-[node name="HBoxContainer2" type="HBoxContainer" parent="CanvasLayer/GOMI Main/HBoxContainer Analog" unique_id=1674172106]
-layout_mode = 2
-size_flags_vertical = 3
-
-[node name="LineEdit AB Analog" type="LineEdit" parent="CanvasLayer/GOMI Main/HBoxContainer Analog/HBoxContainer2" unique_id=97479471]
-layout_mode = 2
-size_flags_horizontal = 3
-theme_override_font_sizes/font_size = 12
-
-[node name="Button Clipboard" type="Button" parent="CanvasLayer/GOMI Main/HBoxContainer Analog/HBoxContainer2" unique_id=1032761219]
-layout_mode = 2
-size_flags_horizontal = 3
-theme_override_font_sizes/font_size = 12
-text = "Clipboard"
-
-[node name="AbUiInputLineEditToClipboard" type="Node" parent="CanvasLayer/GOMI Main/HBoxContainer Analog/HBoxContainer2/Button Clipboard" unique_id=843131497 node_paths=PackedStringArray("_line_edit_group", "_button_to_trigger")]
+[node name="AbUiInputLineEditToClipboard" type="Node" parent="CanvasLayer/GOMI Main/PanelMainBoard/HBoxContainer Analog/Button Clipboard" unique_id=843131497 node_paths=PackedStringArray("_line_edit_group", "_button_to_trigger")]
 script = ExtResource("104_ca1ic")
-_line_edit_group = [NodePath("../../../HBoxContainer/LineEdit AB Bool"), NodePath("../../LineEdit AB Analog"), NodePath("../../../HBoxContainer/LineEdit AB Trigger")]
+_line_edit_group = [NodePath("../../HBoxContainer/LineEdit AB Bool"), NodePath("../../HBoxContainer/LineEdit AB Analog"), NodePath("../../HBoxContainer/LineEdit AB Trigger")]
 _button_to_trigger = [NodePath("..")]
 metadata/_custom_type_script = "uid://dekphoet0if33"
 
-[node name="HBoxContainer Log" type="HBoxContainer" parent="CanvasLayer/GOMI Main" unique_id=1693475444]
+[node name="HBoxContainer" type="VBoxContainer" parent="CanvasLayer/GOMI Main/PanelMainBoard/HBoxContainer Analog" unique_id=74720768]
 layout_mode = 1
 anchors_preset = -1
-anchor_top = 0.94200003
-anchor_right = 0.95400006
+anchor_right = 0.93600005
 anchor_bottom = 1.0
-offset_left = 9.0
-offset_top = -0.040039063
-offset_right = 0.15997314
-offset_bottom = 1.263977
+offset_top = 3.7600098
+offset_right = -1.4160156
+offset_bottom = -4.0
+size_flags_vertical = 3
+
+[node name="LineEdit AB Bool" type="LineEdit" parent="CanvasLayer/GOMI Main/PanelMainBoard/HBoxContainer Analog/HBoxContainer" unique_id=190852102]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_font_sizes/font_size = 12
+
+[node name="LineEdit AB Trigger" type="LineEdit" parent="CanvasLayer/GOMI Main/PanelMainBoard/HBoxContainer Analog/HBoxContainer" unique_id=460222288]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_font_sizes/font_size = 12
+
+[node name="LineEdit AB Analog" type="LineEdit" parent="CanvasLayer/GOMI Main/PanelMainBoard/HBoxContainer Analog/HBoxContainer" unique_id=97479471]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_font_sizes/font_size = 12
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="CanvasLayer/GOMI Main/PanelMainBoard/HBoxContainer Analog" unique_id=1674172106]
+layout_mode = 0
+offset_top = 116.0
+offset_right = 532.0
+offset_bottom = 116.0
+size_flags_vertical = 3
+
+[node name="HBoxContainer Log" type="VBoxContainer" parent="CanvasLayer/GOMI Main/PanelMainBoard" unique_id=1659339279]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 920.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Label CMD" type="Label" parent="CanvasLayer/GOMI Main/HBoxContainer Log" unique_id=149140001]
+[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/GOMI Main/PanelMainBoard/HBoxContainer Log" unique_id=198826309]
+layout_mode = 2
+
+[node name="Label CMD Title" type="Label" parent="CanvasLayer/GOMI Main/PanelMainBoard/HBoxContainer Log/HBoxContainer" unique_id=1337186759]
+layout_mode = 2
+text = "CMD: "
+
+[node name="Label CMD" type="Label" parent="CanvasLayer/GOMI Main/PanelMainBoard/HBoxContainer Log/HBoxContainer" unique_id=149140001]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 1
-text = "-"
+text = "Last Command Line"
 
-[node name="Label SC" type="Label" parent="CanvasLayer/GOMI Main/HBoxContainer Log" unique_id=1149779098]
+[node name="HBoxContainer2" type="HBoxContainer" parent="CanvasLayer/GOMI Main/PanelMainBoard/HBoxContainer Log" unique_id=760224068]
+layout_mode = 2
+
+[node name="Label SC Title" type="Label" parent="CanvasLayer/GOMI Main/PanelMainBoard/HBoxContainer Log/HBoxContainer2" unique_id=1528622298]
+layout_mode = 2
+text = "SC:"
+
+[node name="Label SC" type="Label" parent="CanvasLayer/GOMI Main/PanelMainBoard/HBoxContainer Log/HBoxContainer2" unique_id=1149779098]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 1
-text = "-"
+text = "Last Shortcut"
 
-[node name="Label SC2" type="Label" parent="CanvasLayer/GOMI Main/HBoxContainer Log" unique_id=2133698953]
+[node name="HBoxContainer3" type="HBoxContainer" parent="CanvasLayer/GOMI Main/PanelMainBoard/HBoxContainer Log" unique_id=861960692]
 layout_mode = 2
-size_flags_horizontal = 3
-size_flags_vertical = 1
-text = "-"
 
-[node name="Label2" type="Label" parent="CanvasLayer/GOMI Main/HBoxContainer Log" unique_id=501447162]
+[node name="Label Bool  Title" type="Label" parent="CanvasLayer/GOMI Main/PanelMainBoard/HBoxContainer Log/HBoxContainer3" unique_id=1673411437]
 layout_mode = 2
-text = "-kv"
+text = "Bool:"
 
-[node name="BoolRegUIDisplayBooleanNameFormat" type="Node" parent="CanvasLayer/GOMI Main/HBoxContainer Log/Label2" unique_id=1386096642]
+[node name="Label Boolean Changed" type="Label" parent="CanvasLayer/GOMI Main/PanelMainBoard/HBoxContainer Log/HBoxContainer3" unique_id=501447162]
+layout_mode = 2
+text = "Last Boolean Changed"
+
+[node name="BoolRegUIDisplayBooleanNameFormat" type="Node" parent="CanvasLayer/GOMI Main/PanelMainBoard/HBoxContainer Log/HBoxContainer3/Label Boolean Changed" unique_id=1386096642]
 script = ExtResource("67_16vpb")
 metadata/_custom_type_script = "uid://caagrcerb7wxk"
 
-[node name="BoolRegListenToBooleanChangedInRegisterStaticSingleton" type="Node" parent="CanvasLayer/GOMI Main/HBoxContainer Log/Label2/BoolRegUIDisplayBooleanNameFormat" unique_id=1335391503]
+[node name="BoolRegListenToBooleanChangedInRegisterStaticSingleton" type="Node" parent="CanvasLayer/GOMI Main/PanelMainBoard/HBoxContainer Log/HBoxContainer3/Label Boolean Changed/BoolRegUIDisplayBooleanNameFormat" unique_id=1335391503]
 script = ExtResource("4_16vpb")
 metadata/_custom_type_script = "uid://cvcpojr1clo5"
 
-[node name="ButtonResOsDirectory" parent="CanvasLayer/GOMI Main/HBoxContainer Log" unique_id=64828556 instance=ExtResource("45_has3g")]
-layout_mode = 2
-
-[node name="ButtonUserOsDirectory" parent="CanvasLayer/GOMI Main/HBoxContainer Log" unique_id=509732401 instance=ExtResource("46_2018l")]
-layout_mode = 2
-
-[node name="Button Reload Scene" type="Button" parent="CanvasLayer/GOMI Main/HBoxContainer Log" unique_id=2092020435]
-layout_mode = 2
-text = "Reload"
-
-[node name="PushToSingletonGOMI" type="Node" parent="CanvasLayer/GOMI Main/HBoxContainer Log/Button Reload Scene" unique_id=397088351]
-script = ExtResource("75_lw2yh")
-metadata/_custom_type_script = "uid://c7g1isaokapf8"
-
-[node name="HBoxContainer Quick input" type="HBoxContainer" parent="CanvasLayer/GOMI Main" unique_id=385361233]
+[node name="HBoxContainer Quick input" type="VBoxContainer" parent="CanvasLayer/GOMI Main/PanelMainBoard" unique_id=1079221191]
 layout_mode = 1
 anchors_preset = -1
-anchor_top = 0.87900007
-anchor_right = 0.952
-anchor_bottom = 0.9453125
-offset_left = 9.0
-offset_top = -0.048034668
-offset_right = 0.079956055
-offset_bottom = -3.0
+anchor_left = 0.013
+anchor_top = 0.74700004
+anchor_right = 1.0
+anchor_bottom = 0.86300004
+offset_left = -0.2540002
+offset_top = -0.04901123
+offset_right = -3.0
+offset_bottom = 0.17895508
 grow_horizontal = 2
 grow_vertical = 2
+metadata/_edit_use_anchors_ = true
 
-[node name="LineEdit" type="LineEdit" parent="CanvasLayer/GOMI Main/HBoxContainer Quick input" unique_id=220486799]
+[node name="Panel Command" type="Panel" parent="CanvasLayer/GOMI Main/PanelMainBoard/HBoxContainer Quick input" unique_id=1247377332]
 layout_mode = 2
+size_flags_vertical = 3
+
+[node name="LineEdit" type="LineEdit" parent="CanvasLayer/GOMI Main/PanelMainBoard/HBoxContainer Quick input/Panel Command" unique_id=220486799]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.8777372
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 size_flags_horizontal = 3
+metadata/_edit_use_anchors_ = true
 
-[node name="Button" type="Button" parent="CanvasLayer/GOMI Main/HBoxContainer Quick input" unique_id=440509100]
-layout_mode = 2
+[node name="Button CMD" type="Button" parent="CanvasLayer/GOMI Main/PanelMainBoard/HBoxContainer Quick input/Panel Command" unique_id=440509100]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.8868613
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 text = "  CMD  "
+metadata/_edit_use_anchors_ = true
 
-[node name="InputUiLineEditWithSubmitButton" type="Node" parent="CanvasLayer/GOMI Main/HBoxContainer Quick input/Button" unique_id=801622490 node_paths=PackedStringArray("line_edit", "submit_button")]
+[node name="InputUiLineEditWithSubmitButton" type="Node" parent="CanvasLayer/GOMI Main/PanelMainBoard/HBoxContainer Quick input/Panel Command/Button CMD" unique_id=801622490 node_paths=PackedStringArray("line_edit", "submit_button")]
 script = ExtResource("63_hvd5f")
 line_edit = NodePath("../../LineEdit")
 submit_button = NodePath("..")
 metadata/_custom_type_script = "uid://q8u7ky0mku8v"
 
-[node name="SCmdPushCommandLineToStaticSingleton" type="Node" parent="CanvasLayer/GOMI Main/HBoxContainer Quick input/Button/InputUiLineEditWithSubmitButton" unique_id=886406358]
+[node name="SCmdPushCommandLineToStaticSingleton" type="Node" parent="CanvasLayer/GOMI Main/PanelMainBoard/HBoxContainer Quick input/Panel Command/Button CMD/InputUiLineEditWithSubmitButton" unique_id=886406358]
 script = ExtResource("11_rgn43")
 metadata/_custom_type_script = "uid://cusc6quwej757"
 
-[node name="Label" type="Label" parent="CanvasLayer/GOMI Main/HBoxContainer Quick input" unique_id=580024009]
+[node name="Panel Shortcut" type="Panel" parent="CanvasLayer/GOMI Main/PanelMainBoard/HBoxContainer Quick input" unique_id=616891859]
 layout_mode = 2
-text = "  -  "
+size_flags_vertical = 3
 
-[node name="LineEdit2" type="LineEdit" parent="CanvasLayer/GOMI Main/HBoxContainer Quick input" unique_id=1050439190]
-layout_mode = 2
+[node name="LineEdit SC" type="LineEdit" parent="CanvasLayer/GOMI Main/PanelMainBoard/HBoxContainer Quick input/Panel Shortcut" unique_id=1050439190]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.92335767
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 size_flags_horizontal = 3
+metadata/_edit_use_anchors_ = true
 
-[node name="Button2" type="Button" parent="CanvasLayer/GOMI Main/HBoxContainer Quick input" unique_id=1304355224]
-layout_mode = 2
-text = "  Shortcut  "
+[node name="Button SC" type="Button" parent="CanvasLayer/GOMI Main/PanelMainBoard/HBoxContainer Quick input/Panel Shortcut" unique_id=1304355224]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.93430656
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "SC"
+metadata/_edit_use_anchors_ = true
 
-[node name="InputUiLineEditWithSubmitButton" type="Node" parent="CanvasLayer/GOMI Main/HBoxContainer Quick input/Button2" unique_id=1130516858 node_paths=PackedStringArray("line_edit", "submit_button")]
+[node name="InputUiLineEditWithSubmitButton" type="Node" parent="CanvasLayer/GOMI Main/PanelMainBoard/HBoxContainer Quick input/Panel Shortcut/Button SC" unique_id=1130516858 node_paths=PackedStringArray("line_edit", "submit_button")]
 script = ExtResource("63_hvd5f")
-line_edit = NodePath("../../LineEdit2")
+line_edit = NodePath("../../LineEdit SC")
 submit_button = NodePath("..")
 metadata/_custom_type_script = "uid://q8u7ky0mku8v"
 
-[node name="SCmdPushShortcutToStaticSingleton" type="Node" parent="CanvasLayer/GOMI Main/HBoxContainer Quick input/Button2/InputUiLineEditWithSubmitButton" unique_id=1161933184]
+[node name="SCmdPushShortcutToStaticSingleton" type="Node" parent="CanvasLayer/GOMI Main/PanelMainBoard/HBoxContainer Quick input/Panel Shortcut/Button SC/InputUiLineEditWithSubmitButton" unique_id=1161933184]
 script = ExtResource("4_dewju")
 metadata/_custom_type_script = "uid://briys5vafrqt"
 
-[node name="LineEdit int cmd" type="LineEdit" parent="CanvasLayer/GOMI Main/HBoxContainer Quick input" unique_id=1994888773]
+[node name="Panel Trigger Shortcut" type="Panel" parent="CanvasLayer/GOMI Main/PanelMainBoard/HBoxContainer Quick input" unique_id=565169712]
 layout_mode = 2
-placeholder_text = "i⌘"
+size_flags_vertical = 3
 
-[node name="InputUiLineEditWithSubmitButton" type="Node" parent="CanvasLayer/GOMI Main/HBoxContainer Quick input/LineEdit int cmd" unique_id=542240227 node_paths=PackedStringArray("line_edit")]
-script = ExtResource("63_hvd5f")
-line_edit = NodePath("..")
-_prefix = "sc:i⌘"
-metadata/_custom_type_script = "uid://q8u7ky0mku8v"
+[node name="Panel Last Index Value Send TBIO" type="Panel" parent="CanvasLayer/GOMI Main/PanelMainBoard/HBoxContainer Quick input/Panel Trigger Shortcut" unique_id=1610948590]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.469
+anchor_bottom = 1.0
+offset_right = -1.0119934
+offset_bottom = 1.0
 
-[node name="Push GOMI" type="Node" parent="CanvasLayer/GOMI Main/HBoxContainer Quick input/LineEdit int cmd/InputUiLineEditWithSubmitButton" unique_id=76065175]
-script = ExtResource("75_lw2yh")
-metadata/_custom_type_script = "uid://c7g1isaokapf8"
+[node name="Label Send Integer" type="Label" parent="CanvasLayer/GOMI Main/PanelMainBoard/HBoxContainer Quick input/Panel Trigger Shortcut/Panel Last Index Value Send TBIO" unique_id=1851890924]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "0|1000"
+horizontal_alignment = 1
+vertical_alignment = 1
 
-[node name="LineEdit char cmd" type="LineEdit" parent="CanvasLayer/GOMI Main/HBoxContainer Quick input" unique_id=774614655]
+[node name="InputParseIndexValueIntegerToString2" type="Node" parent="CanvasLayer/GOMI Main/PanelMainBoard/HBoxContainer Quick input/Panel Trigger Shortcut/Panel Last Index Value Send TBIO/Label Send Integer" unique_id=1353102037]
+script = ExtResource("118_vw6xl")
+metadata/_custom_type_script = "uid://b5dytkpgo6xa0"
+
+[node name="Panel3" type="HBoxContainer" parent="CanvasLayer/GOMI Main/PanelMainBoard/HBoxContainer Quick input/Panel Trigger Shortcut" unique_id=1511627373]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.469
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -0.011993408
+offset_top = 2.0
+offset_bottom = -3.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_vertical = 3
+
+[node name="LineEdit macro cmd" type="LineEdit" parent="CanvasLayer/GOMI Main/PanelMainBoard/HBoxContainer Quick input/Panel Trigger Shortcut/Panel3" unique_id=950742230]
+custom_minimum_size = Vector2(20, 0)
 layout_mode = 2
-placeholder_text = "c⌘"
-
-[node name="InputUiLineEditWithSubmitButton" type="Node" parent="CanvasLayer/GOMI Main/HBoxContainer Quick input/LineEdit char cmd" unique_id=1435145683 node_paths=PackedStringArray("line_edit")]
-script = ExtResource("63_hvd5f")
-line_edit = NodePath("..")
-_prefix = "sc:c⌘"
-metadata/_custom_type_script = "uid://q8u7ky0mku8v"
-
-[node name="Push GOMI" type="Node" parent="CanvasLayer/GOMI Main/HBoxContainer Quick input/LineEdit char cmd/InputUiLineEditWithSubmitButton" unique_id=223620531]
-script = ExtResource("75_lw2yh")
-metadata/_custom_type_script = "uid://c7g1isaokapf8"
-
-[node name="LineEdit unicode cmd" type="LineEdit" parent="CanvasLayer/GOMI Main/HBoxContainer Quick input" unique_id=481376402]
-layout_mode = 2
-placeholder_text = "u⌘"
-
-[node name="InputUiLineEditWithSubmitButton" type="Node" parent="CanvasLayer/GOMI Main/HBoxContainer Quick input/LineEdit unicode cmd" unique_id=578992410 node_paths=PackedStringArray("line_edit")]
-script = ExtResource("63_hvd5f")
-line_edit = NodePath("..")
-_prefix = "sc:u⌘"
-metadata/_custom_type_script = "uid://q8u7ky0mku8v"
-
-[node name="Push GOMI" type="Node" parent="CanvasLayer/GOMI Main/HBoxContainer Quick input/LineEdit unicode cmd/InputUiLineEditWithSubmitButton" unique_id=1402059336]
-script = ExtResource("75_lw2yh")
-metadata/_custom_type_script = "uid://c7g1isaokapf8"
-
-[node name="LineEdit macro cmd" type="LineEdit" parent="CanvasLayer/GOMI Main/HBoxContainer Quick input" unique_id=950742230]
-layout_mode = 2
+size_flags_horizontal = 3
 placeholder_text = "⌘"
 
-[node name="InputUiLineEditWithSubmitButton" type="Node" parent="CanvasLayer/GOMI Main/HBoxContainer Quick input/LineEdit macro cmd" unique_id=1898426508 node_paths=PackedStringArray("line_edit")]
+[node name="InputUiLineEditWithSubmitButton" type="Node" parent="CanvasLayer/GOMI Main/PanelMainBoard/HBoxContainer Quick input/Panel Trigger Shortcut/Panel3/LineEdit macro cmd" unique_id=1898426508 node_paths=PackedStringArray("line_edit")]
 script = ExtResource("63_hvd5f")
 line_edit = NodePath("..")
 _prefix = "sc:⌘"
 metadata/_custom_type_script = "uid://q8u7ky0mku8v"
 
-[node name="Push GOMI" type="Node" parent="CanvasLayer/GOMI Main/HBoxContainer Quick input/LineEdit macro cmd/InputUiLineEditWithSubmitButton" unique_id=1098586043]
+[node name="Push GOMI" type="Node" parent="CanvasLayer/GOMI Main/PanelMainBoard/HBoxContainer Quick input/Panel Trigger Shortcut/Panel3/LineEdit macro cmd/InputUiLineEditWithSubmitButton" unique_id=1098586043]
 script = ExtResource("75_lw2yh")
 metadata/_custom_type_script = "uid://c7g1isaokapf8"
 
-[node name="Button3" type="Button" parent="CanvasLayer/GOMI Main/HBoxContainer Quick input" unique_id=1349705622]
+[node name="LineEdit int cmd" type="LineEdit" parent="CanvasLayer/GOMI Main/PanelMainBoard/HBoxContainer Quick input/Panel Trigger Shortcut/Panel3" unique_id=1994888773]
 layout_mode = 2
-text = "X"
+size_flags_horizontal = 3
+placeholder_text = "i⌘"
 
-[node name="PanelContainer" type="PanelContainer" parent="CanvasLayer/GOMI Main" unique_id=993134653]
+[node name="InputUiLineEditWithSubmitButton" type="Node" parent="CanvasLayer/GOMI Main/PanelMainBoard/HBoxContainer Quick input/Panel Trigger Shortcut/Panel3/LineEdit int cmd" unique_id=542240227 node_paths=PackedStringArray("line_edit")]
+script = ExtResource("63_hvd5f")
+line_edit = NodePath("..")
+_prefix = "sc:i⌘"
+metadata/_custom_type_script = "uid://q8u7ky0mku8v"
+
+[node name="Push GOMI" type="Node" parent="CanvasLayer/GOMI Main/PanelMainBoard/HBoxContainer Quick input/Panel Trigger Shortcut/Panel3/LineEdit int cmd/InputUiLineEditWithSubmitButton" unique_id=76065175]
+script = ExtResource("75_lw2yh")
+metadata/_custom_type_script = "uid://c7g1isaokapf8"
+
+[node name="LineEdit char cmd" type="LineEdit" parent="CanvasLayer/GOMI Main/PanelMainBoard/HBoxContainer Quick input/Panel Trigger Shortcut/Panel3" unique_id=774614655]
+layout_mode = 2
+size_flags_horizontal = 3
+placeholder_text = "c⌘"
+
+[node name="InputUiLineEditWithSubmitButton" type="Node" parent="CanvasLayer/GOMI Main/PanelMainBoard/HBoxContainer Quick input/Panel Trigger Shortcut/Panel3/LineEdit char cmd" unique_id=1435145683 node_paths=PackedStringArray("line_edit")]
+script = ExtResource("63_hvd5f")
+line_edit = NodePath("..")
+_prefix = "sc:c⌘"
+metadata/_custom_type_script = "uid://q8u7ky0mku8v"
+
+[node name="Push GOMI" type="Node" parent="CanvasLayer/GOMI Main/PanelMainBoard/HBoxContainer Quick input/Panel Trigger Shortcut/Panel3/LineEdit char cmd/InputUiLineEditWithSubmitButton" unique_id=223620531]
+script = ExtResource("75_lw2yh")
+metadata/_custom_type_script = "uid://c7g1isaokapf8"
+
+[node name="LineEdit unicode cmd" type="LineEdit" parent="CanvasLayer/GOMI Main/PanelMainBoard/HBoxContainer Quick input/Panel Trigger Shortcut/Panel3" unique_id=481376402]
+layout_mode = 2
+size_flags_horizontal = 3
+placeholder_text = "u⌘"
+
+[node name="InputUiLineEditWithSubmitButton" type="Node" parent="CanvasLayer/GOMI Main/PanelMainBoard/HBoxContainer Quick input/Panel Trigger Shortcut/Panel3/LineEdit unicode cmd" unique_id=578992410 node_paths=PackedStringArray("line_edit")]
+script = ExtResource("63_hvd5f")
+line_edit = NodePath("..")
+_prefix = "sc:u⌘"
+metadata/_custom_type_script = "uid://q8u7ky0mku8v"
+
+[node name="Push GOMI" type="Node" parent="CanvasLayer/GOMI Main/PanelMainBoard/HBoxContainer Quick input/Panel Trigger Shortcut/Panel3/LineEdit unicode cmd/InputUiLineEditWithSubmitButton" unique_id=1402059336]
+script = ExtResource("75_lw2yh")
+metadata/_custom_type_script = "uid://c7g1isaokapf8"
+
+[node name="Panel File And Doc" type="Panel" parent="CanvasLayer/GOMI Main/PanelMainBoard" unique_id=1476487436]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.95900005
-anchor_top = 0.010000001
-anchor_right = 0.99500006
-anchor_bottom = 0.98200005
-offset_left = 0.35992432
-offset_top = -0.12000036
-offset_right = -0.20007324
-offset_bottom = 0.2159729
+anchor_top = 0.95501405
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="VBoxContainer" type="HBoxContainer" parent="CanvasLayer/GOMI Main/PanelMainBoard/Panel File And Doc" unique_id=906620606]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Demo2dUiButtonClipboard" parent="CanvasLayer/GOMI Main/PanelContainer" unique_id=667031308 instance=ExtResource("85_eclgv")]
+[node name="ButtonResOsDirectory" parent="CanvasLayer/GOMI Main/PanelMainBoard/Panel File And Doc/VBoxContainer" unique_id=64828556 instance=ExtResource("45_has3g")]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="ButtonUserOsDirectory" parent="CanvasLayer/GOMI Main/PanelMainBoard/Panel File And Doc/VBoxContainer" unique_id=509732401 instance=ExtResource("46_2018l")]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="ButtonDoc Guide" type="Button" parent="CanvasLayer/GOMI Main/PanelMainBoard/Panel File And Doc/VBoxContainer" unique_id=264888405]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "📗 Guide"
+
+[node name="InputUiOpenUrl" type="Node" parent="CanvasLayer/GOMI Main/PanelMainBoard/Panel File And Doc/VBoxContainer/ButtonDoc Guide" unique_id=2146231348]
+script = ExtResource("112_m7vwt")
+_url_to_open = "https://github.com/EloiStree/GOMI_DOC/tree/master/guide"
+metadata/_custom_type_script = "uid://bcxq5monpm1ab"
+
+[node name="ButtonDoc File" type="Button" parent="CanvasLayer/GOMI Main/PanelMainBoard/Panel File And Doc/VBoxContainer" unique_id=422333936]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "📕 File Extension "
+
+[node name="InputUiOpenUrl" type="Node" parent="CanvasLayer/GOMI Main/PanelMainBoard/Panel File And Doc/VBoxContainer/ButtonDoc File" unique_id=377234587]
+script = ExtResource("112_m7vwt")
+_url_to_open = "https://github.com/EloiStree/GOMI_DOC/tree/master/file_extension"
+metadata/_custom_type_script = "uid://bcxq5monpm1ab"
+
+[node name="ButtonDoc Command" type="Button" parent="CanvasLayer/GOMI Main/PanelMainBoard/Panel File And Doc/VBoxContainer" unique_id=2048716479]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "📙 Command"
+
+[node name="InputUiOpenUrl" type="Node" parent="CanvasLayer/GOMI Main/PanelMainBoard/Panel File And Doc/VBoxContainer/ButtonDoc Command" unique_id=277423960]
+script = ExtResource("112_m7vwt")
+_url_to_open = "https://github.com/EloiStree/GOMI_DOC/tree/master/interpreter"
+metadata/_custom_type_script = "uid://bcxq5monpm1ab"
+
+[node name="PanelSideUnicode" type="Panel" parent="CanvasLayer/GOMI Main" unique_id=1367421828]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.93333334
+anchor_top = 0.033739455
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="PanelContainer" type="PanelContainer" parent="CanvasLayer/GOMI Main/PanelSideUnicode" unique_id=993134653]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 2.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Demo2dUiButtonClipboard" parent="CanvasLayer/GOMI Main/PanelSideUnicode/PanelContainer" unique_id=667031308 instance=ExtResource("85_eclgv")]
 layout_mode = 2
 
 [connection signal="on_boolean_set_requested" from="GOMI/Static Singleton GOMI" to="GOMI/Code/Boolean Register" method="set_boolean_value"]
@@ -2484,7 +2715,7 @@ layout_mode = 2
 [connection signal="on_action_found" from="GOMI/DATABASE OF ACTIONS/AB INPUT TO COMMAND/Input Analog Range DB/AbInputActionsRangeInOut" to="GOMI/DATABASE OF ACTIONS/AB INPUT TO COMMAND/Input Analog Range DB/AbInputActionsRangeInOut/Push GOMI" method="push_in_text_to_process"]
 [connection signal="on_index_integer_changed_with_anti_spam" from="GOMI/DATABASE OF ACTIONS/AB INPUT TO FROMAT S2W/AbInputAnalogToFormatS2W" to="GOMI/DATABASE OF ACTIONS/AB INPUT TO FROMAT S2W/AbInputAnalogToFormatS2W/PushToSingletonGOMI" method="push_out_bytes_ii_to_broadcast"]
 [connection signal="on_fusion_complete" from="GOMI/FILE/LoadFileFromFolder" to="GOMI/FILE/LoadFileFromFolder/Filter Text As Files" method="clear_dictionary_and_filter_files_from_text"]
-[connection signal="on_fusion_complete" from="GOMI/FILE/LoadFileFromFolder" to="CanvasLayer/GOMI Main/GOMI TAB/Files/TabContainer/Merge Files/ScrollContainer/CodeEdit Merge Files" method="set_text"]
+[connection signal="on_fusion_complete" from="GOMI/FILE/LoadFileFromFolder" to="CanvasLayer/GOMI Main/PanelMainBoard/GOMI TAB/Files/TabContainer/Merge Files/ScrollContainer/CodeEdit Merge Files" method="set_text"]
 [connection signal="on_file_fused_by_extension_name" from="GOMI/FILE/LoadFileFromFolder/Filter Text As Files" to="GOMI/FILE/LoadFileFromFolder/Filter Text As Files/FileConfigRedirectionByNameRelayBroadcaster" method="push_file_content_by_extension_name"]
 [connection signal="on_content_found_to_redirect" from="GOMI/FILE/LoadFileFromFolder/Filter Text As Files/FileConfigRedirectionByNameRelayBroadcaster/__obsolete/_mouse_to_command" to="GOMI/FILE/LoadFileFromFolder/Filter Text As Files/FileConfigRedirectionByNameRelayBroadcaster/__obsolete/_mouse_to_command/Import Mouse" method="push_in_text_to_parse"]
 [connection signal="on_left_button_down_command" from="GOMI/FILE/LoadFileFromFolder/Filter Text As Files/FileConfigRedirectionByNameRelayBroadcaster/__obsolete/_mouse_to_command/Import Mouse" to="GOMI/DATABASE OF ACTIONS/MOUSE EVENT/Button Left Macro" method="append_action_for_true_value"]
@@ -2558,6 +2789,8 @@ layout_mode = 2
 [connection signal="on_received_from_client_byte_anonym" from="GOMI/Code/Gate In/GameInfo/WebSocket for Game Telemetry/TbioWsDefaultServer" to="GOMI/Code/Gate In/GameInfo/WebSocket for Game Telemetry/TbioWsDefaultServer/Push Game Telemetry" method="push_in_bytes_game_telemetry"]
 [connection signal="on_received_from_client_text_anonym" from="GOMI/Code/Gate In/GameInfo/WebSocket for Game Telemetry/TbioWsDefaultServer" to="GOMI/Code/Gate In/GameInfo/WebSocket for Game Telemetry/TbioWsDefaultServer/Push Game Telemetry" method="push_in_text_game_telemetry"]
 [connection signal="on_boolean_value_changed" from="GOMI/Code/BOOL REGISTER/Listen To Register Boolean Changed" to="GOMI/DATABASE OF ACTIONS/BOOL TO MACRO/InputTextDictionaryTrueFalseValueToActions" method="emit_if_equals_to_text_in_true_or_false_dictionary"]
+[connection signal="on_sent_bytes" from="GOMI/Code/TBIO Out/Udp Alias Pusher" to="CanvasLayer/GOMI Main/PanelMainBoard/HBoxContainer Quick input/Panel Trigger Shortcut/Panel Last Index Value Send TBIO/Label Send Integer/InputParseIndexValueIntegerToString2" method="push_in_bytes_if_iid_size"]
+[connection signal="on_sent_bytes" from="GOMI/Code/TBIO Out/Udp Anonymous Pusher" to="CanvasLayer/GOMI Main/PanelMainBoard/HBoxContainer Quick input/Panel Trigger Shortcut/Panel Last Index Value Send TBIO/Label Send Integer/InputParseIndexValueIntegerToString2" method="push_in_bytes_if_iid_size"]
 [connection signal="on_analog_value_changed" from="GOMI/Code/Input/AB INPUT Listener" to="GOMI/DATABASE OF ACTIONS/AB INPUT TO COMMAND/Input Analog Range DB/AbInputActionsRangeInOut" method="trigger_action_from_input_name_with_previous_and_current_value"]
 [connection signal="on_boolean_value_changed" from="GOMI/Code/Input/AB INPUT Listener" to="GOMI/DATABASE OF ACTIONS/AB INPUT TO COMMAND/Input Boolean DB/AbInputActionsFromBoolean" method="trigger_action_from_input_name_and_value"]
 [connection signal="on_device_event_received" from="GOMI/Code/Input/AB INPUT Listener" to="GOMI/DATABASE OF ACTIONS/AB INPUT TO COMMAND/Device Event DB/AbInputActionsFromDeviceEvent" method="trigger_action"]
@@ -2589,7 +2822,7 @@ layout_mode = 2
 [connection signal="on_one_char_format_found" from="GOMI/Code/Input/ABSTRACT/TWO CHAR MACRO/InputListenToTwoChar255Format" to="GOMI/DATABASE OF ACTIONS/AA TO MACRO/One Two Byte To Text Action" method="trigger_action_with_one_char_as_byte"]
 [connection signal="on_two_char_format_found" from="GOMI/Code/Input/ABSTRACT/TWO CHAR MACRO/InputListenToTwoChar255Format" to="GOMI/DATABASE OF ACTIONS/AA TO MACRO/One Two Byte To Text Action" method="trigger_action_with_two_char"]
 [connection signal="on_string_to_relay_received" from="GOMI/Code/PROCESS_COMMAND_LINE" to="GOMI/Code/PROCESS_COMMAND_LINE/Actioneer of command line" method="push_in_command_line_text"]
-[connection signal="on_command_start_processing" from="GOMI/Code/PROCESS_COMMAND_LINE/Actioneer of command line" to="CanvasLayer/GOMI Main/HBoxContainer Log/Label CMD" method="set_text"]
+[connection signal="on_command_start_processing" from="GOMI/Code/PROCESS_COMMAND_LINE/Actioneer of command line" to="CanvasLayer/GOMI Main/PanelMainBoard/HBoxContainer Log/HBoxContainer/Label CMD" method="set_text"]
 [connection signal="on_call_macro_request" from="GOMI/Code/PROCESS_COMMAND_LINE/Actioneer of command line/Interpreter/To Call Macro" to="ToStore/Trigger Loaded GDScript From Name/Trigger GDScript From Name" method="emit_godot_script_resource_from_file_name"]
 [connection signal="on_call_macro_request" from="GOMI/Code/PROCESS_COMMAND_LINE/Actioneer of command line/Interpreter/To Call Macro" to="GOMI/DATABASE OF ACTIONS/MACRO TO COMMAND/InputTextDictionaryToActions" method="emit_if_text_equals_to_one_key"]
 [connection signal="on_set_boolean_to_value_from_name" from="GOMI/Code/PROCESS_COMMAND_LINE/Actioneer of command line/Interpreter/To Boolean Registerd" to="GOMI/Code/PROCESS_COMMAND_LINE/Actioneer of command line/Interpreter/To Boolean Registerd/Push To bool Register" method="set_boolean_value_in_static_singleton"]
@@ -2601,8 +2834,7 @@ layout_mode = 2
 [connection signal="on_parsed_text_emitted" from="GOMI/Code/PROCESS_SHORTCUT_LINE/Pre Actionner shortcut line/Duplicate Text inside Brackets" to="GOMI/Code/PROCESS_SHORTCUT_LINE/Pre Actionner shortcut line/Replace Shortcut with User Alias" method="push_in_to_replace_shortcut_word_from_alias"]
 [connection signal="on_parsed_text_with_replace_alias" from="GOMI/Code/PROCESS_SHORTCUT_LINE/Pre Actionner shortcut line/Replace Shortcut with User Alias" to="GOMI/Code/PROCESS_SHORTCUT_LINE/Pre Actionner shortcut line/Delay Shortcut Received" method="push_in_text_to_split_and_delay"]
 [connection signal="on_word_ready_to_be_interpreted" from="GOMI/Code/PROCESS_SHORTCUT_LINE/Pre Actionner shortcut line/Delay Shortcut Received" to="GOMI/Code/PROCESS_SHORTCUT_LINE/Auctioneer of shortcut line" method="push_in_shortcut_text"]
-[connection signal="on_last_text_received" from="GOMI/Code/PROCESS_SHORTCUT_LINE/Auctioneer of shortcut line" to="CanvasLayer/GOMI Main/HBoxContainer Log/Label SC" method="set_text"]
-[connection signal="on_last_word_processed" from="GOMI/Code/PROCESS_SHORTCUT_LINE/Auctioneer of shortcut line" to="CanvasLayer/GOMI Main/HBoxContainer Log/Label SC2" method="set_text"]
+[connection signal="on_last_text_received" from="GOMI/Code/PROCESS_SHORTCUT_LINE/Auctioneer of shortcut line" to="CanvasLayer/GOMI Main/PanelMainBoard/HBoxContainer Log/HBoxContainer2/Label SC" method="set_text"]
 [connection signal="on_integer_found" from="GOMI/Code/PROCESS_SHORTCUT_LINE/Auctioneer of shortcut line/Interpreters To Use/To Deal with Integer Action" to="GOMI/Code/TBIO Out/Udp Alias Pusher" method="send_integer_to_all"]
 [connection signal="on_integer_found" from="GOMI/Code/PROCESS_SHORTCUT_LINE/Auctioneer of shortcut line/Interpreters To Use/To Deal with Integer Action" to="GOMI/Code/TBIO Out/Udp Anonymous Pusher" method="push_integer_to_targets"]
 [connection signal="on_index_integer_found" from="GOMI/Code/PROCESS_SHORTCUT_LINE/Auctioneer of shortcut line/Interpreters To Use/To Deal With Index Integer Action" to="GOMI/Code/TBIO Out/Udp Alias Pusher" method="send_integer_index_to_all"]
@@ -2630,59 +2862,64 @@ layout_mode = 2
 [connection signal="on_call_unicode_macro_request" from="GOMI/Code/PROCESS_SHORTCUT_LINE/Auctioneer of shortcut line/Interpreters To Use/To Call Macros" to="GOMI/DATABASE OF ACTIONS/UNICODE TO MACRO/InputTextDictionaryToActions" method="emit_if_text_equals_to_one_key"]
 [connection signal="on_set_boolean_to_value_from_name" from="GOMI/Code/PROCESS_SHORTCUT_LINE/Auctioneer of shortcut line/Interpreters To Use/To Set Boolean in Register" to="GOMI/Code/PROCESS_SHORTCUT_LINE/Auctioneer of shortcut line/Interpreters To Use/To Set Boolean in Register/Push Boolean To Register" method="set_boolean_value_in_static_singleton"]
 [connection signal="on_toggle_boolean_from_name" from="GOMI/Code/PROCESS_SHORTCUT_LINE/Auctioneer of shortcut line/Interpreters To Use/To Set Boolean in Register" to="GOMI/Code/PROCESS_SHORTCUT_LINE/Auctioneer of shortcut line/Interpreters To Use/To Set Boolean in Register/Push Boolean To Register" method="toggle_boolean_value_in_static_singleton"]
-[connection signal="on_stop_gdscript_execution_by_name" from="CanvasLayer/GOMI Main/GOMI TAB/GDScript/TabContainer/Code Push/SceneCodeEditorPusherForGomi/GomiPusherCodeEditSubmitWithButton" to="CanvasLayer/GOMI Main/GOMI TAB/GDScript/TabContainer/Code Push/SceneCodeEditorPusherForGomi/GomiPusherCodeEditSubmitWithButton/PushToSingletonGOMI" method="push_in_remove_named_gdscript"]
-[connection signal="on_submit_gdscript_to_execute_in_background" from="CanvasLayer/GOMI Main/GOMI TAB/GDScript/TabContainer/Code Push/SceneCodeEditorPusherForGomi/GomiPusherCodeEditSubmitWithButton" to="CanvasLayer/GOMI Main/GOMI TAB/GDScript/TabContainer/Code Push/SceneCodeEditorPusherForGomi/GomiPusherCodeEditSubmitWithButton/PushToSingletonGOMI" method="push_in_execute_named_gdscript"]
-[connection signal="on_submit_gdscript_to_execute_once" from="CanvasLayer/GOMI Main/GOMI TAB/GDScript/TabContainer/Code Push/SceneCodeEditorPusherForGomi/GomiPusherCodeEditSubmitWithButton" to="CanvasLayer/GOMI Main/GOMI TAB/GDScript/TabContainer/Code Push/SceneCodeEditorPusherForGomi/GomiPusherCodeEditSubmitWithButton/PushToSingletonGOMI" method="push_in_execute_one_time_gdscript"]
-[connection signal="on_boolean_key_value_changed" from="CanvasLayer/GOMI Main/GOMI TAB/Bool/Demo2dVboxBooleanRegister/VBoxContainer/HBoxContainer/CheckButton/BoolRegLineEditToggleSubmit" to="CanvasLayer/GOMI Main/GOMI TAB/Bool/Demo2dVboxBooleanRegister/VBoxContainer/HBoxContainer/Push Bool" method="set_boolean_value_in_static_singleton"]
-[connection signal="on_boolean_key_down" from="CanvasLayer/GOMI Main/GOMI TAB/Bool/Demo2dVboxBooleanRegister/VBoxContainer/HBoxContainer/Button Toggle/BoolRegLineEditButtonSubmit" to="CanvasLayer/GOMI Main/GOMI TAB/Bool/Demo2dVboxBooleanRegister/VBoxContainer/HBoxContainer/Push Bool" method="toggle_boolean_value_in_static_singleton"]
-[connection signal="button_down" from="CanvasLayer/GOMI Main/GOMI TAB/S2W/Button" to="CanvasLayer/GOMI Main/GOMI TAB/S2W/Button/InputUiOpenUrl" method="open_url_from_inspector"]
-[connection signal="button_down" from="CanvasLayer/GOMI Main/GOMI TAB/Learn/ScrollContainer/HBoxContainer/VBoxContainer/Button GOMI" to="CanvasLayer/GOMI Main/GOMI TAB/Learn/ScrollContainer/HBoxContainer/VBoxContainer/Button GOMI/InputUiOpenUrl" method="open_url_from_inspector"]
-[connection signal="button_down" from="CanvasLayer/GOMI Main/GOMI TAB/Learn/ScrollContainer/HBoxContainer/VBoxContainer/Button Documentation" to="CanvasLayer/GOMI Main/GOMI TAB/Learn/ScrollContainer/HBoxContainer/VBoxContainer/Button Documentation/InputUiOpenUrl" method="open_url_from_inspector"]
-[connection signal="button_down" from="CanvasLayer/GOMI Main/GOMI TAB/Learn/ScrollContainer/HBoxContainer/VBoxContainer/Button Documentation2" to="CanvasLayer/GOMI Main/GOMI TAB/Learn/ScrollContainer/HBoxContainer/VBoxContainer/Button Documentation2/InputUiOpenUrl" method="open_url_from_inspector"]
-[connection signal="button_down" from="CanvasLayer/GOMI Main/GOMI TAB/Learn/ScrollContainer/HBoxContainer/VBoxContainer/HBoxContainer/Button S2W" to="CanvasLayer/GOMI Main/GOMI TAB/Learn/ScrollContainer/HBoxContainer/VBoxContainer/HBoxContainer/Button S2W/InputUiOpenUrl" method="open_url_from_inspector"]
-[connection signal="button_down" from="CanvasLayer/GOMI Main/GOMI TAB/Learn/ScrollContainer/HBoxContainer/VBoxContainer/HBoxContainer/Button IID" to="CanvasLayer/GOMI Main/GOMI TAB/Learn/ScrollContainer/HBoxContainer/VBoxContainer/HBoxContainer/Button IID/InputUiOpenUrl" method="open_url_from_inspector"]
-[connection signal="button_down" from="CanvasLayer/GOMI Main/GOMI TAB/Learn/ScrollContainer/HBoxContainer/VBoxContainer/Button Doc XBox" to="CanvasLayer/GOMI Main/GOMI TAB/Learn/ScrollContainer/HBoxContainer/VBoxContainer/Button Doc XBox/InputUiOpenUrl" method="open_url_from_inspector"]
-[connection signal="button_down" from="CanvasLayer/GOMI Main/GOMI TAB/Learn/ScrollContainer/HBoxContainer/VBoxContainer/Button Doc Keyboard" to="CanvasLayer/GOMI Main/GOMI TAB/Learn/ScrollContainer/HBoxContainer/VBoxContainer/Button Doc Keyboard/InputUiOpenUrl" method="open_url_from_inspector"]
-[connection signal="button_down" from="CanvasLayer/GOMI Main/GOMI TAB/Learn/ScrollContainer/HBoxContainer/VBoxContainer/Button Doc Pico2W" to="CanvasLayer/GOMI Main/GOMI TAB/Learn/ScrollContainer/HBoxContainer/VBoxContainer/Button Doc Pico2W/InputUiOpenUrl" method="open_url_from_inspector"]
-[connection signal="button_down" from="CanvasLayer/GOMI Main/GOMI TAB/Learn/ScrollContainer/HBoxContainer/VBoxContainer/Button Doc Arduino" to="CanvasLayer/GOMI Main/GOMI TAB/Learn/ScrollContainer/HBoxContainer/VBoxContainer/Button Doc Arduino/InputUiOpenUrl" method="open_url_from_inspector"]
-[connection signal="button_down" from="CanvasLayer/GOMI Main/GOMI TAB/Learn/ScrollContainer/HBoxContainer/VBoxContainer/Button Doc AOMI" to="CanvasLayer/GOMI Main/GOMI TAB/Learn/ScrollContainer/HBoxContainer/VBoxContainer/Button Doc AOMI/InputUiOpenUrl" method="open_url_from_inspector"]
-[connection signal="button_down" from="CanvasLayer/GOMI Main/GOMI TAB/Learn/ScrollContainer/HBoxContainer/VBoxContainer/Button Doc XESP32" to="CanvasLayer/GOMI Main/GOMI TAB/Learn/ScrollContainer/HBoxContainer/VBoxContainer/Button Doc XESP32/InputUiOpenUrl" method="open_url_from_inspector"]
-[connection signal="button_down" from="CanvasLayer/GOMI Main/GOMI TAB/Learn/ScrollContainer/HBoxContainer/VBoxContainer/Button License" to="CanvasLayer/GOMI Main/GOMI TAB/Learn/ScrollContainer/HBoxContainer/VBoxContainer/Button License/InputUiOpenUrl" method="open_url_from_inspector"]
-[connection signal="button_down" from="CanvasLayer/GOMI Main/GOMI TAB/Learn/ScrollContainer/HBoxContainer/VBoxContainer2/Button Documentation8" to="CanvasLayer/GOMI Main/GOMI TAB/Learn/ScrollContainer/HBoxContainer/VBoxContainer2/Button Documentation8/InputUiOpenUrl" method="open_url_from_inspector"]
-[connection signal="button_down" from="CanvasLayer/GOMI Main/GOMI TAB/Learn/ScrollContainer/HBoxContainer/VBoxContainer2/Button Documentation9" to="CanvasLayer/GOMI Main/GOMI TAB/Learn/ScrollContainer/HBoxContainer/VBoxContainer2/Button Documentation9/InputUiOpenUrl" method="open_url_from_inspector"]
-[connection signal="button_down" from="CanvasLayer/GOMI Main/GOMI TAB/Learn/ScrollContainer/HBoxContainer/VBoxContainer2/Button Code Lab TV" to="CanvasLayer/GOMI Main/GOMI TAB/Learn/ScrollContainer/HBoxContainer/VBoxContainer2/Button Code Lab TV/InputUiOpenUrl" method="open_url_from_inspector"]
-[connection signal="button_down" from="CanvasLayer/GOMI Main/GOMI TAB/Learn/ScrollContainer/HBoxContainer/VBoxContainer2/Button Hello Git" to="CanvasLayer/GOMI Main/GOMI TAB/Learn/ScrollContainer/HBoxContainer/VBoxContainer2/Button Hello Git/InputUiOpenUrl" method="open_url_from_inspector"]
-[connection signal="button_down" from="CanvasLayer/GOMI Main/GOMI TAB/Learn/ScrollContainer/HBoxContainer/VBoxContainer2/Button Hello GDScript" to="CanvasLayer/GOMI Main/GOMI TAB/Learn/ScrollContainer/HBoxContainer/VBoxContainer2/Button Hello GDScript/InputUiOpenUrl" method="open_url_from_inspector"]
-[connection signal="button_down" from="CanvasLayer/GOMI Main/GOMI TAB/Learn/ScrollContainer/HBoxContainer/VBoxContainer2/Button Hello Godot Engine" to="CanvasLayer/GOMI Main/GOMI TAB/Learn/ScrollContainer/HBoxContainer/VBoxContainer2/Button Hello Godot Engine/InputUiOpenUrl" method="open_url_from_inspector"]
-[connection signal="button_down" from="CanvasLayer/GOMI Main/GOMI TAB/Learn/ScrollContainer/HBoxContainer/VBoxContainer2/Button Hello Godot XR" to="CanvasLayer/GOMI Main/GOMI TAB/Learn/ScrollContainer/HBoxContainer/VBoxContainer2/Button Hello Godot XR/InputUiOpenUrl" method="open_url_from_inspector"]
-[connection signal="button_down" from="CanvasLayer/GOMI Main/GOMI TAB/Learn/ScrollContainer/HBoxContainer/VBoxContainer2/Button Hello Input" to="CanvasLayer/GOMI Main/GOMI TAB/Learn/ScrollContainer/HBoxContainer/VBoxContainer2/Button Hello Input/InputUiOpenUrl" method="open_url_from_inspector"]
-[connection signal="button_down" from="CanvasLayer/GOMI Main/GOMI TAB/Learn/ScrollContainer/HBoxContainer/VBoxContainer2/Button Hello C#" to="CanvasLayer/GOMI Main/GOMI TAB/Learn/ScrollContainer/HBoxContainer/VBoxContainer2/Button Hello C#/InputUiOpenUrl" method="open_url_from_inspector"]
-[connection signal="on_analog_value_changed_as_string" from="CanvasLayer/GOMI Main/HBoxContainer Analog/AbInputStaticListenToValueChanged" to="CanvasLayer/GOMI Main/HBoxContainer Analog/HBoxContainer2/LineEdit AB Analog" method="set_text"]
-[connection signal="on_boolean_value_changed_as_string" from="CanvasLayer/GOMI Main/HBoxContainer Analog/AbInputStaticListenToValueChanged" to="CanvasLayer/GOMI Main/HBoxContainer Analog/HBoxContainer/LineEdit AB Bool" method="set_text"]
-[connection signal="on_device_event_received_as_string" from="CanvasLayer/GOMI Main/HBoxContainer Analog/AbInputStaticListenToValueChanged" to="CanvasLayer/GOMI Main/HBoxContainer Analog/HBoxContainer/LineEdit AB Trigger" method="set_text"]
-[connection signal="on_text_to_display" from="CanvasLayer/GOMI Main/HBoxContainer Log/Label2/BoolRegUIDisplayBooleanNameFormat" to="CanvasLayer/GOMI Main/HBoxContainer Log/Label2" method="set_text"]
-[connection signal="on_boolean_value_changed" from="CanvasLayer/GOMI Main/HBoxContainer Log/Label2/BoolRegUIDisplayBooleanNameFormat/BoolRegListenToBooleanChangedInRegisterStaticSingleton" to="CanvasLayer/GOMI Main/HBoxContainer Log/Label2/BoolRegUIDisplayBooleanNameFormat" method="push_in_boolean_name_value"]
-[connection signal="button_down" from="CanvasLayer/GOMI Main/HBoxContainer Log/Button Reload Scene" to="CanvasLayer/GOMI Main/HBoxContainer Log/Button Reload Scene/PushToSingletonGOMI" method="push_in_text_to_process" binds= ["cmd:godot:reload"]]
-[connection signal="on_submit_button_pressed" from="CanvasLayer/GOMI Main/HBoxContainer Quick input/Button/InputUiLineEditWithSubmitButton" to="CanvasLayer/GOMI Main/HBoxContainer Quick input/Button/InputUiLineEditWithSubmitButton/SCmdPushCommandLineToStaticSingleton" method="push_command_line_to_static_singleton"]
-[connection signal="on_submit_button_pressed" from="CanvasLayer/GOMI Main/HBoxContainer Quick input/Button2/InputUiLineEditWithSubmitButton" to="CanvasLayer/GOMI Main/HBoxContainer Quick input/Button2/InputUiLineEditWithSubmitButton/SCmdPushShortcutToStaticSingleton" method="push_shortcut_to_static_singleton"]
-[connection signal="on_line_edit_text_submit" from="CanvasLayer/GOMI Main/HBoxContainer Quick input/LineEdit int cmd/InputUiLineEditWithSubmitButton" to="CanvasLayer/GOMI Main/HBoxContainer Quick input/LineEdit int cmd/InputUiLineEditWithSubmitButton/Push GOMI" method="push_in_text_to_process"]
-[connection signal="on_line_edit_text_submit" from="CanvasLayer/GOMI Main/HBoxContainer Quick input/LineEdit char cmd/InputUiLineEditWithSubmitButton" to="CanvasLayer/GOMI Main/HBoxContainer Quick input/LineEdit char cmd/InputUiLineEditWithSubmitButton/Push GOMI" method="push_in_text_to_process"]
-[connection signal="on_line_edit_text_submit" from="CanvasLayer/GOMI Main/HBoxContainer Quick input/LineEdit unicode cmd/InputUiLineEditWithSubmitButton" to="CanvasLayer/GOMI Main/HBoxContainer Quick input/LineEdit unicode cmd/InputUiLineEditWithSubmitButton/Push GOMI" method="push_in_text_to_process"]
-[connection signal="on_line_edit_text_submit" from="CanvasLayer/GOMI Main/HBoxContainer Quick input/LineEdit macro cmd/InputUiLineEditWithSubmitButton" to="CanvasLayer/GOMI Main/HBoxContainer Quick input/LineEdit macro cmd/InputUiLineEditWithSubmitButton/Push GOMI" method="push_in_text_to_process"]
-[connection signal="button_down" from="CanvasLayer/GOMI Main/HBoxContainer Quick input/Button3" to="CanvasLayer" method="queue_free"]
+[connection signal="button_down" from="CanvasLayer/GOMI Main/Panel Reload/Button Reload Scene" to="CanvasLayer/GOMI Main/Panel Reload/Button Reload Scene/PushToSingletonGOMI" method="push_in_text_to_process" binds= ["cmd:godot:reload"]]
+[connection signal="on_stop_gdscript_execution_by_name" from="CanvasLayer/GOMI Main/PanelMainBoard/GOMI TAB/GDScript/TabContainer/Code Push/SceneCodeEditorPusherForGomi/GomiPusherCodeEditSubmitWithButton" to="CanvasLayer/GOMI Main/PanelMainBoard/GOMI TAB/GDScript/TabContainer/Code Push/SceneCodeEditorPusherForGomi/GomiPusherCodeEditSubmitWithButton/PushToSingletonGOMI" method="push_in_remove_named_gdscript"]
+[connection signal="on_submit_gdscript_to_execute_in_background" from="CanvasLayer/GOMI Main/PanelMainBoard/GOMI TAB/GDScript/TabContainer/Code Push/SceneCodeEditorPusherForGomi/GomiPusherCodeEditSubmitWithButton" to="CanvasLayer/GOMI Main/PanelMainBoard/GOMI TAB/GDScript/TabContainer/Code Push/SceneCodeEditorPusherForGomi/GomiPusherCodeEditSubmitWithButton/PushToSingletonGOMI" method="push_in_execute_named_gdscript"]
+[connection signal="on_submit_gdscript_to_execute_once" from="CanvasLayer/GOMI Main/PanelMainBoard/GOMI TAB/GDScript/TabContainer/Code Push/SceneCodeEditorPusherForGomi/GomiPusherCodeEditSubmitWithButton" to="CanvasLayer/GOMI Main/PanelMainBoard/GOMI TAB/GDScript/TabContainer/Code Push/SceneCodeEditorPusherForGomi/GomiPusherCodeEditSubmitWithButton/PushToSingletonGOMI" method="push_in_execute_one_time_gdscript"]
+[connection signal="on_area_triggered_inside_value" from="CanvasLayer/GOMI Main/PanelMainBoard/GOMI TAB/Input/TabContainer/Mouse Area/InputObserveMouseAreaTriggers" to="CanvasLayer/GOMI Main/PanelMainBoard/GOMI TAB/Input/TabContainer/Mouse Area/InputObserveMouseAreaTriggers/AbInputAddPrefixToKeyValue" method="push_in_key_value_boolean"]
+[connection signal="on_parsed_key_value_boolean" from="CanvasLayer/GOMI Main/PanelMainBoard/GOMI TAB/Input/TabContainer/Mouse Area/InputObserveMouseAreaTriggers/AbInputAddPrefixToKeyValue" to="CanvasLayer/GOMI Main/PanelMainBoard/GOMI TAB/Input/TabContainer/Mouse Area/InputObserveMouseAreaTriggers/AbInputStaticSetWithLocalRefList" method="set_boolean_value_with_input_name"]
+[connection signal="on_boolean_key_value_changed" from="CanvasLayer/GOMI Main/PanelMainBoard/GOMI TAB/Bool/Demo2dVboxBooleanRegister/VBoxContainer/HBoxContainer/CheckButton/BoolRegLineEditToggleSubmit" to="CanvasLayer/GOMI Main/PanelMainBoard/GOMI TAB/Bool/Demo2dVboxBooleanRegister/VBoxContainer/HBoxContainer/Push Bool" method="set_boolean_value_in_static_singleton"]
+[connection signal="on_boolean_key_down" from="CanvasLayer/GOMI Main/PanelMainBoard/GOMI TAB/Bool/Demo2dVboxBooleanRegister/VBoxContainer/HBoxContainer/Button Toggle/BoolRegLineEditButtonSubmit" to="CanvasLayer/GOMI Main/PanelMainBoard/GOMI TAB/Bool/Demo2dVboxBooleanRegister/VBoxContainer/HBoxContainer/Push Bool" method="toggle_boolean_value_in_static_singleton"]
+[connection signal="button_down" from="CanvasLayer/GOMI Main/PanelMainBoard/GOMI TAB/S2W/Button" to="CanvasLayer/GOMI Main/PanelMainBoard/GOMI TAB/S2W/Button/InputUiOpenUrl" method="open_url_from_inspector"]
+[connection signal="button_down" from="CanvasLayer/GOMI Main/PanelMainBoard/GOMI TAB/Learn/ScrollContainer/HBoxContainer/VBoxContainer/Button GOMI" to="CanvasLayer/GOMI Main/PanelMainBoard/GOMI TAB/Learn/ScrollContainer/HBoxContainer/VBoxContainer/Button GOMI/InputUiOpenUrl" method="open_url_from_inspector"]
+[connection signal="button_down" from="CanvasLayer/GOMI Main/PanelMainBoard/GOMI TAB/Learn/ScrollContainer/HBoxContainer/VBoxContainer/Button Documentation" to="CanvasLayer/GOMI Main/PanelMainBoard/GOMI TAB/Learn/ScrollContainer/HBoxContainer/VBoxContainer/Button Documentation/InputUiOpenUrl" method="open_url_from_inspector"]
+[connection signal="button_down" from="CanvasLayer/GOMI Main/PanelMainBoard/GOMI TAB/Learn/ScrollContainer/HBoxContainer/VBoxContainer/Button Documentation2" to="CanvasLayer/GOMI Main/PanelMainBoard/GOMI TAB/Learn/ScrollContainer/HBoxContainer/VBoxContainer/Button Documentation2/InputUiOpenUrl" method="open_url_from_inspector"]
+[connection signal="button_down" from="CanvasLayer/GOMI Main/PanelMainBoard/GOMI TAB/Learn/ScrollContainer/HBoxContainer/VBoxContainer/HBoxContainer/Button S2W" to="CanvasLayer/GOMI Main/PanelMainBoard/GOMI TAB/Learn/ScrollContainer/HBoxContainer/VBoxContainer/HBoxContainer/Button S2W/InputUiOpenUrl" method="open_url_from_inspector"]
+[connection signal="button_down" from="CanvasLayer/GOMI Main/PanelMainBoard/GOMI TAB/Learn/ScrollContainer/HBoxContainer/VBoxContainer/HBoxContainer/Button IID" to="CanvasLayer/GOMI Main/PanelMainBoard/GOMI TAB/Learn/ScrollContainer/HBoxContainer/VBoxContainer/HBoxContainer/Button IID/InputUiOpenUrl" method="open_url_from_inspector"]
+[connection signal="button_down" from="CanvasLayer/GOMI Main/PanelMainBoard/GOMI TAB/Learn/ScrollContainer/HBoxContainer/VBoxContainer/Button Doc XBox" to="CanvasLayer/GOMI Main/PanelMainBoard/GOMI TAB/Learn/ScrollContainer/HBoxContainer/VBoxContainer/Button Doc XBox/InputUiOpenUrl" method="open_url_from_inspector"]
+[connection signal="button_down" from="CanvasLayer/GOMI Main/PanelMainBoard/GOMI TAB/Learn/ScrollContainer/HBoxContainer/VBoxContainer/Button Doc Keyboard" to="CanvasLayer/GOMI Main/PanelMainBoard/GOMI TAB/Learn/ScrollContainer/HBoxContainer/VBoxContainer/Button Doc Keyboard/InputUiOpenUrl" method="open_url_from_inspector"]
+[connection signal="button_down" from="CanvasLayer/GOMI Main/PanelMainBoard/GOMI TAB/Learn/ScrollContainer/HBoxContainer/VBoxContainer/Button Doc Pico2W" to="CanvasLayer/GOMI Main/PanelMainBoard/GOMI TAB/Learn/ScrollContainer/HBoxContainer/VBoxContainer/Button Doc Pico2W/InputUiOpenUrl" method="open_url_from_inspector"]
+[connection signal="button_down" from="CanvasLayer/GOMI Main/PanelMainBoard/GOMI TAB/Learn/ScrollContainer/HBoxContainer/VBoxContainer/Button Doc Arduino" to="CanvasLayer/GOMI Main/PanelMainBoard/GOMI TAB/Learn/ScrollContainer/HBoxContainer/VBoxContainer/Button Doc Arduino/InputUiOpenUrl" method="open_url_from_inspector"]
+[connection signal="button_down" from="CanvasLayer/GOMI Main/PanelMainBoard/GOMI TAB/Learn/ScrollContainer/HBoxContainer/VBoxContainer/Button Doc AOMI" to="CanvasLayer/GOMI Main/PanelMainBoard/GOMI TAB/Learn/ScrollContainer/HBoxContainer/VBoxContainer/Button Doc AOMI/InputUiOpenUrl" method="open_url_from_inspector"]
+[connection signal="button_down" from="CanvasLayer/GOMI Main/PanelMainBoard/GOMI TAB/Learn/ScrollContainer/HBoxContainer/VBoxContainer/Button Doc XESP32" to="CanvasLayer/GOMI Main/PanelMainBoard/GOMI TAB/Learn/ScrollContainer/HBoxContainer/VBoxContainer/Button Doc XESP32/InputUiOpenUrl" method="open_url_from_inspector"]
+[connection signal="button_down" from="CanvasLayer/GOMI Main/PanelMainBoard/GOMI TAB/Learn/ScrollContainer/HBoxContainer/VBoxContainer/Button License" to="CanvasLayer/GOMI Main/PanelMainBoard/GOMI TAB/Learn/ScrollContainer/HBoxContainer/VBoxContainer/Button License/InputUiOpenUrl" method="open_url_from_inspector"]
+[connection signal="button_down" from="CanvasLayer/GOMI Main/PanelMainBoard/GOMI TAB/Learn/ScrollContainer/HBoxContainer/VBoxContainer/Button Documentation8" to="CanvasLayer/GOMI Main/PanelMainBoard/GOMI TAB/Learn/ScrollContainer/HBoxContainer/VBoxContainer/Button Documentation8/InputUiOpenUrl" method="open_url_from_inspector"]
+[connection signal="button_down" from="CanvasLayer/GOMI Main/PanelMainBoard/GOMI TAB/Learn/ScrollContainer/HBoxContainer/VBoxContainer/Button Documentation9" to="CanvasLayer/GOMI Main/PanelMainBoard/GOMI TAB/Learn/ScrollContainer/HBoxContainer/VBoxContainer/Button Documentation9/InputUiOpenUrl" method="open_url_from_inspector"]
+[connection signal="button_down" from="CanvasLayer/GOMI Main/PanelMainBoard/GOMI TAB/Learn/ScrollContainer/HBoxContainer/VBoxContainer/Button Code Lab TV" to="CanvasLayer/GOMI Main/PanelMainBoard/GOMI TAB/Learn/ScrollContainer/HBoxContainer/VBoxContainer/Button Code Lab TV/InputUiOpenUrl" method="open_url_from_inspector"]
+[connection signal="button_down" from="CanvasLayer/GOMI Main/PanelMainBoard/GOMI TAB/Learn/ScrollContainer/HBoxContainer/VBoxContainer/Button Hello Git" to="CanvasLayer/GOMI Main/PanelMainBoard/GOMI TAB/Learn/ScrollContainer/HBoxContainer/VBoxContainer/Button Hello Git/InputUiOpenUrl" method="open_url_from_inspector"]
+[connection signal="button_down" from="CanvasLayer/GOMI Main/PanelMainBoard/GOMI TAB/Learn/ScrollContainer/HBoxContainer/VBoxContainer/Button Hello GDScript" to="CanvasLayer/GOMI Main/PanelMainBoard/GOMI TAB/Learn/ScrollContainer/HBoxContainer/VBoxContainer/Button Hello GDScript/InputUiOpenUrl" method="open_url_from_inspector"]
+[connection signal="button_down" from="CanvasLayer/GOMI Main/PanelMainBoard/GOMI TAB/Learn/ScrollContainer/HBoxContainer/VBoxContainer/Button Hello Godot Engine" to="CanvasLayer/GOMI Main/PanelMainBoard/GOMI TAB/Learn/ScrollContainer/HBoxContainer/VBoxContainer/Button Hello Godot Engine/InputUiOpenUrl" method="open_url_from_inspector"]
+[connection signal="button_down" from="CanvasLayer/GOMI Main/PanelMainBoard/GOMI TAB/Learn/ScrollContainer/HBoxContainer/VBoxContainer/Button Hello Godot XR" to="CanvasLayer/GOMI Main/PanelMainBoard/GOMI TAB/Learn/ScrollContainer/HBoxContainer/VBoxContainer/Button Hello Godot XR/InputUiOpenUrl" method="open_url_from_inspector"]
+[connection signal="button_down" from="CanvasLayer/GOMI Main/PanelMainBoard/GOMI TAB/Learn/ScrollContainer/HBoxContainer/VBoxContainer/Button Hello Input" to="CanvasLayer/GOMI Main/PanelMainBoard/GOMI TAB/Learn/ScrollContainer/HBoxContainer/VBoxContainer/Button Hello Input/InputUiOpenUrl" method="open_url_from_inspector"]
+[connection signal="button_down" from="CanvasLayer/GOMI Main/PanelMainBoard/GOMI TAB/Learn/ScrollContainer/HBoxContainer/VBoxContainer/Button Hello C#" to="CanvasLayer/GOMI Main/PanelMainBoard/GOMI TAB/Learn/ScrollContainer/HBoxContainer/VBoxContainer/Button Hello C#/InputUiOpenUrl" method="open_url_from_inspector"]
+[connection signal="on_analog_value_changed_as_string" from="CanvasLayer/GOMI Main/PanelMainBoard/HBoxContainer Analog/AbInputStaticListenToValueChanged" to="CanvasLayer/GOMI Main/PanelMainBoard/HBoxContainer Analog/HBoxContainer/LineEdit AB Analog" method="set_text"]
+[connection signal="on_boolean_value_changed_as_string" from="CanvasLayer/GOMI Main/PanelMainBoard/HBoxContainer Analog/AbInputStaticListenToValueChanged" to="CanvasLayer/GOMI Main/PanelMainBoard/HBoxContainer Analog/HBoxContainer/LineEdit AB Bool" method="set_text"]
+[connection signal="on_device_event_received_as_string" from="CanvasLayer/GOMI Main/PanelMainBoard/HBoxContainer Analog/AbInputStaticListenToValueChanged" to="CanvasLayer/GOMI Main/PanelMainBoard/HBoxContainer Analog/HBoxContainer/LineEdit AB Trigger" method="set_text"]
+[connection signal="on_text_to_display" from="CanvasLayer/GOMI Main/PanelMainBoard/HBoxContainer Log/HBoxContainer3/Label Boolean Changed/BoolRegUIDisplayBooleanNameFormat" to="CanvasLayer/GOMI Main/PanelMainBoard/HBoxContainer Log/HBoxContainer3/Label Boolean Changed" method="set_text"]
+[connection signal="on_boolean_value_changed" from="CanvasLayer/GOMI Main/PanelMainBoard/HBoxContainer Log/HBoxContainer3/Label Boolean Changed/BoolRegUIDisplayBooleanNameFormat/BoolRegListenToBooleanChangedInRegisterStaticSingleton" to="CanvasLayer/GOMI Main/PanelMainBoard/HBoxContainer Log/HBoxContainer3/Label Boolean Changed/BoolRegUIDisplayBooleanNameFormat" method="push_in_boolean_name_value"]
+[connection signal="on_submit_button_pressed" from="CanvasLayer/GOMI Main/PanelMainBoard/HBoxContainer Quick input/Panel Command/Button CMD/InputUiLineEditWithSubmitButton" to="CanvasLayer/GOMI Main/PanelMainBoard/HBoxContainer Quick input/Panel Command/Button CMD/InputUiLineEditWithSubmitButton/SCmdPushCommandLineToStaticSingleton" method="push_command_line_to_static_singleton"]
+[connection signal="on_submit_button_pressed" from="CanvasLayer/GOMI Main/PanelMainBoard/HBoxContainer Quick input/Panel Shortcut/Button SC/InputUiLineEditWithSubmitButton" to="CanvasLayer/GOMI Main/PanelMainBoard/HBoxContainer Quick input/Panel Shortcut/Button SC/InputUiLineEditWithSubmitButton/SCmdPushShortcutToStaticSingleton" method="push_shortcut_to_static_singleton"]
+[connection signal="on_string_parsed" from="CanvasLayer/GOMI Main/PanelMainBoard/HBoxContainer Quick input/Panel Trigger Shortcut/Panel Last Index Value Send TBIO/Label Send Integer/InputParseIndexValueIntegerToString2" to="CanvasLayer/GOMI Main/PanelMainBoard/HBoxContainer Quick input/Panel Trigger Shortcut/Panel Last Index Value Send TBIO/Label Send Integer" method="set_text"]
+[connection signal="on_line_edit_text_submit" from="CanvasLayer/GOMI Main/PanelMainBoard/HBoxContainer Quick input/Panel Trigger Shortcut/Panel3/LineEdit macro cmd/InputUiLineEditWithSubmitButton" to="CanvasLayer/GOMI Main/PanelMainBoard/HBoxContainer Quick input/Panel Trigger Shortcut/Panel3/LineEdit macro cmd/InputUiLineEditWithSubmitButton/Push GOMI" method="push_in_text_to_process"]
+[connection signal="on_line_edit_text_submit" from="CanvasLayer/GOMI Main/PanelMainBoard/HBoxContainer Quick input/Panel Trigger Shortcut/Panel3/LineEdit int cmd/InputUiLineEditWithSubmitButton" to="CanvasLayer/GOMI Main/PanelMainBoard/HBoxContainer Quick input/Panel Trigger Shortcut/Panel3/LineEdit int cmd/InputUiLineEditWithSubmitButton/Push GOMI" method="push_in_text_to_process"]
+[connection signal="on_line_edit_text_submit" from="CanvasLayer/GOMI Main/PanelMainBoard/HBoxContainer Quick input/Panel Trigger Shortcut/Panel3/LineEdit char cmd/InputUiLineEditWithSubmitButton" to="CanvasLayer/GOMI Main/PanelMainBoard/HBoxContainer Quick input/Panel Trigger Shortcut/Panel3/LineEdit char cmd/InputUiLineEditWithSubmitButton/Push GOMI" method="push_in_text_to_process"]
+[connection signal="on_line_edit_text_submit" from="CanvasLayer/GOMI Main/PanelMainBoard/HBoxContainer Quick input/Panel Trigger Shortcut/Panel3/LineEdit unicode cmd/InputUiLineEditWithSubmitButton" to="CanvasLayer/GOMI Main/PanelMainBoard/HBoxContainer Quick input/Panel Trigger Shortcut/Panel3/LineEdit unicode cmd/InputUiLineEditWithSubmitButton/Push GOMI" method="push_in_text_to_process"]
+[connection signal="button_down" from="CanvasLayer/GOMI Main/PanelMainBoard/Panel File And Doc/VBoxContainer/ButtonDoc Guide" to="CanvasLayer/GOMI Main/PanelMainBoard/Panel File And Doc/VBoxContainer/ButtonDoc Guide/InputUiOpenUrl" method="open_url_from_inspector"]
+[connection signal="button_down" from="CanvasLayer/GOMI Main/PanelMainBoard/Panel File And Doc/VBoxContainer/ButtonDoc File" to="CanvasLayer/GOMI Main/PanelMainBoard/Panel File And Doc/VBoxContainer/ButtonDoc File/InputUiOpenUrl" method="open_url_from_inspector"]
+[connection signal="button_down" from="CanvasLayer/GOMI Main/PanelMainBoard/Panel File And Doc/VBoxContainer/ButtonDoc Command" to="CanvasLayer/GOMI Main/PanelMainBoard/Panel File And Doc/VBoxContainer/ButtonDoc Command/InputUiOpenUrl" method="open_url_from_inspector"]
 
 [editable path="ToStore/Pre Load Main Godot Script"]
 [editable path="ToStore/Trigger Loaded GDScript From Name"]
-[editable path="CanvasLayer/GOMI Main/GOMI TAB/GDScript/TabContainer/Code Push/SceneCodeEditorPusherForGomi"]
-[editable path="CanvasLayer/GOMI Main/GOMI TAB/Input/TabContainer/MIDI"]
-[editable path="CanvasLayer/GOMI Main/GOMI TAB/Input/TabContainer/Mouse"]
-[editable path="CanvasLayer/GOMI Main/GOMI TAB/Input/TabContainer/NFC"]
-[editable path="CanvasLayer/GOMI Main/GOMI TAB/Input/TabContainer/Key Log"]
-[editable path="CanvasLayer/GOMI Main/GOMI TAB/Input/TabContainer/Joysticks"]
-[editable path="CanvasLayer/GOMI Main/GOMI TAB/Input/TabContainer/Ctrl Shift Alt"]
-[editable path="CanvasLayer/GOMI Main/GOMI TAB/Input/TabContainer/TV Remote"]
-[editable path="CanvasLayer/GOMI Main/GOMI TAB/Input/TabContainer/Copy Past"]
-[editable path="CanvasLayer/GOMI Main/GOMI TAB/Input/TabContainer/Mouse Area"]
-[editable path="CanvasLayer/GOMI Main/GOMI TAB/Input/TabContainer/Grid"]
-[editable path="CanvasLayer/GOMI Main/GOMI TAB/Input/TabContainer/UI Emit"]
-[editable path="CanvasLayer/GOMI Main/GOMI TAB/Input/TabContainer/KeyboardInput"]
+[editable path="CanvasLayer/GOMI Main/PanelMainBoard/GOMI TAB/GDScript/TabContainer/Code Push/SceneCodeEditorPusherForGomi"]
+[editable path="CanvasLayer/GOMI Main/PanelMainBoard/GOMI TAB/Input/TabContainer/MIDI"]
+[editable path="CanvasLayer/GOMI Main/PanelMainBoard/GOMI TAB/Input/TabContainer/Mouse"]
+[editable path="CanvasLayer/GOMI Main/PanelMainBoard/GOMI TAB/Input/TabContainer/NFC"]
+[editable path="CanvasLayer/GOMI Main/PanelMainBoard/GOMI TAB/Input/TabContainer/Key Log"]
+[editable path="CanvasLayer/GOMI Main/PanelMainBoard/GOMI TAB/Input/TabContainer/Joysticks"]
+[editable path="CanvasLayer/GOMI Main/PanelMainBoard/GOMI TAB/Input/TabContainer/Ctrl Shift Alt"]
+[editable path="CanvasLayer/GOMI Main/PanelMainBoard/GOMI TAB/Input/TabContainer/TV Remote"]
+[editable path="CanvasLayer/GOMI Main/PanelMainBoard/GOMI TAB/Input/TabContainer/Copy Past"]
+[editable path="CanvasLayer/GOMI Main/PanelMainBoard/GOMI TAB/Input/TabContainer/Mouse Area"]
+[editable path="CanvasLayer/GOMI Main/PanelMainBoard/GOMI TAB/Input/TabContainer/Grid"]
+[editable path="CanvasLayer/GOMI Main/PanelMainBoard/GOMI TAB/Input/TabContainer/UI Emit"]
+[editable path="CanvasLayer/GOMI Main/PanelMainBoard/GOMI TAB/Input/TabContainer/KeyboardInput"]
