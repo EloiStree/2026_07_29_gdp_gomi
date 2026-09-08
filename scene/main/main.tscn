@@ -121,9 +121,17 @@
 [ext_resource type="Script" uid="uid://dbjhie2h4hxeh" path="res://addons/2026_07_29_gdp_gomi/script/experimentation_script/script/remove_all_control/exp_remove_full_control.gd" id="95_i5ptq"]
 [ext_resource type="Script" uid="uid://br38ejpq7y2m6" path="res://addons/2026_08_27_gdp_bool_analog_dictionary/scene/guid/demo_2d_vbox_abstract_boolean_float_input/script/ab_input_static_listen_to_value_changed.gd" id="99_7qd0e"]
 [ext_resource type="PackedScene" uid="uid://l8ywpf88875q" path="res://addons/2026_07_20_gdp_get_ipv4_info/scene/guid/demo_ui2d_ipv4_fetch/demo_ui2d_ipv4_fetch.tscn" id="99_xxhw8"]
+[ext_resource type="PackedScene" uid="uid://dcynmxesc0o32" path="res://addons/2026_09_07_gdp_graph_edit_to_gomi/scene/guid/demo_graph_node_named_bean/prefab/prefab_graph_node_gomi_bean_ui_named_boolean_button.tscn" id="101_byfae"]
+[ext_resource type="PackedScene" uid="uid://bk2186ogy2i37" path="res://addons/2026_09_07_gdp_graph_edit_to_gomi/scene/guid/demo_graph_node_named_bean/prefab/prefab_graph_node_gomi_bean_ui_named_boolean_toggle.tscn" id="102_20uwg"]
 [ext_resource type="PackedScene" uid="uid://cabdc5i2urxji" path="res://addons/2025_10_28_gdp_ntp_sync/scene/guid/demo_2d_vbox_ntp_offset/demo_2d_vbox_ntp_offset.tscn" id="102_jb2c4"]
+[ext_resource type="PackedScene" uid="uid://ddorp6345meud" path="res://addons/2026_09_07_gdp_graph_edit_to_gomi/scene/guid/demo_graph_node_named_bean/prefab/prefab_graph_node_gomi_bean_ui_push_command_button.tscn" id="103_wiphs"]
 [ext_resource type="Script" uid="uid://dekphoet0if33" path="res://addons/2026_08_27_gdp_bool_analog_dictionary/scene/guid/demo_2d_vbox_abstract_boolean_float_input/script/ab_ui_input/ab_ui_input_line_edit_to_clipboard.gd" id="104_ca1ic"]
+[ext_resource type="PackedScene" uid="uid://dsev4eupkigc" path="res://addons/2026_09_07_gdp_graph_edit_to_gomi/scene/guid/demo_graph_node_named_bean/prefab/prefab_graph_node_gomi_bean_ui_push_command_toggle.tscn" id="104_qqolx"]
+[ext_resource type="PackedScene" uid="uid://bl86cqc46y4sg" path="res://addons/2026_09_07_gdp_graph_edit_to_gomi/scene/guid/demo_graph_node_named_bean/prefab/prefab_graph_node_gomi_bean_ui_push_shortcut_button.tscn" id="104_wiphs"]
+[ext_resource type="PackedScene" uid="uid://bswp2x2s3rlxt" path="res://addons/2026_09_07_gdp_graph_edit_to_gomi/scene/guid/demo_graph_node_named_bean/prefab/prefab_graph_node_gomi_bean_ui_push_game_telemetry.tscn" id="106_20uwg"]
 [ext_resource type="Script" uid="uid://pxmwg52apxu5" path="res://addons/2026_08_27_gdp_bool_analog_dictionary/script/ab_input_add_prefix_to_key_value.gd" id="107_feoa8"]
+[ext_resource type="Script" uid="uid://ccbpnyr5w452y" path="res://addons/2026_01_03_gdp_input_to_primitive/script/input_parse_prefix_suffix_around_string.gd" id="107_qqolx"]
+[ext_resource type="PackedScene" uid="uid://bdg6u0m1eycbj" path="res://addons/2026_09_08_gdp_bluetooth_electronics_as_graph_node/scene/guid/demo_graph_node_basic_in_out/demo_graph_node_basic_in_out.tscn" id="107_wiphs"]
 [ext_resource type="Script" uid="uid://bcxq5monpm1ab" path="res://addons/2026_01_03_gdp_input_to_primitive/script/input_ui_open_url.gd" id="112_m7vwt"]
 [ext_resource type="Script" uid="uid://cheu56oxb55ta" path="res://addons/2026_01_03_gdp_input_to_primitive/script/unstore/input_text_file_from_godot_project.gd" id="116_pu0sh"]
 [ext_resource type="Script" uid="uid://b5dytkpgo6xa0" path="res://addons/2026_01_03_gdp_input_to_primitive/script/input_parse_index_value_integer_to_string.gd" id="118_vw6xl"]
@@ -1258,6 +1266,75 @@ visible = false
 
 [node name="Button Stop" parent="CanvasLayer/GOMI Main/PanelMainBoard/GOMI TAB/GDScript/TabContainer/Code Push/SceneCodeEditorPusherForGomi/Panel/HBoxContainer" parent_id_path=PackedInt32Array(1938970278, 1039317097) index="5" unique_id=781367671]
 visible = false
+
+[node name="Graph" type="Panel" parent="CanvasLayer/GOMI Main/PanelMainBoard/GOMI TAB/GDScript/TabContainer" unique_id=1137702685]
+visible = false
+layout_mode = 2
+metadata/_tab_index = 1
+
+[node name="GraphEdit" type="GraphEdit" parent="CanvasLayer/GOMI Main/PanelMainBoard/GOMI TAB/GDScript/TabContainer/Graph" unique_id=624094933]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -9.0
+offset_top = 7.0
+offset_right = -9.0
+offset_bottom = 7.0
+grow_horizontal = 2
+grow_vertical = 2
+show_grid_buttons = false
+show_minimap_button = false
+show_arrange_button = false
+
+[node name="GraphNodeGomiBeanUiNamedBooleanButton" parent="CanvasLayer/GOMI Main/PanelMainBoard/GOMI TAB/GDScript/TabContainer/Graph/GraphEdit" unique_id=1967887356 instance=ExtResource("101_byfae")]
+layout_mode = 0
+offset_top = 90.0
+offset_bottom = 242.0
+
+[node name="GraphNodeGomiBeanUiNamedBooleanToggle" parent="CanvasLayer/GOMI Main/PanelMainBoard/GOMI TAB/GDScript/TabContainer/Graph/GraphEdit" unique_id=572137222 instance=ExtResource("102_20uwg")]
+layout_mode = 0
+offset_top = 259.0
+offset_bottom = 411.0
+
+[node name="GraphNodeGomiBeanUiPushCommandButton" parent="CanvasLayer/GOMI Main/PanelMainBoard/GOMI TAB/GDScript/TabContainer/Graph/GraphEdit" unique_id=1468100209 instance=ExtResource("103_wiphs")]
+layout_mode = 0
+offset_top = 431.0
+offset_bottom = 633.0
+
+[node name="GraphNodeGomiBeanUiPushCommandToggle" parent="CanvasLayer/GOMI Main/PanelMainBoard/GOMI TAB/GDScript/TabContainer/Graph/GraphEdit" unique_id=482082571 instance=ExtResource("104_qqolx")]
+layout_mode = 0
+offset_top = -32.0
+offset_bottom = 120.0
+
+[node name="GraphNodeGomiBeanUiPushGameTelemetry" parent="CanvasLayer/GOMI Main/PanelMainBoard/GOMI TAB/GDScript/TabContainer/Graph/GraphEdit" unique_id=1365405059 instance=ExtResource("106_20uwg")]
+layout_mode = 0
+offset_top = 158.0
+offset_bottom = 308.0
+
+[node name="GraphNodeGomiBeanUiPushShortcutButton" parent="CanvasLayer/GOMI Main/PanelMainBoard/GOMI TAB/GDScript/TabContainer/Graph/GraphEdit" unique_id=2074290134 instance=ExtResource("104_wiphs")]
+layout_mode = 0
+offset_left = 31.0
+offset_top = 431.0
+offset_right = 438.0
+offset_bottom = 706.0
+
+[node name="UART" type="Panel" parent="CanvasLayer/GOMI Main/PanelMainBoard/GOMI TAB/GDScript/TabContainer" unique_id=600707480]
+visible = false
+layout_mode = 2
+metadata/_tab_index = 2
+
+[node name="InputParsePrefixSuffixAroundString" type="Node" parent="CanvasLayer/GOMI Main/PanelMainBoard/GOMI TAB/GDScript/TabContainer/UART" unique_id=1281454148]
+script = ExtResource("107_qqolx")
+_prefix_to_append = "uart:"
+metadata/_custom_type_script = "uid://ccbpnyr5w452y"
+
+[node name="PushToSingletonGOMI" type="Node" parent="CanvasLayer/GOMI Main/PanelMainBoard/GOMI TAB/GDScript/TabContainer/UART/InputParsePrefixSuffixAroundString" unique_id=1631637737]
+script = ExtResource("75_lw2yh")
+metadata/_custom_type_script = "uid://c7g1isaokapf8"
+
+[node name="Demo" parent="CanvasLayer/GOMI Main/PanelMainBoard/GOMI TAB/GDScript/TabContainer/UART" unique_id=843151644 instance=ExtResource("107_wiphs")]
+layout_mode = 1
 
 [node name="Input" type="Panel" parent="CanvasLayer/GOMI Main/PanelMainBoard/GOMI TAB" unique_id=1151134158]
 visible = false
@@ -2914,8 +2991,8 @@ layout_mode = 2
 [connection signal="on_stop_gdscript_execution_by_name" from="CanvasLayer/GOMI Main/PanelMainBoard/GOMI TAB/GDScript/TabContainer/Code Push/SceneCodeEditorPusherForGomi/GomiPusherCodeEditSubmitWithButton" to="CanvasLayer/GOMI Main/PanelMainBoard/GOMI TAB/GDScript/TabContainer/Code Push/SceneCodeEditorPusherForGomi/GomiPusherCodeEditSubmitWithButton/PushToSingletonGOMI" method="push_in_remove_named_gdscript"]
 [connection signal="on_submit_gdscript_to_execute_in_background" from="CanvasLayer/GOMI Main/PanelMainBoard/GOMI TAB/GDScript/TabContainer/Code Push/SceneCodeEditorPusherForGomi/GomiPusherCodeEditSubmitWithButton" to="CanvasLayer/GOMI Main/PanelMainBoard/GOMI TAB/GDScript/TabContainer/Code Push/SceneCodeEditorPusherForGomi/GomiPusherCodeEditSubmitWithButton/PushToSingletonGOMI" method="push_in_execute_named_gdscript"]
 [connection signal="on_submit_gdscript_to_execute_once" from="CanvasLayer/GOMI Main/PanelMainBoard/GOMI TAB/GDScript/TabContainer/Code Push/SceneCodeEditorPusherForGomi/GomiPusherCodeEditSubmitWithButton" to="CanvasLayer/GOMI Main/PanelMainBoard/GOMI TAB/GDScript/TabContainer/Code Push/SceneCodeEditorPusherForGomi/GomiPusherCodeEditSubmitWithButton/PushToSingletonGOMI" method="push_in_execute_one_time_gdscript"]
-[connection signal="pressed" from="CanvasLayer/GOMI Main/PanelMainBoard/GOMI TAB/Input/TabContainer/IPV4/VBoxContainer/DemoUi2dIpv4Fetch/ScrollContainer/VBoxContainer/Button" to="CanvasLayer/GOMI Main/PanelMainBoard/GOMI TAB/Input/TabContainer/IPV4/VBoxContainer/DemoUi2dIpv4Fetch/ScrollContainer/VBoxContainer/LabelLocalIpv4Joined/NetFetchGetLocalIPv4" method="fetch_local_ipv4"]
-[connection signal="pressed" from="CanvasLayer/GOMI Main/PanelMainBoard/GOMI TAB/Input/TabContainer/IPV4/VBoxContainer/DemoUi2dIpv4Fetch/ScrollContainer/VBoxContainer/Button" to="CanvasLayer/GOMI Main/PanelMainBoard/GOMI TAB/Input/TabContainer/IPV4/VBoxContainer/DemoUi2dIpv4Fetch/ScrollContainer/VBoxContainer/LabelPublicIpv4/NetFetchGetPublicIPv4" method="fetch_public_ipv4"]
+[connection signal="on_formated_text" from="CanvasLayer/GOMI Main/PanelMainBoard/GOMI TAB/GDScript/TabContainer/UART/InputParsePrefixSuffixAroundString" to="CanvasLayer/GOMI Main/PanelMainBoard/GOMI TAB/GDScript/TabContainer/UART/InputParsePrefixSuffixAroundString/PushToSingletonGOMI" method="push_in_text_to_process"]
+[connection signal="on_text_received_from_emitters" from="CanvasLayer/GOMI Main/PanelMainBoard/GOMI TAB/GDScript/TabContainer/UART/Demo/Emitters" to="CanvasLayer/GOMI Main/PanelMainBoard/GOMI TAB/GDScript/TabContainer/UART/InputParsePrefixSuffixAroundString" method="push_in_text"]
 [connection signal="on_area_triggered_inside_value" from="CanvasLayer/GOMI Main/PanelMainBoard/GOMI TAB/Input/TabContainer/Mouse Area/InputObserveMouseAreaTriggers" to="CanvasLayer/GOMI Main/PanelMainBoard/GOMI TAB/Input/TabContainer/Mouse Area/InputObserveMouseAreaTriggers/AbInputAddPrefixToKeyValue" method="push_in_key_value_boolean"]
 [connection signal="on_parsed_key_value_boolean" from="CanvasLayer/GOMI Main/PanelMainBoard/GOMI TAB/Input/TabContainer/Mouse Area/InputObserveMouseAreaTriggers/AbInputAddPrefixToKeyValue" to="CanvasLayer/GOMI Main/PanelMainBoard/GOMI TAB/Input/TabContainer/Mouse Area/InputObserveMouseAreaTriggers/AbInputStaticSetWithLocalRefList" method="set_boolean_value_with_input_name"]
 [connection signal="on_boolean_key_value_changed" from="CanvasLayer/GOMI Main/PanelMainBoard/GOMI TAB/Bool/Demo2dVboxBooleanRegister/VBoxContainer/HBoxContainer/CheckButton/BoolRegLineEditToggleSubmit" to="CanvasLayer/GOMI Main/PanelMainBoard/GOMI TAB/Bool/Demo2dVboxBooleanRegister/VBoxContainer/HBoxContainer/Push Bool" method="set_boolean_value_in_static_singleton"]
@@ -2961,6 +3038,7 @@ layout_mode = 2
 [editable path="ToStore/Pre Load Main Godot Script"]
 [editable path="ToStore/Trigger Loaded GDScript From Name"]
 [editable path="CanvasLayer/GOMI Main/PanelMainBoard/GOMI TAB/GDScript/TabContainer/Code Push/SceneCodeEditorPusherForGomi"]
+[editable path="CanvasLayer/GOMI Main/PanelMainBoard/GOMI TAB/GDScript/TabContainer/UART/Demo"]
 [editable path="CanvasLayer/GOMI Main/PanelMainBoard/GOMI TAB/Input/TabContainer/IPV4/VBoxContainer/DemoUi2dIpv4Fetch"]
 [editable path="CanvasLayer/GOMI Main/PanelMainBoard/GOMI TAB/Input/TabContainer/IPV4/VBoxContainer/DemoUi2dIpv4Fetch/ScrollContainer/VBoxContainer/LabelLocalIpv4Joined"]
 [editable path="CanvasLayer/GOMI Main/PanelMainBoard/GOMI TAB/Input/TabContainer/IPV4/VBoxContainer/DemoUi2dIpv4Fetch/ScrollContainer/VBoxContainer/LabelPublicIpv4"]
