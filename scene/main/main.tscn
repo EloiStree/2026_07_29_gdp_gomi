@@ -17,7 +17,7 @@
 [ext_resource type="Script" uid="uid://bllyrren6tpgy" path="res://addons/2025_10_27_gdp_udp_in_out_gate/scripts/udp_io_parse_byte_package_to_iid.gd" id="2_vkenm"]
 [ext_resource type="Script" uid="uid://ysrq37d0k7sv" path="res://addons/2025_10_27_gdp_udp_in_out_gate/scripts/alias/udp_io_alias_key_to_list.gd" id="3_8awcc"]
 [ext_resource type="Script" uid="uid://bs8pt0dllg6y3" path="res://addons/2026_07_30_gdp_boolean_register/scene/guid/demo_2d_vbox_static_boolean_register/script/bool_reg_bridge_set_and_listen_boolean_to_static_register.gd" id="3_58ya2"]
-[ext_resource type="Script" uid="uid://ci68j7wx1poj6" path="res://addons/2026_08_16_gdp_files_as_one_text/demo/guid/demo_2d_vbox_download_fuse_url_local/file_config_redirection_by_name_relay.gd" id="3_2018l"]
+[ext_resource type="Script" uid="uid://ci68j7wx1poj6" path="res://addons/2026_08_16_gdp_files_as_one_text/demo/guid/demo_2d_vbox_download_fuse_url_local/file_config_redirection_by_exact_file_extension_relay.gd" id="3_2018l"]
 [ext_resource type="Script" uid="uid://cku7rckwwwh4i" path="res://addons/2026_08_09_gdp_text_interpeter_sc_cmd/script/unstored/scmd_text_delayer_.gd" id="3_glqed"]
 [ext_resource type="Script" uid="uid://djrstxa66bhuq" path="res://addons/2026_08_16_gdp_files_as_one_text/demo/guid/demo_2d_vbox_download_fuse_url_local/file_config_fuse_all_fles_in_folder_as_big_text.gd" id="3_wwu1v"]
 [ext_resource type="Script" uid="uid://cvcpojr1clo5" path="res://addons/2026_07_30_gdp_boolean_register/scene/guid/demo_2d_vbox_static_boolean_register/script/bool_reg_listen_to_boolean_register_static_singleton.gd" id="4_16vpb"]
@@ -86,6 +86,7 @@
 [ext_resource type="Script" uid="uid://bmjoj6331yk6a" path="res://addons/2026_08_09_gdp_text_interpeter_sc_cmd/script/interpreters_sc/ignore_wait/scmd_sc_interpreter_wait_for_n_milliseconds.gd" id="36_xrwyb"]
 [ext_resource type="Script" uid="uid://0ebuvi8k7fbd" path="res://addons/2026_08_09_gdp_text_interpeter_sc_cmd/script/interpreters_sc/midi/scmd_sc_interpeter_midi.gd" id="37_68an0"]
 [ext_resource type="Script" uid="uid://bgc60omuuxwoe" path="res://addons/2025_10_28_gdp_ntp_sync/scene/guid/demo_2d_vbox_ntp_offset/script/vibed/ntp_tool_get_offset_of_single_server.gd" id="37_gjif2"]
+[ext_resource type="Script" uid="uid://ox6i80jdh60j" path="res://addons/2026_08_16_gdp_files_as_one_text/demo/guid/demo_2d_vbox_download_fuse_url_local/file_config_redirection_by_full_file_name_relay.gd" id="37_io717"]
 [ext_resource type="Script" uid="uid://bfvhdcjt1g5ye" path="res://addons/2026_08_09_gdp_text_interpeter_sc_cmd/script/interpreters_sc/clipboard/scmd_sc_interpreter_clipboard_storage.gd" id="38_1xswp"]
 [ext_resource type="Script" uid="uid://bpmly7i8fsqxp" path="res://addons/2026_01_03_gdp_input_to_primitive/scene/guid/demo_2d_text_to_text_action/script/input_text_dictionary_to_actions.gd" id="38_8q8k6"]
 [ext_resource type="Script" uid="uid://cvi6cl5mh2288" path="res://addons/2026_08_10_gdp_omi_file_import/scene/guid/demo_2d_vbox_godot_event/omi_file_godot_event_to_command.gd" id="38_cla7f"]
@@ -100,8 +101,13 @@
 [ext_resource type="PackedScene" uid="uid://bg2oltipkal3j" path="res://addons/2026_08_16_gdp_files_as_one_text/demo/guid/demo_2d_vbox_download_fuse_url_local/scene/prefab/prefab_button_res_os_directory.tscn" id="45_has3g"]
 [ext_resource type="Script" uid="uid://diecqinjp6x20" path="res://addons/2026_08_09_gdp_text_interpeter_sc_cmd/script/interpreters_sc/two_char_macro/scmd_sc_interpreter_two_char_macro.gd" id="45_vkenm"]
 [ext_resource type="PackedScene" uid="uid://ckhrtixvka8p" path="res://addons/2026_08_16_gdp_files_as_one_text/demo/guid/demo_2d_vbox_download_fuse_url_local/scene/prefab/prefab_button_user_os_directory.tscn" id="46_2018l"]
+[ext_resource type="Script" uid="uid://do5qg2j6n4pbu" path="res://addons/2026_09_11_gdp_text_uart_in_out_db/script/uart_io_gate_in_text_to_address_message.gd" id="46_chyi0"]
 [ext_resource type="Script" uid="uid://cb42lnswoib1a" path="res://addons/2026_01_03_gdp_input_to_primitive/scene/guid/demo_2d_vbox_uart_one_two_char/input_text_dictionary_to_actions_from_two_char.gd" id="46_nuvlh"]
 [ext_resource type="Script" uid="uid://cxd016trhepxt" path="res://addons/2026_01_03_gdp_input_to_primitive/script/relay/input_relay_string.gd" id="47_lb7po"]
+[ext_resource type="Script" uid="uid://bd42c5tyrjf0x" path="res://addons/2026_09_11_gdp_text_uart_in_out_db/script/uart_io_gate_in_relay.gd" id="47_u32o2"]
+[ext_resource type="Script" uid="uid://sl2df7heyros" path="res://addons/2026_09_11_gdp_text_uart_in_out_db/script/uart_io_relay_filter_with_exact_value_to_named_variant.gd" id="48_afkua"]
+[ext_resource type="Script" uid="uid://c3u3sq2rt5gvf" path="res://addons/2026_09_11_gdp_text_uart_in_out_db/script/uart_io_relay_filter_with_prefix_suffix_to_ab_input.gd" id="49_stqgv"]
+[ext_resource type="Script" uid="uid://f4ly85w3bkn0" path="res://addons/2026_09_11_gdp_text_uart_in_out_db/script/uart_io_relay_to_ap_input_with_signal.gd" id="50_o6cec"]
 [ext_resource type="Script" uid="uid://cqegkjoblqteu" path="res://addons/2026_08_09_gdp_text_interpeter_sc_cmd/script/interpreters_sc/integer_to_macro/scmd_sc_interpreter_integer_macro.gd" id="52_pulor"]
 [ext_resource type="Script" uid="uid://dkr2303rkgfq3" path="res://addons/2026_08_09_gdp_text_interpeter_sc_cmd/script/interpreters_cmd/bool_register/scmd_cmd_interpreter_boolean_register.gd" id="53_pduoy"]
 [ext_resource type="Script" uid="uid://bnw3yrlvnikbb" path="res://addons/2026_08_09_gdp_text_interpeter_sc_cmd/script/interpreters_sc/integer/scmd_sc_interpreter_index_integer_action.gd" id="54_fgpks"]
@@ -128,10 +134,12 @@
 [ext_resource type="Script" uid="uid://dekphoet0if33" path="res://addons/2026_08_27_gdp_bool_analog_dictionary/scene/guid/demo_2d_vbox_abstract_boolean_float_input/script/ab_ui_input/ab_ui_input_line_edit_to_clipboard.gd" id="104_ca1ic"]
 [ext_resource type="PackedScene" uid="uid://dsev4eupkigc" path="res://addons/2026_09_07_gdp_graph_edit_to_gomi/scene/guid/demo_graph_node_named_bean/prefab/prefab_graph_node_gomi_bean_ui_push_command_toggle.tscn" id="104_qqolx"]
 [ext_resource type="PackedScene" uid="uid://bl86cqc46y4sg" path="res://addons/2026_09_07_gdp_graph_edit_to_gomi/scene/guid/demo_graph_node_named_bean/prefab/prefab_graph_node_gomi_bean_ui_push_shortcut_button.tscn" id="104_wiphs"]
+[ext_resource type="Script" uid="uid://bp1e2gdv5a4xl" path="res://addons/2026_01_03_gdp_input_to_primitive/script/input_memory_from_get_set_text_of_target_node.gd" id="104_yr7qt"]
 [ext_resource type="PackedScene" uid="uid://bswp2x2s3rlxt" path="res://addons/2026_09_07_gdp_graph_edit_to_gomi/scene/guid/demo_graph_node_named_bean/prefab/prefab_graph_node_gomi_bean_ui_push_game_telemetry.tscn" id="106_20uwg"]
 [ext_resource type="Script" uid="uid://pxmwg52apxu5" path="res://addons/2026_08_27_gdp_bool_analog_dictionary/script/ab_input_add_prefix_to_key_value.gd" id="107_feoa8"]
 [ext_resource type="Script" uid="uid://ccbpnyr5w452y" path="res://addons/2026_01_03_gdp_input_to_primitive/script/input_parse_prefix_suffix_around_string.gd" id="107_qqolx"]
 [ext_resource type="PackedScene" uid="uid://bdg6u0m1eycbj" path="res://addons/2026_09_08_gdp_bluetooth_electronics_as_graph_node/scene/guid/demo_graph_node_basic_in_out/demo_graph_node_basic_in_out.tscn" id="107_wiphs"]
+[ext_resource type="PackedScene" uid="uid://c502tma8vrnhe" path="res://addons/2026_09_08_gdp_post_it_to_learn_with_graph_node/scene/guid/demo_garph_node_post_it_basic/demo_garph_node_post_it_basic.tscn" id="110_h3nbc"]
 [ext_resource type="Script" uid="uid://bcxq5monpm1ab" path="res://addons/2026_01_03_gdp_input_to_primitive/script/input_ui_open_url.gd" id="112_m7vwt"]
 [ext_resource type="Script" uid="uid://cheu56oxb55ta" path="res://addons/2026_01_03_gdp_input_to_primitive/script/unstore/input_text_file_from_godot_project.gd" id="116_pu0sh"]
 [ext_resource type="Script" uid="uid://b5dytkpgo6xa0" path="res://addons/2026_01_03_gdp_input_to_primitive/script/input_parse_index_value_integer_to_string.gd" id="118_vw6xl"]
@@ -735,6 +743,18 @@ script = ExtResource("35_de16l")
 _use_debug_print = true
 metadata/_custom_type_script = "uid://dyi637b61u14f"
 
+[node name="_post_it_board" type="Node" parent="GOMI/FILE/LoadFileFromFolder/Filter Text As Files/FileConfigRedirectionByNameRelayBroadcaster" unique_id=1781519992]
+script = ExtResource("37_io717")
+_exact_file_name = ""
+_find_file_name = ".post_it_board"
+metadata/_custom_type_script = "uid://ci68j7wx1poj6"
+
+[node name="_bluetooth_electronic" type="Node" parent="GOMI/FILE/LoadFileFromFolder/Filter Text As Files/FileConfigRedirectionByNameRelayBroadcaster" unique_id=364735665]
+script = ExtResource("37_io717")
+_exact_file_name = ""
+_find_file_name = ".bluetooth_electronic"
+metadata/_custom_type_script = "uid://ci68j7wx1poj6"
+
 [node name="Code" type="Node" parent="GOMI" unique_id=365457322]
 
 [node name="NTP" type="Node" parent="GOMI/Code" unique_id=39432543]
@@ -777,11 +797,60 @@ metadata/_custom_type_script = "uid://yxfimt0e7o0b"
 script = ExtResource("2_vkenm")
 metadata/_custom_type_script = "uid://bllyrren6tpgy"
 
+[node name="PushToSingletonGOMI" type="Node" parent="GOMI/Code/Gate In/Command/UDP for Command/UdpIoListenThreadUdpByte" unique_id=1499412701]
+script = ExtResource("75_lw2yh")
+metadata/_custom_type_script = "uid://c7g1isaokapf8"
+
 [node name="UdpIoListenThreadUdpText" type="Node" parent="GOMI/Code/Gate In/Command/UDP for Command" unique_id=1078676604]
 script = ExtResource("2_m1p13")
 _port_id = 2614
 _auto_start_server = false
 metadata/_custom_type_script = "uid://bya86h4uvfpnl"
+
+[node name="PushToSingletonGOMI" type="Node" parent="GOMI/Code/Gate In/Command/UDP for Command/UdpIoListenThreadUdpText" unique_id=1072534338]
+script = ExtResource("75_lw2yh")
+metadata/_custom_type_script = "uid://c7g1isaokapf8"
+
+[node name="UdpIoListenThreadUdpUART" type="Node" parent="GOMI/Code/Gate In/Command/UDP for Command" unique_id=870931058]
+script = ExtResource("2_m1p13")
+_port_id = 2510
+metadata/_custom_type_script = "uid://bya86h4uvfpnl"
+
+[node name="UART TEMPORARY" type="Node" parent="GOMI/Code/Gate In/Command/UDP for Command/UdpIoListenThreadUdpUART" unique_id=101683441]
+
+[node name="UartIoGateInTextToAddressMessage" type="Node" parent="GOMI/Code/Gate In/Command/UDP for Command/UdpIoListenThreadUdpUART/UART TEMPORARY" unique_id=716674141]
+script = ExtResource("46_chyi0")
+metadata/_custom_type_script = "uid://do5qg2j6n4pbu"
+
+[node name="UartIoGateInRelay" type="Node" parent="GOMI/Code/Gate In/Command/UDP for Command/UdpIoListenThreadUdpUART/UART TEMPORARY" unique_id=1222459012]
+script = ExtResource("47_u32o2")
+metadata/_custom_type_script = "uid://bd42c5tyrjf0x"
+
+[node name="UartIoRelayFilterWithExactValueToNamedVariant" type="Node" parent="GOMI/Code/Gate In/Command/UDP for Command/UdpIoListenThreadUdpUART/UART TEMPORARY/UartIoGateInRelay" unique_id=1181368210]
+script = ExtResource("48_afkua")
+metadata/_custom_type_script = "uid://sl2df7heyros"
+
+[node name="UartIoRelayFilterWithPrefixSuffixToAbInput" type="Node" parent="GOMI/Code/Gate In/Command/UDP for Command/UdpIoListenThreadUdpUART/UART TEMPORARY/UartIoGateInRelay" unique_id=2096008516]
+script = ExtResource("49_stqgv")
+_add_at_ready = "FILE>>>|default.uart_to_ab_input
+prefix♦️suffix♦️name_of_value
+*AX♦️*♦️accelerometer_x
+*AZ♦️*♦️accelerometer_z
+*AY♦️*♦️accelerometer_y
+*AS♦️*♦️accelerometer_strengh
+*T♦️*♦️temperature
+*C♦️*♦️compass
+*S♦️*♦️volume
+"
+metadata/_custom_type_script = "uid://c3u3sq2rt5gvf"
+
+[node name="UartIoRelayToApInputWithSignal" type="Node" parent="GOMI/Code/Gate In/Command/UDP for Command/UdpIoListenThreadUdpUART/UART TEMPORARY/UartIoGateInRelay" unique_id=81168268]
+script = ExtResource("50_o6cec")
+metadata/_custom_type_script = "uid://f4ly85w3bkn0"
+
+[node name="AbInputStaticSetWithLocalRefList" type="Node" parent="GOMI/Code/Gate In/Command/UDP for Command/UdpIoListenThreadUdpUART/UART TEMPORARY/UartIoGateInRelay/UartIoRelayToApInputWithSignal" unique_id=1265524675]
+script = ExtResource("44_c6ljw")
+metadata/_custom_type_script = "uid://ivok83vhxq15"
 
 [node name="WebSocket for Command" type="Node" parent="GOMI/Code/Gate In/Command" unique_id=2044544183]
 
@@ -1030,9 +1099,9 @@ metadata/_custom_type_script = "uid://bf1pvarstcheb"
 [node name="To Boolean Registerd" type="Node" parent="GOMI/Code/PROCESS_COMMAND_LINE/Actioneer of command line/Interpreter" unique_id=1258746403]
 script = ExtResource("53_pduoy")
 
-[node name="Push To bool Register" type="Node" parent="GOMI/Code/PROCESS_COMMAND_LINE/Actioneer of command line/Interpreter/To Boolean Registerd" unique_id=1922871376]
-script = ExtResource("35_smkdd")
-metadata/_custom_type_script = "uid://drujjt4x780gf"
+[node name="PushToSingletonGOMI" type="Node" parent="GOMI/Code/PROCESS_COMMAND_LINE/Actioneer of command line/Interpreter/To Boolean Registerd" unique_id=1125260665]
+script = ExtResource("75_lw2yh")
+metadata/_custom_type_script = "uid://c7g1isaokapf8"
 
 [node name="To Delay command with time" type="Node" parent="GOMI/Code/PROCESS_COMMAND_LINE/Actioneer of command line/Interpreter" unique_id=944515631]
 script = ExtResource("12_ck7vd")
@@ -1242,9 +1311,10 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-current_tab = 0
+current_tab = 2
 
 [node name="Code Push" type="TabBar" parent="CanvasLayer/GOMI Main/PanelMainBoard/GOMI TAB/GDScript/TabContainer" unique_id=1225792577]
+visible = false
 layout_mode = 2
 metadata/_tab_index = 0
 
@@ -1302,6 +1372,13 @@ layout_mode = 0
 offset_top = 431.0
 offset_bottom = 633.0
 
+[node name="InputMemoryFromGetSetTextOfTargetNode" type="Node" parent="CanvasLayer/GOMI Main/PanelMainBoard/GOMI TAB/GDScript/TabContainer/Graph/GraphEdit/GraphNodeGomiBeanUiPushCommandButton" unique_id=400455589 node_paths=PackedStringArray("_target_node")]
+script = ExtResource("104_yr7qt")
+_target_node = NodePath("../LineEdit Command To Push")
+_path_format = "user://temp_garph_node/%s.txt"
+_save_unique_id = "command_push"
+metadata/_custom_type_script = "uid://bp1e2gdv5a4xl"
+
 [node name="GraphNodeGomiBeanUiPushCommandToggle" parent="CanvasLayer/GOMI Main/PanelMainBoard/GOMI TAB/GDScript/TabContainer/Graph/GraphEdit" unique_id=482082571 instance=ExtResource("104_qqolx")]
 layout_mode = 0
 offset_top = -32.0
@@ -1312,15 +1389,29 @@ layout_mode = 0
 offset_top = 158.0
 offset_bottom = 308.0
 
+[node name="InputMemoryFromGetSetTextOfTargetNode2" type="Node" parent="CanvasLayer/GOMI Main/PanelMainBoard/GOMI TAB/GDScript/TabContainer/Graph/GraphEdit/GraphNodeGomiBeanUiPushGameTelemetry" unique_id=1972642238 node_paths=PackedStringArray("_target_node")]
+script = ExtResource("104_yr7qt")
+_target_node = NodePath("../TextEdit game telemetry to create")
+_path_format = "user://temp_garph_node/%s.txt"
+_save_unique_id = "game_telemetry_push"
+metadata/_custom_type_script = "uid://bp1e2gdv5a4xl"
+
 [node name="GraphNodeGomiBeanUiPushShortcutButton" parent="CanvasLayer/GOMI Main/PanelMainBoard/GOMI TAB/GDScript/TabContainer/Graph/GraphEdit" unique_id=2074290134 instance=ExtResource("104_wiphs")]
 layout_mode = 0
-offset_left = 31.0
-offset_top = 431.0
-offset_right = 438.0
-offset_bottom = 706.0
+offset_left = 264.0
+offset_top = 351.0
+offset_right = 671.0
+offset_bottom = 626.0
+position_offset = Vector2(264, 351)
+
+[node name="InputMemoryFromGetSetTextOfTargetNode3" type="Node" parent="CanvasLayer/GOMI Main/PanelMainBoard/GOMI TAB/GDScript/TabContainer/Graph/GraphEdit/GraphNodeGomiBeanUiPushShortcutButton" unique_id=1231355300 node_paths=PackedStringArray("_target_node")]
+script = ExtResource("104_yr7qt")
+_target_node = NodePath("../LineEdit")
+_save_unique_id = "shortcut_push"
+_use_print_of_save_path = true
+metadata/_custom_type_script = "uid://bp1e2gdv5a4xl"
 
 [node name="UART" type="Panel" parent="CanvasLayer/GOMI Main/PanelMainBoard/GOMI TAB/GDScript/TabContainer" unique_id=600707480]
-visible = false
 layout_mode = 2
 metadata/_tab_index = 2
 
@@ -1335,6 +1426,17 @@ metadata/_custom_type_script = "uid://c7g1isaokapf8"
 
 [node name="Demo" parent="CanvasLayer/GOMI Main/PanelMainBoard/GOMI TAB/GDScript/TabContainer/UART" unique_id=843151644 instance=ExtResource("107_wiphs")]
 layout_mode = 1
+
+[node name="Post It" type="Panel" parent="CanvasLayer/GOMI Main/PanelMainBoard/GOMI TAB/GDScript/TabContainer" unique_id=55784348]
+visible = false
+layout_mode = 2
+metadata/_tab_index = 3
+
+[node name="DemoGarphNodePostItBasic" parent="CanvasLayer/GOMI Main/PanelMainBoard/GOMI TAB/GDScript/TabContainer/Post It" unique_id=1445728716 instance=ExtResource("110_h3nbc")]
+layout_mode = 1
+
+[node name="GraphEdit" parent="CanvasLayer/GOMI Main/PanelMainBoard/GOMI TAB/GDScript/TabContainer/Post It/DemoGarphNodePostItBasic" index="5" unique_id=919634082]
+scroll_offset = Vector2(0, -0.1739502)
 
 [node name="Input" type="Panel" parent="CanvasLayer/GOMI Main/PanelMainBoard/GOMI TAB" unique_id=1151134158]
 visible = false
@@ -2839,7 +2941,8 @@ layout_mode = 2
 [connection signal="on_index_integer_changed_with_anti_spam" from="GOMI/DATABASE OF ACTIONS/AB INPUT TO FROMAT S2W/AbInputAnalogToFormatS2W" to="GOMI/DATABASE OF ACTIONS/AB INPUT TO FROMAT S2W/AbInputAnalogToFormatS2W/PushToSingletonGOMI" method="push_out_bytes_ii_to_broadcast"]
 [connection signal="on_fusion_complete" from="GOMI/FILE/LoadFileFromFolder" to="GOMI/FILE/LoadFileFromFolder/Filter Text As Files" method="clear_dictionary_and_filter_files_from_text"]
 [connection signal="on_fusion_complete" from="GOMI/FILE/LoadFileFromFolder" to="CanvasLayer/GOMI Main/PanelMainBoard/GOMI TAB/Files/TabContainer/Merge Files/ScrollContainer/CodeEdit Merge Files" method="set_text"]
-[connection signal="on_file_fused_by_extension_name" from="GOMI/FILE/LoadFileFromFolder/Filter Text As Files" to="GOMI/FILE/LoadFileFromFolder/Filter Text As Files/FileConfigRedirectionByNameRelayBroadcaster" method="push_file_content_by_extension_name"]
+[connection signal="on_file_fused_with_only_extension_name" from="GOMI/FILE/LoadFileFromFolder/Filter Text As Files" to="GOMI/FILE/LoadFileFromFolder/Filter Text As Files/FileConfigRedirectionByNameRelayBroadcaster" method="push_file_content_by_extension_name"]
+[connection signal="on_file_with_extension_name" from="GOMI/FILE/LoadFileFromFolder/Filter Text As Files" to="GOMI/FILE/LoadFileFromFolder/Filter Text As Files/FileConfigRedirectionByNameRelayBroadcaster" method="push_file_content_by_full_file_name"]
 [connection signal="on_content_found_to_redirect" from="GOMI/FILE/LoadFileFromFolder/Filter Text As Files/FileConfigRedirectionByNameRelayBroadcaster/__obsolete/_mouse_to_command" to="GOMI/FILE/LoadFileFromFolder/Filter Text As Files/FileConfigRedirectionByNameRelayBroadcaster/__obsolete/_mouse_to_command/Import Mouse" method="push_in_text_to_parse"]
 [connection signal="on_left_button_down_command" from="GOMI/FILE/LoadFileFromFolder/Filter Text As Files/FileConfigRedirectionByNameRelayBroadcaster/__obsolete/_mouse_to_command/Import Mouse" to="GOMI/DATABASE OF ACTIONS/MOUSE EVENT/Button Left Macro" method="append_action_for_true_value"]
 [connection signal="on_left_button_up_command" from="GOMI/FILE/LoadFileFromFolder/Filter Text As Files/FileConfigRedirectionByNameRelayBroadcaster/__obsolete/_mouse_to_command/Import Mouse" to="GOMI/DATABASE OF ACTIONS/MOUSE EVENT/Button Left Macro" method="append_action_for_false_value"]
@@ -2907,10 +3010,24 @@ layout_mode = 2
 [connection signal="on_request_append_xbox_if_has_text_in_name" from="GOMI/FILE/LoadFileFromFolder/Filter Text As Files/FileConfigRedirectionByNameRelayBroadcaster/_godot_joystick_to_command/OmiFileGodotJoystickToCommand" to="GOMI/Code/Input/GODOT LISTENER/GAMEPAD/InputListenToDevicesAxisAndButtons" method="append_is_xbox_keyword"]
 [connection signal="on_request_duplicate_input_with_new_name" from="GOMI/FILE/LoadFileFromFolder/Filter Text As Files/FileConfigRedirectionByNameRelayBroadcaster/_godot_joystick_to_command/OmiFileGodotJoystickToCommand" to="GOMI/Code/Input/GODOT LISTENER/GAMEPAD/InputListenToDevicesAxisAndButtons/InputDebugDevicesAxisAndButtonsAsString" method="append_a_device_input_duplication"]
 [connection signal="on_request_rename_input_with_new_name" from="GOMI/FILE/LoadFileFromFolder/Filter Text As Files/FileConfigRedirectionByNameRelayBroadcaster/_godot_joystick_to_command/OmiFileGodotJoystickToCommand" to="GOMI/Code/Input/GODOT LISTENER/GAMEPAD/InputListenToDevicesAxisAndButtons/InputDebugDevicesAxisAndButtonsAsString" method="append_a_device_input_rename"]
+[connection signal="on_content_found_to_redirect_with_file_name_without_extension" from="GOMI/FILE/LoadFileFromFolder/Filter Text As Files/FileConfigRedirectionByNameRelayBroadcaster/_post_it_board" to="CanvasLayer/GOMI Main/PanelMainBoard/GOMI TAB/GDScript/TabContainer/Post It/DemoGarphNodePostItBasic/PostItBoardAsTextRegister" method="set_text_for_board"]
+[connection signal="on_content_found_to_redirect_with_file_name_without_extension" from="GOMI/FILE/LoadFileFromFolder/Filter Text As Files/FileConfigRedirectionByNameRelayBroadcaster/_bluetooth_electronic" to="CanvasLayer/GOMI Main/PanelMainBoard/GOMI TAB/GDScript/TabContainer/Post It/DemoGarphNodePostItBasic/PostItBoardAsTextRegister" method="set_text_for_board"]
 [connection signal="on_ntp_utc_time_offset_milliseconds_received" from="GOMI/Code/NTP/NtpToolGetOffsetOfSingleServer" to="GOMI/Code/NTP/NtpToolGetOffsetOfSingleServer/PushToSingletonGOMI" method="push_in_ntp_utc_offset_in_milliseconds"]
 [connection signal="on_ntp_utc_time_offset_milliseconds_received" from="GOMI/Code/NTP/NtpToolGetOffsetOfSingleServer" to="GOMI/Code/NTP/NtpToolGetOffsetOfSingleServer/NtpToolComputeTimeWithOffsetNtpUtc" method="set_ntp_utc_offset_in_milliseconds"]
-[connection signal="on_message_received" from="GOMI/Code/Gate In/Command/UDP for Command/UdpIoListenThreadUdpByte" to="GOMI/Code/Gate In/Command/UDP for Command/UdpIoListenThreadUdpByte/UdpIoParseBytePackageToIID" method="parse_byte_in_litte_endian_package_to_iid"]
-[connection signal="on_message_received" from="GOMI/Code/Gate In/Command/UDP for Command/UdpIoListenThreadUdpText" to="GOMI/Static Singleton GOMI" method="push_in_raw_text"]
+[connection signal="on_message_received" from="GOMI/Code/Gate In/Command/UDP for Command/UdpIoListenThreadUdpByte" to="GOMI/Code/Gate In/Command/UDP for Command/UdpIoListenThreadUdpByte/PushToSingletonGOMI" method="push_in_bytes_to_process"]
+[connection signal="on_message_received" from="GOMI/Code/Gate In/Command/UDP for Command/UdpIoListenThreadUdpText" to="GOMI/Code/Gate In/Command/UDP for Command/UdpIoListenThreadUdpText/PushToSingletonGOMI" method="push_in_text_to_process"]
+[connection signal="on_message_received" from="GOMI/Code/Gate In/Command/UDP for Command/UdpIoListenThreadUdpUART" to="GOMI/Code/Gate In/Command/UDP for Command/UdpIoListenThreadUdpUART/UART TEMPORARY/UartIoGateInTextToAddressMessage" method="push_in_text_to_split"]
+[connection signal="on_found_address_message_from_text" from="GOMI/Code/Gate In/Command/UDP for Command/UdpIoListenThreadUdpUART/UART TEMPORARY/UartIoGateInTextToAddressMessage" to="GOMI/Code/Gate In/Command/UDP for Command/UdpIoListenThreadUdpUART/UART TEMPORARY/UartIoGateInRelay" method="relay_text_received_from_address"]
+[connection signal="on_relay_received_message_from_address" from="GOMI/Code/Gate In/Command/UDP for Command/UdpIoListenThreadUdpUART/UART TEMPORARY/UartIoGateInRelay" to="GOMI/Code/Gate In/Command/UDP for Command/UdpIoListenThreadUdpUART/UART TEMPORARY/UartIoGateInRelay/UartIoRelayFilterWithExactValueToNamedVariant" method="push_in_address_value"]
+[connection signal="on_relay_received_message_from_address" from="GOMI/Code/Gate In/Command/UDP for Command/UdpIoListenThreadUdpUART/UART TEMPORARY/UartIoGateInRelay" to="GOMI/Code/Gate In/Command/UDP for Command/UdpIoListenThreadUdpUART/UART TEMPORARY/UartIoGateInRelay/UartIoRelayFilterWithPrefixSuffixToAbInput" method="push_in_package_to_parse"]
+[connection signal="on_bool_value_found_with_address" from="GOMI/Code/Gate In/Command/UDP for Command/UdpIoListenThreadUdpUART/UART TEMPORARY/UartIoGateInRelay/UartIoRelayFilterWithExactValueToNamedVariant" to="GOMI/Code/Gate In/Command/UDP for Command/UdpIoListenThreadUdpUART/UART TEMPORARY/UartIoGateInRelay/UartIoRelayToApInputWithSignal" method="push_to_ap_input_boolean_with_address"]
+[connection signal="on_trigger_found_with_address" from="GOMI/Code/Gate In/Command/UDP for Command/UdpIoListenThreadUdpUART/UART TEMPORARY/UartIoGateInRelay/UartIoRelayFilterWithExactValueToNamedVariant" to="GOMI/Code/Gate In/Command/UDP for Command/UdpIoListenThreadUdpUART/UART TEMPORARY/UartIoGateInRelay/UartIoRelayToApInputWithSignal" method="push_to_ap_input_trigger"]
+[connection signal="on_bool_value_found_with_address" from="GOMI/Code/Gate In/Command/UDP for Command/UdpIoListenThreadUdpUART/UART TEMPORARY/UartIoGateInRelay/UartIoRelayFilterWithPrefixSuffixToAbInput" to="GOMI/Code/Gate In/Command/UDP for Command/UdpIoListenThreadUdpUART/UART TEMPORARY/UartIoGateInRelay/UartIoRelayToApInputWithSignal" method="push_to_ap_input_boolean_with_address"]
+[connection signal="on_float_value_found_with_address" from="GOMI/Code/Gate In/Command/UDP for Command/UdpIoListenThreadUdpUART/UART TEMPORARY/UartIoGateInRelay/UartIoRelayFilterWithPrefixSuffixToAbInput" to="GOMI/Code/Gate In/Command/UDP for Command/UdpIoListenThreadUdpUART/UART TEMPORARY/UartIoGateInRelay/UartIoRelayToApInputWithSignal" method="push_to_ap_input_float_with_address"]
+[connection signal="on_trigger_value_found_with_address" from="GOMI/Code/Gate In/Command/UDP for Command/UdpIoListenThreadUdpUART/UART TEMPORARY/UartIoGateInRelay/UartIoRelayFilterWithPrefixSuffixToAbInput" to="GOMI/Code/Gate In/Command/UDP for Command/UdpIoListenThreadUdpUART/UART TEMPORARY/UartIoGateInRelay/UartIoRelayToApInputWithSignal" method="push_to_ap_input_trigger_with_address"]
+[connection signal="on_relay_to_ap_input_boolean" from="GOMI/Code/Gate In/Command/UDP for Command/UdpIoListenThreadUdpUART/UART TEMPORARY/UartIoGateInRelay/UartIoRelayToApInputWithSignal" to="GOMI/Code/Gate In/Command/UDP for Command/UdpIoListenThreadUdpUART/UART TEMPORARY/UartIoGateInRelay/UartIoRelayToApInputWithSignal/AbInputStaticSetWithLocalRefList" method="set_boolean_value_with_input_name"]
+[connection signal="on_relay_to_ap_input_float" from="GOMI/Code/Gate In/Command/UDP for Command/UdpIoListenThreadUdpUART/UART TEMPORARY/UartIoGateInRelay/UartIoRelayToApInputWithSignal" to="GOMI/Code/Gate In/Command/UDP for Command/UdpIoListenThreadUdpUART/UART TEMPORARY/UartIoGateInRelay/UartIoRelayToApInputWithSignal/AbInputStaticSetWithLocalRefList" method="set_analog_value_with_input_name"]
+[connection signal="on_relay_to_ap_input_trigger" from="GOMI/Code/Gate In/Command/UDP for Command/UdpIoListenThreadUdpUART/UART TEMPORARY/UartIoGateInRelay/UartIoRelayToApInputWithSignal" to="GOMI/Code/Gate In/Command/UDP for Command/UdpIoListenThreadUdpUART/UART TEMPORARY/UartIoGateInRelay/UartIoRelayToApInputWithSignal/AbInputStaticSetWithLocalRefList" method="trigger_event_with_input_name"]
 [connection signal="on_received_from_client_byte_anonym" from="GOMI/Code/Gate In/GameInfo/WebSocket for Game Telemetry/TbioWsDefaultServer" to="GOMI/Code/Gate In/GameInfo/WebSocket for Game Telemetry/TbioWsDefaultServer/Push Game Telemetry" method="push_in_bytes_game_telemetry"]
 [connection signal="on_received_from_client_text_anonym" from="GOMI/Code/Gate In/GameInfo/WebSocket for Game Telemetry/TbioWsDefaultServer" to="GOMI/Code/Gate In/GameInfo/WebSocket for Game Telemetry/TbioWsDefaultServer/Push Game Telemetry" method="push_in_text_game_telemetry"]
 [connection signal="on_boolean_value_changed" from="GOMI/Code/BOOL REGISTER/Listen To Register Boolean Changed" to="GOMI/DATABASE OF ACTIONS/BOOL TO MACRO/InputTextDictionaryTrueFalseValueToActions" method="emit_if_equals_to_text_in_true_or_false_dictionary"]
@@ -2950,8 +3067,8 @@ layout_mode = 2
 [connection signal="on_command_start_processing" from="GOMI/Code/PROCESS_COMMAND_LINE/Actioneer of command line" to="CanvasLayer/GOMI Main/PanelMainBoard/HBoxContainer Log/HBoxContainer/Label CMD" method="set_text"]
 [connection signal="on_call_macro_request" from="GOMI/Code/PROCESS_COMMAND_LINE/Actioneer of command line/Interpreter/To Call Macro" to="ToStore/Trigger Loaded GDScript From Name/Trigger GDScript From Name" method="emit_godot_script_resource_from_file_name"]
 [connection signal="on_call_macro_request" from="GOMI/Code/PROCESS_COMMAND_LINE/Actioneer of command line/Interpreter/To Call Macro" to="GOMI/DATABASE OF ACTIONS/MACRO TO COMMAND/InputTextDictionaryToActions" method="emit_if_text_equals_to_one_key"]
-[connection signal="on_set_boolean_to_value_from_name" from="GOMI/Code/PROCESS_COMMAND_LINE/Actioneer of command line/Interpreter/To Boolean Registerd" to="GOMI/Code/PROCESS_COMMAND_LINE/Actioneer of command line/Interpreter/To Boolean Registerd/Push To bool Register" method="set_boolean_value_in_static_singleton"]
-[connection signal="on_toggle_boolean_from_name" from="GOMI/Code/PROCESS_COMMAND_LINE/Actioneer of command line/Interpreter/To Boolean Registerd" to="GOMI/Code/PROCESS_COMMAND_LINE/Actioneer of command line/Interpreter/To Boolean Registerd/Push To bool Register" method="toggle_boolean_value_in_static_singleton"]
+[connection signal="on_set_boolean_to_value_from_name" from="GOMI/Code/PROCESS_COMMAND_LINE/Actioneer of command line/Interpreter/To Boolean Registerd" to="GOMI/Code/PROCESS_COMMAND_LINE/Actioneer of command line/Interpreter/To Boolean Registerd/PushToSingletonGOMI" method="push_in_boolean_set"]
+[connection signal="on_toggle_boolean_from_name" from="GOMI/Code/PROCESS_COMMAND_LINE/Actioneer of command line/Interpreter/To Boolean Registerd" to="GOMI/Code/PROCESS_COMMAND_LINE/Actioneer of command line/Interpreter/To Boolean Registerd/PushToSingletonGOMI" method="push_in_boolean_toggle"]
 [connection signal="on_command_line_to_delay_found" from="GOMI/Code/PROCESS_COMMAND_LINE/Actioneer of command line/Interpreter/To Delay command with time" to="GOMI/Code/PROCESS_COMMAND_LINE/Actioneer of command line/Interpreter/To Delay command with time/As simple Text Delayer" method="append_text_to_be_delayed_of_milliseconds"]
 [connection signal="on_text_ready_to_be_relayed" from="GOMI/Code/PROCESS_COMMAND_LINE/Actioneer of command line/Interpreter/To Delay command with time/As simple Text Delayer" to="GOMI/Code/PROCESS_COMMAND_LINE/Actioneer of command line" method="push_in_command_line_text"]
 [connection signal="on_shortcut_line_to_interpret_found" from="GOMI/Code/PROCESS_COMMAND_LINE/Actioneer of command line/Interpreter/To Relay Shortcut to the actioneer" to="GOMI/Code/PROCESS_COMMAND_LINE/Actioneer of command line/Interpreter/To Relay Shortcut to the actioneer/SCmdPushShortcutToStaticSingleton" method="push_shortcut_to_static_singleton"]
@@ -3038,7 +3155,11 @@ layout_mode = 2
 [editable path="ToStore/Pre Load Main Godot Script"]
 [editable path="ToStore/Trigger Loaded GDScript From Name"]
 [editable path="CanvasLayer/GOMI Main/PanelMainBoard/GOMI TAB/GDScript/TabContainer/Code Push/SceneCodeEditorPusherForGomi"]
+[editable path="CanvasLayer/GOMI Main/PanelMainBoard/GOMI TAB/GDScript/TabContainer/Graph/GraphEdit/GraphNodeGomiBeanUiPushCommandButton"]
+[editable path="CanvasLayer/GOMI Main/PanelMainBoard/GOMI TAB/GDScript/TabContainer/Graph/GraphEdit/GraphNodeGomiBeanUiPushGameTelemetry"]
+[editable path="CanvasLayer/GOMI Main/PanelMainBoard/GOMI TAB/GDScript/TabContainer/Graph/GraphEdit/GraphNodeGomiBeanUiPushShortcutButton"]
 [editable path="CanvasLayer/GOMI Main/PanelMainBoard/GOMI TAB/GDScript/TabContainer/UART/Demo"]
+[editable path="CanvasLayer/GOMI Main/PanelMainBoard/GOMI TAB/GDScript/TabContainer/Post It/DemoGarphNodePostItBasic"]
 [editable path="CanvasLayer/GOMI Main/PanelMainBoard/GOMI TAB/Input/TabContainer/IPV4/VBoxContainer/DemoUi2dIpv4Fetch"]
 [editable path="CanvasLayer/GOMI Main/PanelMainBoard/GOMI TAB/Input/TabContainer/IPV4/VBoxContainer/DemoUi2dIpv4Fetch/ScrollContainer/VBoxContainer/LabelLocalIpv4Joined"]
 [editable path="CanvasLayer/GOMI Main/PanelMainBoard/GOMI TAB/Input/TabContainer/IPV4/VBoxContainer/DemoUi2dIpv4Fetch/ScrollContainer/VBoxContainer/LabelPublicIpv4"]
