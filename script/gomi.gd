@@ -28,6 +28,8 @@ signal on_bytes_out_to_broadcast_request(bytes_to_broadcast:PackedByteArray)
 signal on_text_in_game_telemetry(game_telemetry: String)
 signal on_bytes_in_game_telemetry(game_telemetry:PackedByteArray)
 
+signal on_text_in_uart_data(uart_source_address: String, uart_data: String)
+signal on_text_uart_data_received(uart_source_address: String, uart_data: String)
 
 
 func _ready() -> void:
@@ -35,6 +37,10 @@ func _ready() -> void:
 
 func _exit_tree() -> void:
 	_singleton= null
+
+
+func push_in_text_uart_data(uart_source_address: String, uart_data: String):
+	GOMI.uart_text_data(uart_source_address, uart_data)
 
 
 ## Notify the user that the app received game telemetry on the websocket
@@ -237,6 +243,8 @@ static func hook_analog_changed(callable_analog_name_with_value:Callable):
 
 
 
+
+
 ## Notify the user that the app received game telemetry on the websocket
 static func game_text_telemetry(text_game_telemetry:String):
 	if _singleton==null:
@@ -322,3 +330,31 @@ static func push_in_ntp_utc_offset_in_milliseconds(offset_in_milliseconds:float)
 	
 	
 	
+
+
+
+#region UART Byte Data
+static func uart_text_data(uart_source_address: String, uart_data: String):
+	var stale_callables: Array[Callable] = []
+	for callable in _listeners_text_uart_data:
+		if callable == null or callable.is_null() or not callable.is_valid():
+			stale_callables.append(callable)
+			continue
+		callable.call(uart_source_address, uart_data)
+	for stale_callable in stale_callables:
+		_listeners_text_uart_data.erase(stale_callable)
+	
+	if _singleton==null:
+		return
+	_singleton.on_text_in_uart_data.emit(uart_source_address, uart_data)
+	_singleton.on_text_uart_data_received.emit(uart_source_address, uart_data)
+
+
+static var _listeners_text_uart_data: Array[Callable] = []
+static func hook_to_text_uart_data(callback:Callable):
+	_listeners_text_uart_data.append(callback)
+
+static func unhook_from_text_uart_data(callback:Callable):
+	_listeners_text_uart_data.erase(callback)
+
+#endregion

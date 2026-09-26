@@ -113,7 +113,6 @@
 [ext_resource type="Script" uid="uid://bnw3yrlvnikbb" path="res://addons/2026_08_09_gdp_text_interpeter_sc_cmd/script/interpreters_sc/integer/scmd_sc_interpreter_index_integer_action.gd" id="54_fgpks"]
 [ext_resource type="Script" uid="uid://6w1y5aow3bv8" path="res://addons/2026_08_09_gdp_text_interpeter_sc_cmd/script/interpreters_sc/bool_register/scmd_sc_interpreter_boolean_register.gd" id="54_s1fus"]
 [ext_resource type="Script" uid="uid://cjmfcj5o88d4p" path="res://addons/2026_08_27_gdp_bool_analog_dictionary/scene/guid/demo_2d_vbox_abstract_boolean_float_input/script/ab_input_static_set_with_key.gd" id="56_de16l"]
-[ext_resource type="Script" uid="uid://puy72ch5g05f" path="res://addons/2026_08_27_gdp_bool_analog_dictionary/scene/guid/demo_2d_vbox_abstract_boolean_float_input/script/abstract/ab_input_push_key_value.gd" id="56_fdhwg"]
 [ext_resource type="Script" uid="uid://cbtslw3dg0ak0" path="res://addons/2026_08_09_gdp_text_interpeter_sc_cmd/script/interpreters_sc/call_macro/scmd_sc_interpreter_call_macro.gd" id="60_2uy26"]
 [ext_resource type="Script" uid="uid://q8u7ky0mku8v" path="res://addons/2026_01_03_gdp_input_to_primitive/scene/guid/demo_2d_text_to_text_action/script/input_ui_line_edit_with_submit_button.gd" id="63_hvd5f"]
 [ext_resource type="Script" uid="uid://caagrcerb7wxk" path="res://addons/2026_07_30_gdp_boolean_register/scene/guid/demo_2d_vbox_boolean_register/script/ui/bool_reg_ui_display_boolean_name_format.gd" id="67_16vpb"]
@@ -141,8 +140,11 @@
 [ext_resource type="PackedScene" uid="uid://bdg6u0m1eycbj" path="res://addons/2026_09_08_gdp_bluetooth_electronics_as_graph_node/scene/guid/demo_graph_node_basic_in_out/demo_graph_node_basic_in_out.tscn" id="107_wiphs"]
 [ext_resource type="PackedScene" uid="uid://c502tma8vrnhe" path="res://addons/2026_09_08_gdp_post_it_to_learn_with_graph_node/scene/guid/demo_garph_node_post_it_basic/demo_garph_node_post_it_basic.tscn" id="110_h3nbc"]
 [ext_resource type="Script" uid="uid://bcxq5monpm1ab" path="res://addons/2026_01_03_gdp_input_to_primitive/script/input_ui_open_url.gd" id="112_m7vwt"]
+[ext_resource type="PackedScene" uid="uid://cbgvv3knjiimc" path="res://addons/2026_09_08_gdp_bluetooth_electronics_as_graph_node/scene/guid/demo_graph_node_basic_in_out/prefab/listen_text/prefab_graph_node_listen_text_vertical_gauge_basic.tscn" id="116_afkua"]
 [ext_resource type="Script" uid="uid://cheu56oxb55ta" path="res://addons/2026_01_03_gdp_input_to_primitive/script/unstore/input_text_file_from_godot_project.gd" id="116_pu0sh"]
 [ext_resource type="Script" uid="uid://b5dytkpgo6xa0" path="res://addons/2026_01_03_gdp_input_to_primitive/script/input_parse_index_value_integer_to_string.gd" id="118_vw6xl"]
+[ext_resource type="Script" uid="uid://bc1vh33b6npeb" path="res://addons/2026_07_29_gdp_gomi/script/listen_to_singleton_gomi.gd" id="130_u32o2"]
+[ext_resource type="Script" uid="uid://dqmbxxy7co57r" path="res://addons/2026_09_11_gdp_text_uart_in_out_db/script/uart_io_format_key_variant.gd" id="131_afkua"]
 
 [sub_resource type="Resource" id="Resource_rs1r3"]
 script = ExtResource("2_58ya2")
@@ -852,6 +854,10 @@ metadata/_custom_type_script = "uid://f4ly85w3bkn0"
 script = ExtResource("44_c6ljw")
 metadata/_custom_type_script = "uid://ivok83vhxq15"
 
+[node name="PushToSingletonGOMI" type="Node" parent="GOMI/Code/Gate In/Command/UDP for Command/UdpIoListenThreadUdpUART/UART TEMPORARY/UartIoGateInRelay" unique_id=1501623160]
+script = ExtResource("75_lw2yh")
+metadata/_custom_type_script = "uid://c7g1isaokapf8"
+
 [node name="WebSocket for Command" type="Node" parent="GOMI/Code/Gate In/Command" unique_id=2044544183]
 
 [node name="TbioWsDefaultServer" type="Node" parent="GOMI/Code/Gate In/Command/WebSocket for Command" unique_id=103891934]
@@ -1004,9 +1010,10 @@ metadata/_custom_type_script = "uid://dy6v5butthvf6"
 script = ExtResource("23_y8qhp")
 metadata/_custom_type_script = "uid://cm76n7hcopjcs"
 
-[node name="AbInputPushKeyValue" type="Node" parent="GOMI/Code/Input/GODOT LISTENER/KEYBOARD/LOG/Key Log/InputAbstractTypingKeyLogger" unique_id=789919212]
-script = ExtResource("56_fdhwg")
-metadata/_custom_type_script = "uid://puy72ch5g05f"
+[node name="AbInputStaticSetWithKey" type="Node" parent="GOMI/Code/Input/GODOT LISTENER/KEYBOARD/LOG/Key Log/InputAbstractTypingKeyLogger" unique_id=1048694194]
+script = ExtResource("56_de16l")
+_input_name_for_primitive = "keyboard_log"
+metadata/_custom_type_script = "uid://cjmfcj5o88d4p"
 
 [node name="UNICODE CHAR" type="Node" parent="GOMI/Code/Input/GODOT LISTENER/KEYBOARD" unique_id=548753475]
 script = ExtResource("22_8iqu7")
@@ -1417,15 +1424,57 @@ metadata/_tab_index = 2
 
 [node name="InputParsePrefixSuffixAroundString" type="Node" parent="CanvasLayer/GOMI Main/PanelMainBoard/GOMI TAB/GDScript/TabContainer/UART" unique_id=1281454148]
 script = ExtResource("107_qqolx")
-_prefix_to_append = "uart:"
+_prefix_to_append = "uart|out|00:00:00:00:00:00|"
 metadata/_custom_type_script = "uid://ccbpnyr5w452y"
 
 [node name="PushToSingletonGOMI" type="Node" parent="CanvasLayer/GOMI Main/PanelMainBoard/GOMI TAB/GDScript/TabContainer/UART/InputParsePrefixSuffixAroundString" unique_id=1631637737]
 script = ExtResource("75_lw2yh")
 metadata/_custom_type_script = "uid://c7g1isaokapf8"
 
+[node name="ListenToSingletonGomi" type="Node" parent="CanvasLayer/GOMI Main/PanelMainBoard/GOMI TAB/GDScript/TabContainer/UART/InputParsePrefixSuffixAroundString" unique_id=563741213]
+script = ExtResource("130_u32o2")
+metadata/_custom_type_script = "uid://bc1vh33b6npeb"
+
 [node name="Demo" parent="CanvasLayer/GOMI Main/PanelMainBoard/GOMI TAB/GDScript/TabContainer/UART" unique_id=843151644 instance=ExtResource("107_wiphs")]
 layout_mode = 1
+
+[node name="Emit as Formated" parent="CanvasLayer/GOMI Main/PanelMainBoard/GOMI TAB/GDScript/TabContainer/UART/Demo/Emitters" parent_id_path=PackedInt32Array(843151644, 1089267683) index="0" unique_id=2035474577]
+_prefix_text = "cmd:uart|out|%s|%s"
+
+[node name="PushToSingletonGOMI" type="Node" parent="CanvasLayer/GOMI Main/PanelMainBoard/GOMI TAB/GDScript/TabContainer/UART/Demo/Emitters/Emit as Formated" index="0" unique_id=334377004]
+script = ExtResource("75_lw2yh")
+metadata/_custom_type_script = "uid://c7g1isaokapf8"
+
+[node name="GraphNode Listen Text Vertical Gauge Basic8" parent="CanvasLayer/GOMI Main/PanelMainBoard/GOMI TAB/GDScript/TabContainer/UART/Demo/GraphEdit" parent_id_path=PackedInt32Array(843151644, 658164110) index="15" unique_id=171193175 instance=ExtResource("116_afkua")]
+layout_mode = 0
+offset_left = 349.0
+offset_top = 212.857
+offset_right = 437.0
+offset_bottom = 362.857
+position_offset = Vector2(349, 212.857)
+title = "Ultrasonic"
+slot/1/left_enabled = false
+slot/1/left_type = 0
+slot/1/left_color = Color(1, 1, 1, 1)
+slot/1/left_icon = null
+slot/1/right_enabled = false
+slot/1/right_type = 0
+slot/1/right_color = Color(1, 1, 1, 1)
+slot/1/right_icon = null
+slot/1/draw_stylebox = true
+
+[node name="VSlider" parent="CanvasLayer/GOMI Main/PanelMainBoard/GOMI TAB/GDScript/TabContainer/UART/Demo/GraphEdit/GraphNode Listen Text Vertical Gauge Basic8" index="2" unique_id=1300271918]
+min_value = -5.0
+max_value = 40.0
+
+[node name="BeGraphInTextToGaugeBasic" parent="CanvasLayer/GOMI Main/PanelMainBoard/GOMI TAB/GDScript/TabContainer/UART/Demo/GraphEdit/GraphNode Listen Text Vertical Gauge Basic8/VSlider" index="0" unique_id=904532289]
+_gauge_range_max_value = 255.0
+_gauge_step_value = 0.01
+_prefix_to_value = "US"
+
+[node name="Label" type="Label" parent="CanvasLayer/GOMI Main/PanelMainBoard/GOMI TAB/GDScript/TabContainer/UART/Demo/GraphEdit/GraphNode Listen Text Vertical Gauge Basic8" unique_id=202875903]
+layout_mode = 2
+text = "23"
 
 [node name="Post It" type="Panel" parent="CanvasLayer/GOMI Main/PanelMainBoard/GOMI TAB/GDScript/TabContainer" unique_id=55784348]
 visible = false
@@ -1450,9 +1499,10 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-current_tab = 0
+current_tab = 13
 
 [node name="IPV4" type="Panel" parent="CanvasLayer/GOMI Main/PanelMainBoard/GOMI TAB/Input/TabContainer" unique_id=6950897]
+visible = false
 layout_mode = 2
 metadata/_tab_index = 0
 
@@ -1547,6 +1597,51 @@ metadata/_tab_index = 11
 visible = false
 layout_mode = 2
 metadata/_tab_index = 12
+
+[node name="UART IN" type="Panel" parent="CanvasLayer/GOMI Main/PanelMainBoard/GOMI TAB/Input/TabContainer" unique_id=457575631]
+layout_mode = 2
+metadata/_tab_index = 13
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/GOMI Main/PanelMainBoard/GOMI TAB/Input/TabContainer/UART IN" unique_id=880346004]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="CanvasLayer/GOMI Main/PanelMainBoard/GOMI TAB/Input/TabContainer/UART IN/VBoxContainer" unique_id=588170350]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="CanvasLayer/GOMI Main/PanelMainBoard/GOMI TAB/Input/TabContainer/UART IN/VBoxContainer/HBoxContainer2" unique_id=1459241541]
+layout_mode = 2
+text = "Default Listener: UTF8 UDP Port 2510"
+
+[node name="HBoxContainer3" type="HBoxContainer" parent="CanvasLayer/GOMI Main/PanelMainBoard/GOMI TAB/Input/TabContainer/UART IN/VBoxContainer" unique_id=1192907245]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="CanvasLayer/GOMI Main/PanelMainBoard/GOMI TAB/Input/TabContainer/UART IN/VBoxContainer/HBoxContainer3" unique_id=628133140]
+layout_mode = 2
+text = "Default format: uart|address|value"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/GOMI Main/PanelMainBoard/GOMI TAB/Input/TabContainer/UART IN/VBoxContainer" unique_id=1768647926]
+layout_mode = 2
+
+[node name="ListenToSingletonGomi" type="Node" parent="CanvasLayer/GOMI Main/PanelMainBoard/GOMI TAB/Input/TabContainer/UART IN/VBoxContainer/HBoxContainer" unique_id=2056050375]
+script = ExtResource("130_u32o2")
+metadata/_custom_type_script = "uid://bc1vh33b6npeb"
+
+[node name="UartIoFormatKeyVariant" type="Node" parent="CanvasLayer/GOMI Main/PanelMainBoard/GOMI TAB/Input/TabContainer/UART IN/VBoxContainer/HBoxContainer/ListenToSingletonGomi" unique_id=1638126355]
+script = ExtResource("131_afkua")
+metadata/_custom_type_script = "uid://dqmbxxy7co57r"
+
+[node name="Label" type="Label" parent="CanvasLayer/GOMI Main/PanelMainBoard/GOMI TAB/Input/TabContainer/UART IN/VBoxContainer/HBoxContainer" unique_id=847516866]
+layout_mode = 2
+text = "UART IN:"
+
+[node name="Label Value" type="Label" parent="CanvasLayer/GOMI Main/PanelMainBoard/GOMI TAB/Input/TabContainer/UART IN/VBoxContainer/HBoxContainer" unique_id=1859457818]
+layout_mode = 2
 
 [node name="Bool" type="Panel" parent="CanvasLayer/GOMI Main/PanelMainBoard/GOMI TAB" unique_id=829018000]
 visible = false
@@ -3020,6 +3115,7 @@ layout_mode = 2
 [connection signal="on_found_address_message_from_text" from="GOMI/Code/Gate In/Command/UDP for Command/UdpIoListenThreadUdpUART/UART TEMPORARY/UartIoGateInTextToAddressMessage" to="GOMI/Code/Gate In/Command/UDP for Command/UdpIoListenThreadUdpUART/UART TEMPORARY/UartIoGateInRelay" method="relay_text_received_from_address"]
 [connection signal="on_relay_received_message_from_address" from="GOMI/Code/Gate In/Command/UDP for Command/UdpIoListenThreadUdpUART/UART TEMPORARY/UartIoGateInRelay" to="GOMI/Code/Gate In/Command/UDP for Command/UdpIoListenThreadUdpUART/UART TEMPORARY/UartIoGateInRelay/UartIoRelayFilterWithExactValueToNamedVariant" method="push_in_address_value"]
 [connection signal="on_relay_received_message_from_address" from="GOMI/Code/Gate In/Command/UDP for Command/UdpIoListenThreadUdpUART/UART TEMPORARY/UartIoGateInRelay" to="GOMI/Code/Gate In/Command/UDP for Command/UdpIoListenThreadUdpUART/UART TEMPORARY/UartIoGateInRelay/UartIoRelayFilterWithPrefixSuffixToAbInput" method="push_in_package_to_parse"]
+[connection signal="on_relay_received_message_from_address" from="GOMI/Code/Gate In/Command/UDP for Command/UdpIoListenThreadUdpUART/UART TEMPORARY/UartIoGateInRelay" to="GOMI/Code/Gate In/Command/UDP for Command/UdpIoListenThreadUdpUART/UART TEMPORARY/UartIoGateInRelay/PushToSingletonGOMI" method="push_in_text_uart_data"]
 [connection signal="on_bool_value_found_with_address" from="GOMI/Code/Gate In/Command/UDP for Command/UdpIoListenThreadUdpUART/UART TEMPORARY/UartIoGateInRelay/UartIoRelayFilterWithExactValueToNamedVariant" to="GOMI/Code/Gate In/Command/UDP for Command/UdpIoListenThreadUdpUART/UART TEMPORARY/UartIoGateInRelay/UartIoRelayToApInputWithSignal" method="push_to_ap_input_boolean_with_address"]
 [connection signal="on_trigger_found_with_address" from="GOMI/Code/Gate In/Command/UDP for Command/UdpIoListenThreadUdpUART/UART TEMPORARY/UartIoGateInRelay/UartIoRelayFilterWithExactValueToNamedVariant" to="GOMI/Code/Gate In/Command/UDP for Command/UdpIoListenThreadUdpUART/UART TEMPORARY/UartIoGateInRelay/UartIoRelayToApInputWithSignal" method="push_to_ap_input_trigger"]
 [connection signal="on_bool_value_found_with_address" from="GOMI/Code/Gate In/Command/UDP for Command/UdpIoListenThreadUdpUART/UART TEMPORARY/UartIoGateInRelay/UartIoRelayFilterWithPrefixSuffixToAbInput" to="GOMI/Code/Gate In/Command/UDP for Command/UdpIoListenThreadUdpUART/UART TEMPORARY/UartIoGateInRelay/UartIoRelayToApInputWithSignal" method="push_to_ap_input_boolean_with_address"]
@@ -3036,22 +3132,22 @@ layout_mode = 2
 [connection signal="on_analog_value_changed" from="GOMI/Code/Input/AB INPUT Listener" to="GOMI/DATABASE OF ACTIONS/AB INPUT TO COMMAND/Input Analog Range DB/AbInputActionsRangeInOut" method="trigger_action_from_input_name_with_previous_and_current_value"]
 [connection signal="on_boolean_value_changed" from="GOMI/Code/Input/AB INPUT Listener" to="GOMI/DATABASE OF ACTIONS/AB INPUT TO COMMAND/Input Boolean DB/AbInputActionsFromBoolean" method="trigger_action_from_input_name_and_value"]
 [connection signal="on_device_event_received" from="GOMI/Code/Input/AB INPUT Listener" to="GOMI/DATABASE OF ACTIONS/AB INPUT TO COMMAND/Device Event DB/AbInputActionsFromDeviceEvent" method="trigger_action"]
-[connection signal="on_midi_control_analog_key_value" from="GOMI/Code/Input/GODOT LISTENER/MIDI/InputListenToMidi/InputListenToMidiAsAbInput" to="GOMI/Code/Input/GODOT LISTENER/MIDI/InputListenToMidi/InputListenToMidiAsAbInput/Midi AB Input" method="set_analog_value"]
-[connection signal="on_midi_note_analog_key_value" from="GOMI/Code/Input/GODOT LISTENER/MIDI/InputListenToMidi/InputListenToMidiAsAbInput" to="GOMI/Code/Input/GODOT LISTENER/MIDI/InputListenToMidi/InputListenToMidiAsAbInput/Midi AB Input" method="set_analog_value"]
-[connection signal="on_midi_note_boolean_key_value" from="GOMI/Code/Input/GODOT LISTENER/MIDI/InputListenToMidi/InputListenToMidiAsAbInput" to="GOMI/Code/Input/GODOT LISTENER/MIDI/InputListenToMidi/InputListenToMidiAsAbInput/Midi AB Input" method="set_boolean_value"]
-[connection signal="on_last_device_axis_changed_input_named_value" from="GOMI/Code/Input/GODOT LISTENER/GAMEPAD/InputListenToDevicesAxisAndButtons/InputDebugDevicesAxisAndButtonsAsString" to="GOMI/Code/Input/GODOT LISTENER/GAMEPAD/InputListenToDevicesAxisAndButtons/AB Push Static" method="set_analog_value"]
-[connection signal="on_last_device_button_changed_input_named_value" from="GOMI/Code/Input/GODOT LISTENER/GAMEPAD/InputListenToDevicesAxisAndButtons/InputDebugDevicesAxisAndButtonsAsString" to="GOMI/Code/Input/GODOT LISTENER/GAMEPAD/InputListenToDevicesAxisAndButtons/AB Push Static" method="set_boolean_value"]
+[connection signal="on_midi_control_analog_key_value" from="GOMI/Code/Input/GODOT LISTENER/MIDI/InputListenToMidi/InputListenToMidiAsAbInput" to="GOMI/Code/Input/GODOT LISTENER/MIDI/InputListenToMidi/InputListenToMidiAsAbInput/Midi AB Input" method="set_analog_value_with_input_name"]
+[connection signal="on_midi_note_analog_key_value" from="GOMI/Code/Input/GODOT LISTENER/MIDI/InputListenToMidi/InputListenToMidiAsAbInput" to="GOMI/Code/Input/GODOT LISTENER/MIDI/InputListenToMidi/InputListenToMidiAsAbInput/Midi AB Input" method="set_analog_value_with_input_name"]
+[connection signal="on_midi_note_boolean_key_value" from="GOMI/Code/Input/GODOT LISTENER/MIDI/InputListenToMidi/InputListenToMidiAsAbInput" to="GOMI/Code/Input/GODOT LISTENER/MIDI/InputListenToMidi/InputListenToMidiAsAbInput/Midi AB Input" method="set_boolean_value_with_input_name"]
+[connection signal="on_last_device_axis_changed_input_named_value" from="GOMI/Code/Input/GODOT LISTENER/GAMEPAD/InputListenToDevicesAxisAndButtons/InputDebugDevicesAxisAndButtonsAsString" to="GOMI/Code/Input/GODOT LISTENER/GAMEPAD/InputListenToDevicesAxisAndButtons/AB Push Static" method="set_analog_value_with_input_name"]
+[connection signal="on_last_device_button_changed_input_named_value" from="GOMI/Code/Input/GODOT LISTENER/GAMEPAD/InputListenToDevicesAxisAndButtons/InputDebugDevicesAxisAndButtonsAsString" to="GOMI/Code/Input/GODOT LISTENER/GAMEPAD/InputListenToDevicesAxisAndButtons/AB Push Static" method="set_boolean_value_with_input_name"]
 [connection signal="on_nfc_submit_code_found" from="GOMI/Code/Input/GODOT LISTENER/KEYBOARD/NFC/InputListenToFastTypingNfc" to="GOMI/FILE/LoadFileFromFolder/Filter Text As Files/FileConfigRedirectionByNameRelayBroadcaster/_nfc_to_command/Key Value Splitter/InputTextDictionaryToActions" method="emit_if_text_equals_to_one_key"]
 [connection signal="on_nfc_submit_code_found" from="GOMI/Code/Input/GODOT LISTENER/KEYBOARD/NFC/InputListenToFastTypingNfc" to="GOMI/Code/Input/GODOT LISTENER/KEYBOARD/NFC/InputListenToFastTypingNfc/AbInputStaticSetWithKey" method="trigger_event_with_inspector_input_name"]
 [connection signal="on_string_builder_changed" from="GOMI/Code/Input/GODOT LISTENER/KEYBOARD/LOG/Key Log/InputAbstractTypingKeyLogger" to="GOMI/DATABASE OF ACTIONS/KEYBOARD NFC RFID/NFC Equals By" method="emit_if_text_finishing_by_one_key"]
-[connection signal="on_string_builder_changed" from="GOMI/Code/Input/GODOT LISTENER/KEYBOARD/LOG/Key Log/InputAbstractTypingKeyLogger" to="GOMI/Code/Input/GODOT LISTENER/KEYBOARD/LOG/Key Log/InputAbstractTypingKeyLogger/AbInputPushKeyValue" method="trigger_event_with_inspector_input_name"]
+[connection signal="on_string_builder_changed" from="GOMI/Code/Input/GODOT LISTENER/KEYBOARD/LOG/Key Log/InputAbstractTypingKeyLogger" to="GOMI/Code/Input/GODOT LISTENER/KEYBOARD/LOG/Key Log/InputAbstractTypingKeyLogger/AbInputStaticSetWithKey" method="trigger_event_with_inspector_input_name"]
 [connection signal="on_new_input_detected" from="GOMI/Code/Input/GODOT LISTENER/KEYBOARD/LOG/Key Log/InputAbstractTypingKeyLogger/InputListenToGamepadAsAlias" to="GOMI/Code/Input/GODOT LISTENER/KEYBOARD/LOG/Key Log/InputAbstractTypingKeyLogger" method="inject_key_as_string"]
 [connection signal="on_any_unicode_char_found" from="GOMI/Code/Input/GODOT LISTENER/KEYBOARD/UNICODE CHAR/InputListenToKeyboardUnicodeAsString" to="GOMI/DATABASE OF ACTIONS/KEYBOARD INT CHAR/Keyboard Char to Actions" method="emit_if_text_equals_to_one_key"]
 [connection signal="on_any_unicode_integer_as_string_found" from="GOMI/Code/Input/GODOT LISTENER/KEYBOARD/UNICODE INT/InputListenToKeyboardUnicodeAsInteger" to="GOMI/DATABASE OF ACTIONS/KEYBOARD INT CHAR/Keyboard Int to Actions" method="emit_if_text_equals_to_one_key"]
-[connection signal="on_ab_input_key_bool_value" from="GOMI/Code/Input/GODOT LISTENER/KEYBOARD/KEYBOARD DOWN UP/Input Listen To Keyboard" to="GOMI/Code/Input/GODOT LISTENER/KEYBOARD/KEYBOARD DOWN UP/Input Listen To Keyboard/Keyboard As AB Input" method="set_boolean_value"]
+[connection signal="on_ab_input_key_bool_value" from="GOMI/Code/Input/GODOT LISTENER/KEYBOARD/KEYBOARD DOWN UP/Input Listen To Keyboard" to="GOMI/Code/Input/GODOT LISTENER/KEYBOARD/KEYBOARD DOWN UP/Input Listen To Keyboard/Keyboard As AB Input" method="set_boolean_value_with_input_name"]
 [connection signal="on_event_key_stroke_as_given_by_godot" from="GOMI/Code/Input/GODOT LISTENER/KEYBOARD/KEYBOARD DOWN UP/Input Listen To Keyboard" to="GOMI/DATABASE OF ACTIONS/KEYBOARD STROKE/Keyboard stroke key" method="emit_if_equals_to_text_in_true_or_false_dictionary"]
 [connection signal="on_ab_input_event" from="GOMI/Code/Input/GODOT LISTENER/MOUSE/BASIC/InputListenToMouse" to="GOMI/Code/Input/GODOT LISTENER/MOUSE/BASIC/InputListenToMouse/Mouse AB Input" method="trigger_event_with_input_name"]
-[connection signal="on_ab_input_key_bool_value" from="GOMI/Code/Input/GODOT LISTENER/MOUSE/BASIC/InputListenToMouse" to="GOMI/Code/Input/GODOT LISTENER/MOUSE/BASIC/InputListenToMouse/Mouse AB Input" method="set_boolean_value"]
+[connection signal="on_ab_input_key_bool_value" from="GOMI/Code/Input/GODOT LISTENER/MOUSE/BASIC/InputListenToMouse" to="GOMI/Code/Input/GODOT LISTENER/MOUSE/BASIC/InputListenToMouse/Mouse AB Input" method="set_boolean_value_with_input_name"]
 [connection signal="on_mouse_left_down_changed" from="GOMI/Code/Input/GODOT LISTENER/MOUSE/BASIC/InputListenToMouse" to="GOMI/DATABASE OF ACTIONS/MOUSE EVENT/Button Left Macro" method="trigger_from_boolean"]
 [connection signal="on_mouse_middle_down_changed" from="GOMI/Code/Input/GODOT LISTENER/MOUSE/BASIC/InputListenToMouse" to="GOMI/DATABASE OF ACTIONS/MOUSE EVENT/Button Middle Macro" method="trigger_from_boolean"]
 [connection signal="on_mouse_right_down_changed" from="GOMI/Code/Input/GODOT LISTENER/MOUSE/BASIC/InputListenToMouse" to="GOMI/DATABASE OF ACTIONS/MOUSE EVENT/Button Right Macro" method="trigger_from_boolean"]
@@ -3109,9 +3205,13 @@ layout_mode = 2
 [connection signal="on_submit_gdscript_to_execute_in_background" from="CanvasLayer/GOMI Main/PanelMainBoard/GOMI TAB/GDScript/TabContainer/Code Push/SceneCodeEditorPusherForGomi/GomiPusherCodeEditSubmitWithButton" to="CanvasLayer/GOMI Main/PanelMainBoard/GOMI TAB/GDScript/TabContainer/Code Push/SceneCodeEditorPusherForGomi/GomiPusherCodeEditSubmitWithButton/PushToSingletonGOMI" method="push_in_execute_named_gdscript"]
 [connection signal="on_submit_gdscript_to_execute_once" from="CanvasLayer/GOMI Main/PanelMainBoard/GOMI TAB/GDScript/TabContainer/Code Push/SceneCodeEditorPusherForGomi/GomiPusherCodeEditSubmitWithButton" to="CanvasLayer/GOMI Main/PanelMainBoard/GOMI TAB/GDScript/TabContainer/Code Push/SceneCodeEditorPusherForGomi/GomiPusherCodeEditSubmitWithButton/PushToSingletonGOMI" method="push_in_execute_one_time_gdscript"]
 [connection signal="on_formated_text" from="CanvasLayer/GOMI Main/PanelMainBoard/GOMI TAB/GDScript/TabContainer/UART/InputParsePrefixSuffixAroundString" to="CanvasLayer/GOMI Main/PanelMainBoard/GOMI TAB/GDScript/TabContainer/UART/InputParsePrefixSuffixAroundString/PushToSingletonGOMI" method="push_in_text_to_process"]
-[connection signal="on_text_received_from_emitters" from="CanvasLayer/GOMI Main/PanelMainBoard/GOMI TAB/GDScript/TabContainer/UART/Demo/Emitters" to="CanvasLayer/GOMI Main/PanelMainBoard/GOMI TAB/GDScript/TabContainer/UART/InputParsePrefixSuffixAroundString" method="push_in_text"]
+[connection signal="on_text_uart_data_received_any" from="CanvasLayer/GOMI Main/PanelMainBoard/GOMI TAB/GDScript/TabContainer/UART/InputParsePrefixSuffixAroundString/ListenToSingletonGomi" to="CanvasLayer/GOMI Main/PanelMainBoard/GOMI TAB/GDScript/TabContainer/UART/Demo/Listeners" method="push_text_to_all_listeners"]
+[connection signal="on_uart_to_relay_with_address_formated" from="CanvasLayer/GOMI Main/PanelMainBoard/GOMI TAB/GDScript/TabContainer/UART/Demo/Emitters/Emit as Formated" to="CanvasLayer/GOMI Main/PanelMainBoard/GOMI TAB/GDScript/TabContainer/UART/Demo/Emitters/Emit as Formated/PushToSingletonGOMI" method="push_in_text_to_process"]
+[connection signal="on_value_changed_as_string" from="CanvasLayer/GOMI Main/PanelMainBoard/GOMI TAB/GDScript/TabContainer/UART/Demo/GraphEdit/GraphNode Listen Text Vertical Gauge Basic8/VSlider/BeGraphInTextToGaugeBasic" to="CanvasLayer/GOMI Main/PanelMainBoard/GOMI TAB/GDScript/TabContainer/UART/Demo/GraphEdit/GraphNode Listen Text Vertical Gauge Basic8/Label" method="set_text"]
 [connection signal="on_area_triggered_inside_value" from="CanvasLayer/GOMI Main/PanelMainBoard/GOMI TAB/Input/TabContainer/Mouse Area/InputObserveMouseAreaTriggers" to="CanvasLayer/GOMI Main/PanelMainBoard/GOMI TAB/Input/TabContainer/Mouse Area/InputObserveMouseAreaTriggers/AbInputAddPrefixToKeyValue" method="push_in_key_value_boolean"]
 [connection signal="on_parsed_key_value_boolean" from="CanvasLayer/GOMI Main/PanelMainBoard/GOMI TAB/Input/TabContainer/Mouse Area/InputObserveMouseAreaTriggers/AbInputAddPrefixToKeyValue" to="CanvasLayer/GOMI Main/PanelMainBoard/GOMI TAB/Input/TabContainer/Mouse Area/InputObserveMouseAreaTriggers/AbInputStaticSetWithLocalRefList" method="set_boolean_value_with_input_name"]
+[connection signal="on_text_uart_data_received" from="CanvasLayer/GOMI Main/PanelMainBoard/GOMI TAB/Input/TabContainer/UART IN/VBoxContainer/HBoxContainer/ListenToSingletonGomi" to="CanvasLayer/GOMI Main/PanelMainBoard/GOMI TAB/Input/TabContainer/UART IN/VBoxContainer/HBoxContainer/ListenToSingletonGomi/UartIoFormatKeyVariant" method="push_in_key_value_to_format"]
+[connection signal="on_formatted_text" from="CanvasLayer/GOMI Main/PanelMainBoard/GOMI TAB/Input/TabContainer/UART IN/VBoxContainer/HBoxContainer/ListenToSingletonGomi/UartIoFormatKeyVariant" to="CanvasLayer/GOMI Main/PanelMainBoard/GOMI TAB/Input/TabContainer/UART IN/VBoxContainer/HBoxContainer/Label Value" method="set_text"]
 [connection signal="on_boolean_key_value_changed" from="CanvasLayer/GOMI Main/PanelMainBoard/GOMI TAB/Bool/Demo2dVboxBooleanRegister/VBoxContainer/HBoxContainer/CheckButton/BoolRegLineEditToggleSubmit" to="CanvasLayer/GOMI Main/PanelMainBoard/GOMI TAB/Bool/Demo2dVboxBooleanRegister/VBoxContainer/HBoxContainer/Push Bool" method="set_boolean_value_in_static_singleton"]
 [connection signal="on_boolean_key_down" from="CanvasLayer/GOMI Main/PanelMainBoard/GOMI TAB/Bool/Demo2dVboxBooleanRegister/VBoxContainer/HBoxContainer/Button Toggle/BoolRegLineEditButtonSubmit" to="CanvasLayer/GOMI Main/PanelMainBoard/GOMI TAB/Bool/Demo2dVboxBooleanRegister/VBoxContainer/HBoxContainer/Push Bool" method="toggle_boolean_value_in_static_singleton"]
 [connection signal="button_down" from="CanvasLayer/GOMI Main/PanelMainBoard/GOMI TAB/S2W/Button" to="CanvasLayer/GOMI Main/PanelMainBoard/GOMI TAB/S2W/Button/InputUiOpenUrl" method="open_url_from_inspector"]
@@ -3159,6 +3259,15 @@ layout_mode = 2
 [editable path="CanvasLayer/GOMI Main/PanelMainBoard/GOMI TAB/GDScript/TabContainer/Graph/GraphEdit/GraphNodeGomiBeanUiPushGameTelemetry"]
 [editable path="CanvasLayer/GOMI Main/PanelMainBoard/GOMI TAB/GDScript/TabContainer/Graph/GraphEdit/GraphNodeGomiBeanUiPushShortcutButton"]
 [editable path="CanvasLayer/GOMI Main/PanelMainBoard/GOMI TAB/GDScript/TabContainer/UART/Demo"]
+[editable path="CanvasLayer/GOMI Main/PanelMainBoard/GOMI TAB/GDScript/TabContainer/UART/Demo/GraphEdit/GraphNode Listen Text Vertical Gauge Basic4"]
+[editable path="CanvasLayer/GOMI Main/PanelMainBoard/GOMI TAB/GDScript/TabContainer/UART/Demo/GraphEdit/GraphNode Listen Text Vertical Gauge Basic5"]
+[editable path="CanvasLayer/GOMI Main/PanelMainBoard/GOMI TAB/GDScript/TabContainer/UART/Demo/GraphEdit/GraphNode Listen Text Vertical Gauge Basic6"]
+[editable path="CanvasLayer/GOMI Main/PanelMainBoard/GOMI TAB/GDScript/TabContainer/UART/Demo/GraphEdit/GraphNode Listen Text Vertical Gauge Basic7"]
+[editable path="CanvasLayer/GOMI Main/PanelMainBoard/GOMI TAB/GDScript/TabContainer/UART/Demo/GraphEdit/GraphNode Listen Text Vertical Gauge Basic2"]
+[editable path="CanvasLayer/GOMI Main/PanelMainBoard/GOMI TAB/GDScript/TabContainer/UART/Demo/GraphEdit/GraphNode Listen Text Vertical Gauge Basic8"]
+[editable path="CanvasLayer/GOMI Main/PanelMainBoard/GOMI TAB/GDScript/TabContainer/UART/Demo/GraphEdit/GraphNode Listen Text Vertical Gauge Basic3"]
+[editable path="CanvasLayer/GOMI Main/PanelMainBoard/GOMI TAB/GDScript/TabContainer/UART/Demo/GraphEdit/GraphNode Listen Text5"]
+[editable path="CanvasLayer/GOMI Main/PanelMainBoard/GOMI TAB/GDScript/TabContainer/UART/Demo/GraphEdit/GraphNode Listen Text4"]
 [editable path="CanvasLayer/GOMI Main/PanelMainBoard/GOMI TAB/GDScript/TabContainer/Post It/DemoGarphNodePostItBasic"]
 [editable path="CanvasLayer/GOMI Main/PanelMainBoard/GOMI TAB/Input/TabContainer/IPV4/VBoxContainer/DemoUi2dIpv4Fetch"]
 [editable path="CanvasLayer/GOMI Main/PanelMainBoard/GOMI TAB/Input/TabContainer/IPV4/VBoxContainer/DemoUi2dIpv4Fetch/ScrollContainer/VBoxContainer/LabelLocalIpv4Joined"]

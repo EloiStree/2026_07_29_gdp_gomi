@@ -65,3 +65,7 @@ func push_in_execute_named_gdscript(unique_name:String, gdscript:String):
 
 func push_in_remove_named_gdscript(unique_name:String):
 	GOMI.remove_named_gdscript(unique_name)
+
+
+func push_in_text_uart_data(uart_source_address: String, uart_data: String):
+	GOMI.uart_text_data(uart_source_address, uart_data)
